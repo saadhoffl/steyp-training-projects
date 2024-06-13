@@ -75,9 +75,9 @@ window.onload = function() {
     var message = urlParams.get('message');
 
     // Display contact details
-    // document.getElementById('name').innerText = name;
-    // document.getElementById('email').innerText = email;
-    // document.getElementById('message').innerText = message;
+    document.getElementById('name').innerText = name;
+    document.getElementById('email').innerText = email;
+    document.getElementById('message').innerText = message;
 }
 
 const print = {
