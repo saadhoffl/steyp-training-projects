@@ -13,3 +13,4 @@
 | Project No | Project Name | Project Status | Descriptions | Skills | Link |
 |------------|--------------|----------------|--------------|------|--------|
 | 01 | movie-land | Completed | created through watching Youtube video | ReactJs | - |
+| 01 | pintrest-clone | progressing | created through watching Youtube video | ReactJs | - |
