@@ -2,7 +2,6 @@
 
 ## UI-ENGINEER:
 
-| Project No | Project Name | Project Status |
-|------------|--------------|----------------|
-| 01         | html-css-home-page |  Progressing |
-| 02         | html-css-home-page |  Progressing |
+| Project No | Project Name | Project Status | Descriptions
+|------------|--------------|----------------|--------------|
+| 01         | html-css-home-page |  Progressing |  created through watching Youtube video. 
