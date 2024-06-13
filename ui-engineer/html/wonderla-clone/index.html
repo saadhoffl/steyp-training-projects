@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Wonderla</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <div class="logo">
+                <a href="#"><img src="images/logo.avif" alt="Wonderla"></a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a class="whitetext active" href="index.html">Home</a></li>
+                    <li><a class="whitetext" href="rides.html">Rides</a></li>
+                    <li><a class="whitetext" href="offers.html">Offers</a></li>
+                    <li><a class="whitetext" href="plan_your_day.html">Plan Your Day</a></li>
+                    <li><a class="whitetext" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-icons">
+                <a class="whitetext fa fa-facebook" href="https://www.facebook.com/Wonderla" target="_blank"></a>
+                <a class="whitetext fa fa-youtube" href="https://www.youtube.com/user/wonderlabangalore" target="_blank"></a>
+                <a class="whitetext fa fa-instagram" href="https://www.instagram.com/wonderla_in/" target="_blank"></a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="slider">
+
+        <div class="slides">
+            <div class="slide">
+                <img src="images/img1.avif" alt="Image 1">
+            </div>
+
+            <div class="slide">
+                <img src="images/img2.avif" alt="Image 2">
+            </div>
+
+            <div class="slide">
+                <img src="images/img3.avif" alt="Image 3">
+            </div>
+
+            <div class="slide">
+                <img src="images/img4.avif" alt="Image 4">
+            </div>
+        </div>
+
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+
+    </div>
+
+    <h1 id="home-h1">WONDERLA - The Largest Amusement Park In India</h1>
+
+    <h2 id="home-h2">Step into a world of magic, where joy springs to life!</h2>
+
+    <hr id="home-sm-line"/>
+
+    <p id="home-para">We are so much more than an amusement park - a world where everyone comes together and enjoys the little moments.
+        A life of fun is what everyone deserves, so come on down to the Wonderla closest to you!</p>
+
+    <div class="grid-container">
+        <div class="card card1">
+            <img src="images/card-image1.avif" alt="Image 1">
+            <h2>Wonderla Kochi</h2>
+        </div>
+        <div class="card card2">
+            <img src="images/card-image2.avif" alt="Image 2">
+            <h2>Wonderla Bengaluru</h2>
+        </div>
+        <div class="card card3">
+            <img src="images/card-image3.avif" alt="Image 3">
+            <h2>Wonderla Hyderabad</h2>
+        </div>
+        <div class="card card4">
+            <img src="images/card-image4.avif" alt="Image 4">
+            <h2>Wonderla Resort, Bengaluru</h2>
+        </div>
+    </div>
+
+    <div class="flex-container">
+
+        <div class="flex-item">
+            <img class="card" src="images/dosa.avif" alt="Image 1"> 
+        </div>
+        <div class="flex-item">
+            <img class="card" src="images/briyani.avif" alt="Image 2">
+        </div>
+        <div class="flex-item">
+            <h2 id="food-h2">Good food = Great day!</h2>
+            <hr id="home-sm-line"/>
+            <p id="home-food-text">Relish a delightful gastronomical experience. 
+                Enjoy scrumptious meals at Wonderla.</p>
+        <div class="btn-div">
+            <button onclick="print.pannuda('pannitenda')" class="btn">Dive In</button>    
+        </div>        
+        </div>
+
+    </div>
+
+    <div class="offer-container">
+    <div class="slider1">
+
+        <h2 id="food-h2">Offers you simply can't refuse!</h2>
+
+        <div class="slides1">
+            <div class="slide1">
+                <img src="images/offer1.avif" alt="Image 1">
+            </div>
+
+            <div class="slide1">
+                <img src="images/offer2.avif" alt="Image 2">
+            </div>
+
+            <div class="slide1">
+                <img src="images/offer3.avif" alt="Image 3">
+            </div>
+
+            <div class="slide1">
+                <img src="images/offer4.avif" alt="Image 4">
+            </div>
+        </div>
+
+        <button class="prev1" onclick="prevSlide1()">&#10094;</button>
+        <button class="next1" onclick="nextSlide1()">&#10095;</button>
+
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Services</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <p class="copyright">Copyright © 2024 Saadh. All rights reserved.</p>
+      </footer>
+      
+    <script src="js/main.js"></script>
+
+</body>
+</html>
