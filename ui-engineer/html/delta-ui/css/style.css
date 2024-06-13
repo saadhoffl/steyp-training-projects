@@ -1,0 +1,892 @@
+/* remove default starting */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote {
+	quotes: none;
+}
+
+blockquote:before, 
+blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+header, 
+section, 
+article, 
+aside, 
+nav, 
+footer, 
+address {
+	display: block;
+}
+
+body {
+	font-family: sans-serif, Arial, Helvetica ;
+	font-size: 14px;
+	color: #555;
+	min-width:320px;
+	overflow-x: hidden;
+}
+
+input,
+textarea,
+select{
+	font-family: sans-serif, Arial, Helvetica ;
+}
+
+/* remove default ended */
+
+/* spoltlight starting */
+
+#spotlight #nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 130px;
+    align-items: center;
+}
+
+#spotlight #nav-bar h1{
+    width: 10%;
+    font-weight: bold;
+}
+
+#spotlight #nav-bar h1 a img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#spotlight #nav-bar ul{
+    display: flex;
+}
+
+#spotlight #nav-bar ul li{
+    margin-right: 30px;
+}
+
+#spotlight #nav-bar ul li:nth-child(5){
+    margin-right: 0px;
+}
+
+#spotlight #nav-bar ul li a{
+    color: black;
+}
+
+#spotlight #nav-bar ul li .active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#spotlight #nav-bar ul li a:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#spotlight #nav-bar div .sign-in{
+    color: black;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+#spotlight #nav-bar div .sign-up{
+    color: black;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* spotlight ended */
+
+
+/* spotlight nav bar bottom starting */
+
+#spotlight #nav-bottom{
+    display: flex;
+    padding: 20px 130px 150px;
+}
+
+#spotlight #nav-bottom .left{
+    margin-top: 70px;
+}
+
+#spotlight #nav-bottom .left div{
+    display: flex;
+}
+
+#spotlight #nav-bottom .left div img{
+    align-items: center;
+    margin-left: 2%;
+    width: 40px;
+}
+
+#spotlight #nav-bottom .left h1{
+    color: black;
+    font-size: 300%;
+    margin-bottom: 3%;
+}
+
+#spotlight #nav-bottom .left p{
+    font-size: 20px;
+    margin-bottom: 8%;
+    padding-right: 20%;
+    font-weight: medium;
+    color: black;
+}
+
+#spotlight #nav-bottom .left .get-started{
+    font-size: 150%;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    margin-right: 40px;
+}
+
+#spotlight #nav-bottom .left .how-it-works{
+    font-size: 150%;
+}
+
+#spotlight #nav-bottom .right{
+    width: 45%;
+}
+
+#spotlight #nav-bottom .right img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* spoltlight nav bar ended */
+
+/* growth calculation starting */
+
+#spotlight #growth{
+    padding-bottom: 70px;
+}
+
+#spotlight #growth h3{
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+#spotlight #growth div{
+    display: flex;
+    justify-content: center;
+}
+
+#spotlight #growth div img{
+    padding-top: 12px;
+    padding-right: 90px;
+    height: 50%;
+}
+
+#spotlight #growth div img:nth-child(4){
+    padding-right: 0px;
+}
+
+/* growth calculation ended */
+
+/* about-us starting */
+
+#spotlight #about-us{
+    padding: 70px 130px;
+    background-color: #FFFCF3;
+    display: flex;
+}
+
+#spotlight #about-us .heading{
+    padding-right: 70px;
+    width: 100%;
+}
+
+#spotlight #about-us .heading h2,
+#spotlight #services h3{
+    font-size: 17px;
+    font-weight: bold;
+    color: #b1b1b1;
+    padding-bottom: 30px;
+}
+
+#spotlight #about-us .heading h3,
+#spotlight #services h4{
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    padding-bottom: 30px;
+}
+
+#spotlight #about-us .heading img{
+    border-radius: 2%;
+    width: 100%;
+    height: 55%;
+}
+
+#spotlight #about-us .content p{
+    color: #000000;
+    font-weight: medium;
+    font-size: 20px;
+    padding-top: 140px;
+    padding-bottom: 40px;
+}
+
+#spotlight #about-us .content ul{
+    padding-bottom: 40px;
+}
+
+#spotlight #about-us .content ul div{
+    color: #292929;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+#spotlight #about-us .content ul div img{
+    padding-right: 15px;
+}
+
+#spotlight #about-us .content ul div li{
+    color: #292929;
+}
+
+/* about us count div staring */
+
+#spotlight #about-us .content .count{
+    display: flex;
+    background-color: #D5FA52;
+    padding: 30px 30px;
+    margin-left: -130px;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #000000;
+    justify-content: center;
+}
+
+#spotlight #about-us .content .count .vertical{
+    border-left: 1px solid black;
+    height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#spotlight #about-us .content .count .project-launched{
+    padding-right: 40px;
+}
+
+#spotlight #about-us .content .count div h1{
+    font-size: 30px;
+}
+
+#spotlight #about-us .content .count .happy-client{
+    padding-right: 40px;
+}
+
+
+#spotlight #about-us .content .count div h2{
+    font-size: 15px;
+}
+
+/* about us count div ended */
+/* about-us ended */
+
+/* service starting */
+
+#spotlight #services{
+    margin: 40px 130px 70px 130px;
+}
+
+#spotlight #services .services-content{
+    display: flex;
+    margin: 0px 20px;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+#spotlight #services .services-content div{
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 230px;
+    padding: 40px;
+    margin-right: 30px;
+    transition: transform 0.5s;
+}
+
+#spotlight #services .services-content div:nth-child(3){
+    margin-right: 0;
+}
+
+#spotlight #services .services-content div:hover{
+    transform: scale(1.07);
+}
+
+#spotlight #services .services-content div img{
+    width: 20%;
+    margin-bottom: 15px;
+}
+
+#spotlight #services .services-content div h5{
+    font-size: 19px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+#spotlight #services .services-content div h6{
+    font-size: 17px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+#spotlight #services .services-content div a{
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+#spotlight #services .services-content div a:hover{
+    text-decoration: underline;
+    text-decoration-color: #555;
+    text-decoration-thickness: 2px;
+}
+
+#spotlight #discover-more{
+    margin: 40px 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#spotlight #discover-more h5{
+    font-size: 22px;
+    color: #000000;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#spotlight #discover-more a{
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    padding: 14px 26px;
+    border-radius: 2px;
+}
+
+/* service ended */
+
+/* pricing starting */
+
+#spotlight #pricing{
+    background-color: #FFFCF3;
+    padding: 60px 130px;
+}
+
+#spotlight #pricing h5{
+    font-size: 17px;
+    font-weight: bold;
+    color: #b1b1b1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#spotlight #pricing h4{
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#spotlight #pricing .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+#spotlight #pricing .month{
+    margin-right: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#spotlight #pricing img{
+    margin-right: 20px;
+    width: 3%;
+}
+
+#spotlight #pricing .year{
+    margin-right: 20px;
+}
+
+#spotlight #pricing .saving{
+    margin-right: 20px;
+    color: #000000;
+    font-weight: bold;
+    background-color: #FDDC01;
+    padding: 4px 11px;
+    border-radius: 40px;
+}
+
+#spotlight #pricing .plans{
+    display: flex;
+    justify-content: center;
+}
+
+#spotlight #pricing .plans .plan-card{
+    justify-content: center;
+    margin-right: 120px;
+    text-align: center;
+}
+
+#spotlight #pricing .plans .active{
+    background-color: #000000;
+    justify-content: center;
+    padding: 40px;
+    margin-top: -40px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+#spotlight #pricing .plans .active h4{
+    color: white;
+}
+
+#spotlight #pricing .plans .active .active-choose-plan{
+   background-color: #D5FA52;
+   color: #000000;
+   font-weight: bold;
+}
+
+#spotlight #pricing .plans .plan-card:nth-child(3){
+    margin-right: 0px;
+}
+
+#spotlight #pricing .plans .plan-card h4{
+    font-size: 25px;
+}
+
+#spotlight #pricing .plans .plan-card h4 span{
+    font-size: 15px;
+    font-weight: bold;
+    color: #b1b1b1;
+}
+
+#spotlight #pricing .plans .plan-card ul .list{
+    display: flex;
+}
+
+#spotlight #pricing .plans .plan-card ul .list li{
+    margin-bottom: 7px;
+    margin-top: 7px;
+}
+
+#spotlight #pricing .plans .plan-card ul .list img{
+    width: 13px;
+}
+
+#spotlight #pricing .plans .plan-card h5{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: white;
+    color: #000000;
+    margin-top: 25px;
+    font-size: 13px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    background-color: #E0E0E2;
+}
+
+#spotlight #pricing .plans .plan-card h3{
+    display: inline-block;
+    padding: 10px 60px;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+    background-color: #747474;
+}
+
+/* pricing ended */
+
+/* testimonials starting*/
+
+#spotlight #testimonials{
+    margin: 70px 130px;
+}
+
+#spotlight #testimonials h2{
+    font-size: 17px;
+    font-weight: bold;
+    color: #b1b1b1;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#spotlight #testimonials h3{
+    color: black;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 70px;
+    line-height: 35px;
+}
+
+#spotlight #testimonials .testimonials-group{
+    display: flex;
+    justify-content: center;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single{
+    margin-right: 100px;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single:nth-child(3){
+    margin-right: 0px;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single img{
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single p{
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single div{
+    display: flex;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single div .user-image{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single div p{
+    margin-top: 8px;
+    margin-right: 50px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single div p .user-domain{
+    color: #7c7c7c;
+}
+
+#spotlight #testimonials .testimonials-group .testimonials-single div .double-qoute{
+    margin-top: 10px;
+    width: 40px;
+    height: 30px;
+}
+
+/* testimonials ended */
+
+
+
+/* contact-us starting */
+
+/* contact-us ended */
+
+
+
+/* subcribe starting */
+
+#spotlight #subcribe{
+    padding: 100px 130px;
+    background-color: #FFFCF3;
+    margin-bottom: 50px;
+}
+
+#spotlight #subcribe div{
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    padding: 50px 50px;
+}
+
+#spotlight #subcribe div h4{
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#spotlight #subcribe div h2{
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#spotlight #subcribe div h3{
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#spotlight #subcribe div .send-email{
+    display: flex;
+    justify-content: center;
+}
+
+#spotlight #subcribe div .send-email input{
+    border: 1px solid white;
+    border-radius: 30px;
+    padding-left: 20px;
+    height: 40px;
+    color: white;
+    width: 300px;
+}
+
+#spotlight #subcribe div .send-email button{
+    padding: 0px 10px;
+    margin-left: -95px;
+    background-color: #D4F851;
+    border-radius: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* subcribe ended */
+
+#spotlight #contact-us{
+    margin: 50px 130px;
+}
+
+#spotlight #contact-us h4{
+    font-size: 17px;
+    font-weight: bold;
+    color: #b1b1b1;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+#spotlight #contact-us .contact-us{
+    display: flex;
+}
+
+#spotlight #contact-us .contact-us .contact-us-image{
+   min-width: 32%;
+}
+
+#spotlight #contact-us .contact-us .contact-us-image img{
+    width: 100%;
+    height: 100%;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs{
+    margin-left: 80px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs h3{
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .phone-email{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .phone{
+    margin-right: 70px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .phone img{
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .phone h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .phone p{
+   font-size: 16px;
+   margin-bottom: 7px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .email img{
+    width: 30px;
+    margin-bottom: 10px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .email h5{
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .email p{
+   font-size: 16px;
+   margin-bottom: 7px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .name,
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .phone{
+    border-bottom: 1px solid black;
+    border-color: #7a7a7a;
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: 338px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .email,
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .project{
+    border-bottom: 1px solid black;
+    border-color: #7a7a7a;
+    font-size: 15px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: 700px;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .btn{
+    display: flex;
+    justify-content: end;
+}
+
+#spotlight #contact-us .contact-us .contact-us-inputs .user-inputs .btn .send-message{
+    font-size: 15px;
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 13px 20px;
+    margin-right: 20px;
+}
+
+/* footer starting */
+
+#spotlight #footer{
+    margin: 40px 130px 35px 130px;
+    padding-top: 40px;
+    border-top: 1px solid black;
+}
+
+#spotlight #footer .footer-menu{
+   display: flex;
+   margin-bottom: 50px;
+}
+
+#spotlight #footer .footer-menu div{
+    margin-right: 100px;
+    min-width: 200px;
+}
+
+#spotlight #footer .footer-menu div p{
+    line-height: 35px;
+}
+
+#spotlight #footer .footer-menu div ul li{
+    margin-bottom: 20px;
+}
+
+#spotlight #footer .footer-menu div .contact-icon{
+    display: flex;
+}
+
+#spotlight #footer .footer-menu div .contact-icon p{
+    margin-top: 8px;
+}
+
+#spotlight #footer .footer-menu div .contact-icon{
+   margin-bottom: 8px;
+}
+
+#spotlight #footer .footer-menu div .contact-icon img{
+   width: 20px;
+   margin-top: 2px;
+   margin-right: 6px;
+}
+
+#spotlight #footer .footer-menu div .social-icon{
+    display: flex;
+ }
+
+#spotlight #footer .footer-menu div .social-icon img{
+   width: 27px;
+   margin-right: 20px;
+   align-items: center;
+}
+
+#spotlight #footer .footer-menu div img{
+    width: 45%;
+    margin-top: 7px;
+}
+
+#spotlight #footer .footer-menu div h5{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+}
+
+#spotlight #footer .footer-menu div p{
+    margin-bottom: 5px;
+}
+
+#spotlight #footer .footer-menu div:nth-child(1){
+    margin-right: 100px;
+}
+
+#spotlight #footer .footer-menu div:nth-child(4){
+    margin-right: 0px;
+}
+
+#spotlight #footer .footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#spotlight #footer .footer p{
+    color: #000000;
+}
+
+#spotlight #footer .footer ul{
+    display: flex;
+}
+
+#spotlight #footer .footer ul li{
+    color: #000000;
+    margin-right: 30px;
+}
+
+#spotlight #footer .footer ul li:nth-child(3){
+    margin-right: 0px;
+}
+
+/* footer ended */
