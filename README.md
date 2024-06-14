@@ -1,6 +1,6 @@
 ## PROJECTS:
 
-[MY-SKILLS AND PROJECT](https://github.com/saadhoffl/my-skills)
+LINK: [MY-SKILLS AND PROJECT](https://github.com/saadhoffl/my-skills)
 
 ## UI-ENGINEER:
 
