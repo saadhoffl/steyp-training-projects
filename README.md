@@ -1,8 +1,8 @@
 ## PROJECTS:
 
-LINK: [MY-SKILLS AND PROJECT](https://github.com/saadhoffl/my-skills)
+LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 
-## UI-ENGINEERS:
+## UI-ENGINEER:
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Link |
 |------------|--------------|----------------|--------------|------|--------|
