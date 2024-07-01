@@ -9,6 +9,7 @@ import CartIcon from "../assests/link-3.svg";
 const Container = styled.div`
   display: flex;
   padding: 20px 50px;
+  align-items: center;
   border-bottom: 1px solid rgb(229, 231, 235);
   justify-content: space-between;
   @media (max-width: 690px) {
@@ -20,9 +21,14 @@ const ImageContainer = styled.div`
   display: flex;
   width: 150px;
   margin-right: 30px;
+  @media (max-width: 795px) {
+    width: 68px;
+    height: 19px;
+    margin-right: 5px;
+  }
   @media (max-width: 525px) {
-    width: 70px;
-    height: 25px;
+    width: 65px;
+    height: 17px;
     margin-right: 5px;
   }
 `;
@@ -61,12 +67,19 @@ const AccountImage = styled.img`
   width: 20px;
 `;
 
-const LocationTitle = styled.div``;
+const LocationTitle = styled.div`
+  font-size: 13px;
+`;
 
-const LocationValue = styled.div``;
+const LocationValue = styled.div`
+  font-size: 11px;
+`;
 
 const AccountTilte = styled.div`
   font-size: 13px;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const AccountDiv = styled.div`
@@ -89,6 +102,7 @@ const AccountDiv1 = styled.div`
 const Input = styled.input`
   margin-left: 20px;
   margin-right: 20px;
+  align-self: center;
   width: 500px;
   height: 30px;
   @media (max-width: 1000px) {
@@ -106,17 +120,23 @@ const Input = styled.input`
   @media (max-width: 720px) {
     width: 150px;
     height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   @media (max-width: 575px) {
     width: 200px;
-    height: 20px;
+    height: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   @media (max-width: 375px) {
     width: 100px;
-    height: 20px;
+    height: 15px;
     @media (max-width: 220px) {
       width: 70px;
       height: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 `;
