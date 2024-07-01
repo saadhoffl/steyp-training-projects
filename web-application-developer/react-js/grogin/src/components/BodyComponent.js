@@ -198,7 +198,7 @@ const ProductCard = styled.div`
 `;
 
 const CardImg = styled.img`
-  width: 220px;
+  width: 223px;
   @media (max-width: 1300px) {
     width: 220px;
   }

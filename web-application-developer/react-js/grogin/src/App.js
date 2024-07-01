@@ -4,6 +4,7 @@ import SeconadaryMenu from "./components/SecondaryMenu";
 import MainNavBar from "./components/MainNavBar";
 import MainMenu from "./components/MainMenu";
 import BodyComponent from "./components/BodyComponent";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <MainNavBar />
       <MainMenu />
       <BodyComponent />
+      <Footer />
     </>
   );
 }
