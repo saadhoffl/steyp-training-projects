@@ -4,6 +4,7 @@ import ShowGridIcon from "../assests/divproductviewsbuttons.svg";
 import ProductImg from "../assests/link--123500x500jpg@2x.png";
 import Rated4Out5 from "../assests/img--rated-400-out-of-5.svg";
 import InStock from "../assests/link--add-to-cart-yellow-potatoes-whole-fresh-5lb-bag.svg";
+import { Link } from "react-router-dom";
 
 const MainContainer = styled.div`
   display: flex;
@@ -339,7 +340,9 @@ function BodyComponent() {
           </AdjustFilters>
           <ProductGridDiv>
             <ProductCard>
-              <CardImg src={ProductImg} />
+              <Link to="/product-details">
+                <CardImg src={ProductImg} />
+              </Link>
               <CardTitle>Large Bagged Oranges</CardTitle>
               <RatingImg src={Rated4Out5} />
               <CardPrice>

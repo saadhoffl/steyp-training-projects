@@ -1,21 +1,16 @@
 import React from "react";
-import OffersCount from "./components/OffersCount";
-import SeconadaryMenu from "./components/SecondaryMenu";
-import MainNavBar from "./components/MainNavBar";
-import MainMenu from "./components/MainMenu";
-import BodyComponent from "./components/BodyComponent";
-import Footer from "./components/Footer";
+import Index from "./pages/Index";
+import ProductDetails from "./pages/ProductDetails";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <OffersCount />
-      <SeconadaryMenu />
-      <MainNavBar />
-      <MainMenu />
-      <BodyComponent />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/product-details" element={<ProductDetails />} />
+      </Routes>
+    </Router>
   );
 }
 

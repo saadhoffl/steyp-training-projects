@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link as NavLink } from "react-router-dom";
 
 const NavList = styled.a`
   text-decoration: none;
@@ -7,11 +8,12 @@ const NavList = styled.a`
   letter-spacing: -0.3px;
   line-height: 48px;
   font-weight: 600;
-  color: inherit;
+  color: black;
   display: inline-block;
   min-width: 42px;
   flex-shrink: 0;
 `;
+
 const NavListItemLink = styled.img`
   align-self: stretch;
   width: 9.8px;
@@ -272,7 +274,9 @@ const MainMenu = ({ className = "" }) => {
     <DivheaderRowRoot className={className}>
       <FrameParent>
         <NavListItemLinkHomParent>
-          <NavList>Home</NavList>
+          <NavLink to="/">
+            <NavList>Home</NavList>
+          </NavLink>
           <NavListItemLink
             loading="lazy"
             alt=""
