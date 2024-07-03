@@ -5,6 +5,7 @@ import ProductImg from "../assests/link--123500x500jpg@2x.png";
 import Rated4Out5 from "../assests/img--rated-400-out-of-5.svg";
 import InStock from "../assests/link--add-to-cart-yellow-potatoes-whole-fresh-5lb-bag.svg";
 import { Link } from "react-router-dom";
+import BannerImg from "../assests/banner33jpg@2x.png";
 
 const MainContainer = styled.div`
   display: flex;
@@ -111,6 +112,7 @@ const ProductStatus = styled.div`
 
 const FiltersDiv = styled.div`
   margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 14px;
   font-weight: normal;
 `;
@@ -259,6 +261,191 @@ const StockTitle = styled.p`
   color: green;
 `;
 
+const Banner33jpgIcon = styled.img`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+`;
+const OnlyThisWeek = styled.a`
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+  color: inherit;
+  display: inline-block;
+  min-width: 73px;
+`;
+const Heading = styled.div`
+  border-radius: 30px;
+  background-color: #ffedd5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 5px 5px 5px 6px;
+  white-space: nowrap;
+  z-index: 1;
+`;
+const Heading1 = styled.b`
+  position: relative;
+  letter-spacing: -1.2px;
+  z-index: 1;
+  @media screen and (max-width: 750px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 18px;
+  }
+`;
+const Heading2 = styled.a`
+  text-decoration: none;
+  position: relative;
+  letter-spacing: -1.2px;
+  font-weight: 700;
+  color: inherit;
+  z-index: 1;
+  @media screen and (max-width: 750px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 450px) {
+    font-size: 18px;
+  }
+`;
+const Heading2GroceryStoreWithParent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`;
+const WeHavePrepared = styled.p`
+  margin: 0;
+`;
+const WeHavePreparedContainer = styled.div`
+  position: relative;
+  font-size: 13px;
+  letter-spacing: -0.32px;
+  line-height: 19.51px;
+  color: #6b7280;
+  display: inline-block;
+  max-width: 100%;
+  z-index: 1;
+`;
+const FrameParent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 9px;
+  max-width: 100%;
+  text-align: left;
+  font-size: 30px;
+  color: #111827;
+`;
+const ShopNow = styled.b`
+  position: absolute;
+  margin: 0 !important;
+  bottom: -17px;
+  left: 13px;
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  line-height: 42px;
+  display: inline-block;
+  font-family: Inter;
+  color: #212529;
+  text-align: center;
+  min-width: 58px;
+`;
+const IklbIconMoveRight = styled.img`
+  height: 14px;
+  width: 19.6px;
+  position: relative;
+`;
+const Link1 = styled.button`
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  padding: 8px 13px;
+  background-color: #fff;
+  width: 109px;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+  &:hover {
+    background-color: #e6e6e6;
+    border: 1px solid #cccfd1;
+    box-sizing: border-box;
+  }
+`;
+const DivsiteBannerRoot = styled.div`
+  width: 100%;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 36.9px 30px 33.9px;
+  box-sizing: border-box;
+  gap: 15px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 10px;
+  color: #7c2d12;
+  font-family: Inter;
+`;
+
+const InputRangeDiv = styled.div`
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 10px;
+`;
+
+const InputRange1 = styled.input`
+  margin-right: -0.2px;
+  width: 100%;
+  -webkit-appearance: none;
+  height: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+  &::-webkit-slider-thumb {
+`;
+
+const InputRange2 = styled.input`
+  margin-left: -0.2px;
+  width: 100%;
+  -webkit-appearance: none;
+  height: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  &::-webkit-slider-thumb {
+`;
+
 function BodyComponent() {
   return (
     <>
@@ -271,6 +458,10 @@ function BodyComponent() {
               <SubSymbol>-</SubSymbol>
               <MaxInput placeholder="30" />
             </PriceFilterWidgetDiv>
+            <InputRangeDiv>
+              <InputRange1 type="range" min={0} max={30} value={0} />
+              <InputRange2 type="range" min={31} max={60} value={60} />
+            </InputRangeDiv>
             <PriceResultDiv>
               <ResultPara>Price: $0 — $30</ResultPara>
               <FilterTitle>Filter</FilterTitle>
@@ -330,6 +521,28 @@ function BodyComponent() {
             <SpanX1>x</SpanX1> Clear filters <SpanX2>x</SpanX2> Fruits &
             Vegetables
           </FiltersDiv>
+          <DivsiteBannerRoot>
+            <Banner33jpgIcon alt="" src={BannerImg} />
+            <Heading>
+              <OnlyThisWeek>Only This Week</OnlyThisWeek>
+            </Heading>
+            <FrameParent>
+              <Heading2GroceryStoreWithParent>
+                <Heading1>Grocery store with different</Heading1>
+                <Heading2>treasures</Heading2>
+              </Heading2GroceryStoreWithParent>
+              <WeHavePreparedContainer>
+                <WeHavePrepared>
+                  We have prepared special discounts for you on grocery
+                </WeHavePrepared>
+                <WeHavePrepared>products...</WeHavePrepared>
+              </WeHavePreparedContainer>
+            </FrameParent>
+            <Link1>
+              <ShopNow>Shop Now</ShopNow>
+              <IklbIconMoveRight alt="" src="/iklbiconmoveright.svg" />
+            </Link1>
+          </DivsiteBannerRoot>
           <AdjustFilters>
             <FilterPara>Showing all 16 results</FilterPara>
             <FilterSpan>Sort:</FilterSpan>

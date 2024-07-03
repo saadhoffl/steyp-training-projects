@@ -5,6 +5,7 @@ import Location from "../assests/link.svg";
 import AccountIcon from "../assests/link-1.svg";
 import WishlistIcon from "../assests/link-2.svg";
 import CartIcon from "../assests/link-3.svg";
+import SearchIcon from "../assests/search--button.svg";
 
 const Container = styled.div`
   display: flex;
@@ -99,12 +100,21 @@ const AccountDiv1 = styled.div`
   display: none;
 `;
 
-const Input = styled.input`
-  margin-left: 20px;
-  margin-right: 20px;
-  align-self: center;
-  width: 500px;
-  height: 30px;
+const SearchPlaceholder = styled.input`
+  width: 276px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 21.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4.5px 0px 0px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-size: 14px;
+  color: #6b7280;
   @media (max-width: 1000px) {
     width: 350px;
     height: 30px;
@@ -138,6 +148,38 @@ const Input = styled.input`
       margin-left: 10px;
       margin-right: 10px;
     }
+`;
+const SearchButton = styled.img`
+  height: 26px;
+  width: 26px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+`;
+const SearchInput1 = styled.div`
+  align-self: stretch;
+  border-radius: 8px;
+  background-color: #f3f4f6;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px 9px 10px 18px;
+  gap: 20px;
+`;
+const SearchBar = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0px 0px 1.8px;
+  box-sizing: border-box;
+  min-width: 562px;
+  max-width: 100%;
+  @media screen and (max-width: 1125px) {
+    min-width: 100%;
   }
 `;
 
@@ -155,7 +197,15 @@ function MainNavBar() {
             <LocationValue>All</LocationValue>
           </LocationIn>
         </LocationDiv>
-        <Input type="text" placeholder="Search" />
+        <SearchBar>
+          <SearchInput1>
+            <SearchPlaceholder
+              placeholder="Search for products, categories or brands..."
+              type="text"
+            />
+            <SearchButton alt="" src={SearchIcon} />
+          </SearchInput1>
+        </SearchBar>
       </MiddleContainer>
       <RightContainer>
         <AccountDiv>

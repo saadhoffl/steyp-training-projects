@@ -15,12 +15,12 @@ const Structure1 = styled.section`
 `;
 const Details1 = styled.section`
   width: 1360px;
-  height: 829.4px;
+  height: 1330px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 0px 898.4px;
+  padding: 0px 20px 898.4px;
   box-sizing: border-box;
   gap: 54px;
   max-width: 100%;
@@ -44,7 +44,7 @@ const MainRoot = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px 20px 0px;
+  padding: 20px 50px 0px;
   box-sizing: border-box;
   gap: 122px;
   line-height: normal;

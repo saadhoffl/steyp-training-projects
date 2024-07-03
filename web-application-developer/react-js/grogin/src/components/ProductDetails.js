@@ -2,6 +2,8 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import ProductImg from "../assests/main.svg";
 import Rated4Out5 from "../assests/img--rated-400-out-of-5.svg";
+import NoticeIcon from "../assests/divnoticeicon.svg";
+import CartIcon from "../assests/before.svg";
 
 const Home = styled.a`
   text-decoration: none;
@@ -18,6 +20,14 @@ const Elements = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1px 0px 0px;
+`;
+
+const Elements3 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px 0px 0px;
 `;
 const LinkIcon = styled.img`
   width: 11.7px;
@@ -376,7 +386,7 @@ const MainLink = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 14px 17px 0px 18px;
+  padding: 1px 17px 0px 18px;
   box-sizing: border-box;
   white-space: nowrap;
   font-size: 14px;
@@ -578,7 +588,7 @@ const AddToCart = styled.b`
 const Button2 = styled.button`
   cursor: pointer;
   border: none;
-  padding: 14px 32px 17px 33px;
+  padding: 1px 32px 17px 33px;
   background-color: #16a34a;
   height: 46px;
   flex: 1;
@@ -590,13 +600,6 @@ const Button2 = styled.button`
   box-sizing: border-box;
   gap: 6px;
   min-width: 104px;
-`;
-const BeforeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 2px 0px 0px;
 `;
 const BuyNow = styled.b`
   position: relative;
@@ -612,7 +615,7 @@ const BuyNow = styled.b`
 const Button3 = styled.button`
   cursor: pointer;
   border: none;
-  padding: 14px 40px 16px 41px;
+  padding: 1px 40px 16px 41px;
   background-color: #212529;
   height: 46px;
   flex: 0.8316;
@@ -773,6 +776,7 @@ const ProductDetail = styled.div`
   }
 `;
 const LayoutRoot = styled.div`
+  margin-top: 10px;
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -789,6 +793,8 @@ const LayoutRoot = styled.div`
     gap: 20px;
   }
 `;
+
+const MainDiv = styled.div``;
 
 const ProductDetails = ({ className = "" }) => {
   return (
@@ -832,151 +838,155 @@ const ProductDetails = ({ className = "" }) => {
       </Container1>
       <ProductDetail>
         <ProductName>
-          <MarketsideFreshOrganicContainer>
-            <MarketsideFreshOrganic1>
-              Marketside Fresh Organic Bananas,
-            </MarketsideFreshOrganic1>
-            <MarketsideFreshOrganic1>Bunch</MarketsideFreshOrganic1>
-          </MarketsideFreshOrganicContainer>
-          <Rating>
-            <Main3>
-              <RatingContainer>
-                <RatingScale>
-                  <ImgRated300OutOf loading="lazy" alt="" src={Rated4Out5} />
-                </RatingScale>
-                <Divrating>
-                  <RatingPlaceholder>3.00</RatingPlaceholder>
-                </Divrating>
-                <Placeholder>
-                  <RatingExplanation>2</RatingExplanation>
-                </Placeholder>
-              </RatingContainer>
-              <Indicator>
-                <Before />
-              </Indicator>
-              <ProductInfo>
-                <SKUContainer>
-                  <Sku>SKU:</Sku>
-                  <E7f8g9h>E7F8G9H0</E7f8g9h>
-                </SKUContainer>
-              </ProductInfo>
-            </Main3>
-          </Rating>
-          <ProductDescription>
-            <VivamusAdipiscingNislContainer>
+          <MainDiv>
+            <MarketsideFreshOrganicContainer>
               <MarketsideFreshOrganic1>
-                Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus
-                malesuada tincidunt. Class aptent taciti
+                Marketside Fresh Organic Bananas,
               </MarketsideFreshOrganic1>
-              <MarketsideFreshOrganic1>
-                sociosqu ad litora torquent Vivamus adipiscing nisl ut dolor
-                dignissim semper.
-              </MarketsideFreshOrganic1>
-            </VivamusAdipiscingNislContainer>
-            <Details>
-              <Attributes>
-                <B>$0.89</B>
-                <Div>$1.99</Div>
-              </Attributes>
-              <MainLink>
-                <OrderOnWhatsapp>Order on WhatsApp</OrderOnWhatsapp>
-              </MainLink>
-            </Details>
-          </ProductDescription>
-          <Offer>
-            <Main4>
-              <Title>
-                <SpecialOffer>Special Offer :</SpecialOffer>
-              </Title>
-              <Countdown>
-                <DivcountdownItem>
-                  <CountdownValues>81</CountdownValues>
-                </DivcountdownItem>
-                <DivcountdownItem1>
-                  <Div1>06</Div1>
-                </DivcountdownItem1>
-                <DivcountdownItem1>
-                  <Div1>50</Div1>
-                </DivcountdownItem1>
-                <Placeholder1>
-                  <TimeLeftLabel>:</TimeLeftLabel>
-                </Placeholder1>
-                <DivcountdownItem1>
-                  <Div1>02</Div1>
-                </DivcountdownItem1>
-              </Countdown>
-              <Label>
-                <RemainsUntilThe>
-                  Remains until the end of the offer.
-                </RemainsUntilThe>
-              </Label>
-            </Main4>
-          </Offer>
-          <Actions>
-            <Form>
-              <DivquantityButtonIcon alt="" src="/divquantitybutton.svg" />
-              <InputProductQuantity>
-                <QuantityPlaceholder>1</QuantityPlaceholder>
-              </InputProductQuantity>
-              <DivquantityButtonIcon
-                loading="lazy"
-                alt=""
-                src="/divquantitybutton-1.svg"
-              />
-            </Form>
-            <Button2>
-              <Elements>
-                <BeforeIcon alt="" src="/before.svg" />
-              </Elements>
-              <AddToCart>Add to cart</AddToCart>
-            </Button2>
-            <Button3>
-              <BeforeContainer>
-                <BeforeIcon alt="" src="/before-1.svg" />
-              </BeforeContainer>
-              <BuyNow>Buy Now</BuyNow>
-            </Button3>
-          </Actions>
-          <Main5>
-            <List>
-              <Payment1>
-                <ListItem type="checkbox" />
-                <Title1>
-                  <ListItemContainer>
-                    <MarketsideFreshOrganic1>
-                      <Payment>Payment.</Payment>
-                      <PaymentUponReceipt>
-                        {" "}
-                        Payment upon receipt of goods, Payment by card in the
-                        department, Google Pay,
-                      </PaymentUponReceipt>
-                    </MarketsideFreshOrganic1>
-                    <MarketsideFreshOrganic1>
-                      Online card, -5% discount in case of payment
-                    </MarketsideFreshOrganic1>
-                  </ListItemContainer>
-                </Title1>
-              </Payment1>
-            </List>
-            <ListItem1>
-              <DivnoticeIcon loading="lazy" alt="" src="/divnoticeicon.svg" />
-              <Title2>
-                <StrongWarrantyContainer>
-                  <PaymentUponReceipt>
-                    <MarketsideFreshOrganic1>
-                      <Payment>Warranty.</Payment>
-                      <PaymentUponReceipt>
-                        {" "}
-                        The Consumer Protection Act does not provide for the
-                        return of this product of proper
-                      </PaymentUponReceipt>
-                    </MarketsideFreshOrganic1>
-                    <MarketsideFreshOrganic1>quality.</MarketsideFreshOrganic1>
-                  </PaymentUponReceipt>
-                </StrongWarrantyContainer>
-              </Title2>
-            </ListItem1>
-          </Main5>
+              <MarketsideFreshOrganic1>Bunch</MarketsideFreshOrganic1>
+            </MarketsideFreshOrganicContainer>
+            <Rating>
+              <Main3>
+                <RatingContainer>
+                  <RatingScale>
+                    <ImgRated300OutOf loading="lazy" alt="" src={Rated4Out5} />
+                  </RatingScale>
+                  <Divrating>
+                    <RatingPlaceholder>3.00</RatingPlaceholder>
+                  </Divrating>
+                  <Placeholder>
+                    <RatingExplanation>2</RatingExplanation>
+                  </Placeholder>
+                </RatingContainer>
+                <Indicator>
+                  <Before />
+                </Indicator>
+                <ProductInfo>
+                  <SKUContainer>
+                    <Sku>SKU:</Sku>
+                    <E7f8g9h>E7F8G9H0</E7f8g9h>
+                  </SKUContainer>
+                </ProductInfo>
+              </Main3>
+            </Rating>
+            <ProductDescription>
+              <VivamusAdipiscingNislContainer>
+                <MarketsideFreshOrganic1>
+                  Vivamus adipiscing nisl ut dolor dignissim semper. Nulla
+                  luctus malesuada tincidunt. Class aptent taciti
+                </MarketsideFreshOrganic1>
+                <MarketsideFreshOrganic1>
+                  sociosqu ad litora torquent Vivamus adipiscing nisl ut dolor
+                  dignissim semper.
+                </MarketsideFreshOrganic1>
+              </VivamusAdipiscingNislContainer>
+              <Details>
+                <Attributes>
+                  <B>$0.89</B>
+                  <Div>$1.99</Div>
+                </Attributes>
+                <MainLink>
+                  <OrderOnWhatsapp>Order on WhatsApp</OrderOnWhatsapp>
+                </MainLink>
+              </Details>
+            </ProductDescription>
+            <Offer>
+              <Main4>
+                <Title>
+                  <SpecialOffer>Special Offer :</SpecialOffer>
+                </Title>
+                <Countdown>
+                  <DivcountdownItem>
+                    <CountdownValues>81</CountdownValues>
+                  </DivcountdownItem>
+                  <DivcountdownItem1>
+                    <Div1>06</Div1>
+                  </DivcountdownItem1>
+                  <DivcountdownItem1>
+                    <Div1>50</Div1>
+                  </DivcountdownItem1>
+                  <Placeholder1>
+                    <TimeLeftLabel>:</TimeLeftLabel>
+                  </Placeholder1>
+                  <DivcountdownItem1>
+                    <Div1>02</Div1>
+                  </DivcountdownItem1>
+                </Countdown>
+                <Label>
+                  <RemainsUntilThe>
+                    Remains until the end of the offer.
+                  </RemainsUntilThe>
+                </Label>
+              </Main4>
+            </Offer>
+            <Actions>
+              <Form>
+                <DivquantityButtonIcon alt="" src="/divquantitybutton.svg" />
+                <InputProductQuantity>
+                  <QuantityPlaceholder>1</QuantityPlaceholder>
+                </InputProductQuantity>
+                <DivquantityButtonIcon
+                  loading="lazy"
+                  alt=""
+                  src="/divquantitybutton-1.svg"
+                />
+              </Form>
+              <Button2>
+                <Elements3>
+                  <BeforeIcon alt="" src={CartIcon} />
+                </Elements3>
+                <AddToCart>Add to cart</AddToCart>
+              </Button2>
+              <Button3>
+                <Elements3>
+                  <BeforeIcon alt="" src={CartIcon} />
+                </Elements3>
+                <BuyNow>Buy Now</BuyNow>
+              </Button3>
+            </Actions>
+            <Main5>
+              <List>
+                <Payment1>
+                  <ListItem type="checkbox" />
+                  <Title1>
+                    <ListItemContainer>
+                      <MarketsideFreshOrganic1>
+                        <Payment>Payment.</Payment>
+                        <PaymentUponReceipt>
+                          {" "}
+                          Payment upon receipt of goods, Payment by card in the
+                          department, Google Pay,
+                        </PaymentUponReceipt>
+                      </MarketsideFreshOrganic1>
+                      <MarketsideFreshOrganic1>
+                        Online card, -5% discount in case of payment
+                      </MarketsideFreshOrganic1>
+                    </ListItemContainer>
+                  </Title1>
+                </Payment1>
+              </List>
+              <ListItem1>
+                <DivnoticeIcon loading="lazy" alt="" src={NoticeIcon} />
+                <Title2>
+                  <StrongWarrantyContainer>
+                    <PaymentUponReceipt>
+                      <MarketsideFreshOrganic1>
+                        <Payment>Warranty.</Payment>
+                        <PaymentUponReceipt>
+                          {" "}
+                          The Consumer Protection Act does not provide for the
+                          return of this product of proper
+                        </PaymentUponReceipt>
+                      </MarketsideFreshOrganic1>
+                      <MarketsideFreshOrganic1>
+                        quality.
+                      </MarketsideFreshOrganic1>
+                    </PaymentUponReceipt>
+                  </StrongWarrantyContainer>
+                </Title2>
+              </ListItem1>
+            </Main5>
+          </MainDiv>
         </ProductName>
       </ProductDetail>
     </LayoutRoot>

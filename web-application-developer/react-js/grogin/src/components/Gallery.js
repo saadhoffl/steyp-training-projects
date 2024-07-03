@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import GalleryImg1 from "../assests/item--1109150x150jpg@2x.png";
+import GalleryImg2 from "../assests/item--2104150x150jpg@2x.png";
+import GalleryImg3 from "../assests/item--389150x150jpg@2x.png";
+import WishlistIcon from "../assests/-link-4.svg";
+import ShareIcon from "../assests/-link-5.svg";
+import CompareIcon from "../assests/-link-6.svg";
 
 const Item1109150x150jpg1 = styled.img`
   height: 73px;
@@ -151,38 +157,26 @@ const Gallery = ({ className = "" }) => {
       <Images>
         <Carousel>
           <Items>
-            <Item1109150x150jpg1
-              loading="lazy"
-              alt=""
-              src="/item--1109150x150jpg@2x.png"
-            />
-            <Item2104150x150jpg1
-              loading="lazy"
-              alt=""
-              src="/item--2104150x150jpg@2x.png"
-            />
-            <Item2104150x150jpg1
-              loading="lazy"
-              alt=""
-              src="/item--389150x150jpg@2x.png"
-            />
+            <Item1109150x150jpg1 loading="lazy" alt="" src={GalleryImg1} />
+            <Item2104150x150jpg1 loading="lazy" alt="" src={GalleryImg2} />
+            <Item2104150x150jpg1 loading="lazy" alt="" src={GalleryImg3} />
           </Items>
         </Carousel>
         <Social>
           <Links>
-            <LinkIcon alt="" src="/-link-4.svg" />
+            <LinkIcon alt="" src={WishlistIcon} />
             <Icons>
               <AddToWishlist>Add to wishlist</AddToWishlist>
             </Icons>
           </Links>
           <Links1>
-            <LinkIcon1 alt="" src="/-link-5.svg" />
+            <LinkIcon1 alt="" src={ShareIcon} />
             <ShareThisProductWrapper>
               <ShareThisProduct>Share this Product</ShareThisProduct>
             </ShareThisProductWrapper>
           </Links1>
           <Links1>
-            <LinkIcon1 alt="" src="/-link-6.svg" />
+            <LinkIcon1 alt="" src={CompareIcon} />
             <CompareWrapper>
               <Compare>Compare</Compare>
             </CompareWrapper>
