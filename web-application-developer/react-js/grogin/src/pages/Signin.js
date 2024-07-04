@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -68,15 +69,57 @@ const Paragraph = styled.p`
   padding-right: 3px;
 `;
 
+const ErrorMsg = styled.p`
+  color: red;
+  text-align: center;
+`;
+
 const LoginPage = () => {
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState("");
+
+  const history = useHistory();
+
+  const handleSubmit = (e) => {
+    setError("");
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/v1/auth/token/", {
+        username,
+        password,
+      })
+      .then((res) => {
+        let data = res.data;
+        localStorage.setItem("user_data", JSON.stringify(data));
+        window.location.href = "/";
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          setError("Invalid username or password");
+        }
+      });
+  };
+
   return (
     <Container>
       <Paragraph>Grogin</Paragraph>
-      <LoginForm>
+      <LoginForm onSubmit={handleSubmit}>
         <Title>Signin</Title>
-        <Input type="text" placeholder="Username" />
-        <Input type="password" placeholder="Password" />
+        <Input
+          onChange={(e) => setUsername(e.target.value)}
+          value={username}
+          type="text"
+          placeholder="Username"
+        />
+        <Input
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          type="password"
+          placeholder="Password"
+        />
         <Button>Signin</Button>
+        {error && <ErrorMsg>{error}</ErrorMsg>}
       </LoginForm>
       <StyledLink to="/signup">Don't have an account?</StyledLink>
     </Container>
