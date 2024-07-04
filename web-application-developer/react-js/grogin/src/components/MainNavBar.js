@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../assests/link--groginlogodarkpng@2x.png";
 import Location from "../assests/link.svg";
@@ -87,6 +87,7 @@ const AccountDiv = styled.div`
   margin: 0 auto;
   text-align: center;
   margin-right: 20px;
+  cursor: pointer;
   @media (max-width: 690px) {
     margin-right: 10px;
   }
@@ -183,7 +184,37 @@ const SearchBar = styled.div`
   }
 `;
 
+const DropDownContent = styled.div`
+  display: "block";
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 170px;
+  margin-top: 5px;
+  text-align: start;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
+const LogOutButton = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`;
+
 function MainNavBar() {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleAccountClick = () => {
+    setShowDropdown(!showDropdown);
+  };
+
+  const handleLogout = () => {
+    // Add logout logic here
+    localStorage.removeItem("user_data");
+    // Redirect or perform any other logout actions
+  };
+
   return (
     <Container>
       <ImageContainer>
@@ -208,9 +239,14 @@ function MainNavBar() {
         </SearchBar>
       </MiddleContainer>
       <RightContainer>
-        <AccountDiv>
+        <AccountDiv onClick={handleAccountClick}>
           <AccountImage src={AccountIcon} alt="" />
           <AccountTilte>Account</AccountTilte>
+          {showDropdown && (
+            <DropDownContent>
+              <LogOutButton onClick={handleLogout}>Logout</LogOutButton>
+            </DropDownContent>
+          )}
         </AccountDiv>
         <AccountDiv1>
           <AccountImage src={WishlistIcon} alt="" />
