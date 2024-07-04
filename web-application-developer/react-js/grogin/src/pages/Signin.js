@@ -65,6 +65,7 @@ const Paragraph = styled.p`
   font-size: 24px;
   color: #fff;
   margin-bottom: 20px;
+  padding-right: 3px;
 `;
 
 const LoginPage = () => {

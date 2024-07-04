@@ -60,9 +60,17 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const Paragraph = styled.p`
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-right: 32px;
+`;
+
 const LoginPage = () => {
   return (
     <Container>
+      <Paragraph>Grogin</Paragraph>
       <LoginForm>
         <Title>Signup</Title>
         <Input type="text" placeholder="First Name" />

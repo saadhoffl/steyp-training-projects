@@ -353,8 +353,8 @@ const FrameParent = styled.div`
 const ShopNow = styled.b`
   position: absolute;
   margin: 0 !important;
-  bottom: -17px;
-  left: 13px;
+  bottom: -4px;
+  left: 23px;
   font-size: 12px;
   letter-spacing: -0.24px;
   line-height: 42px;
@@ -372,7 +372,7 @@ const IklbIconMoveRight = styled.img`
 const Link1 = styled.button`
   cursor: pointer;
   border: 1px solid #e5e7eb;
-  padding: 8px 13px;
+  padding: 10px 13px;
   background-color: #fff;
   width: 109px;
   border-radius: 999px;
