@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Container = styled.div`
@@ -79,6 +79,8 @@ const LoginPage = () => {
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     setError("");
     e.preventDefault();
@@ -90,7 +92,7 @@ const LoginPage = () => {
       .then((res) => {
         let data = res.data;
         localStorage.setItem("user_data", JSON.stringify(data));
-        window.location.href = "/";
+        navigate("/");
       })
       .catch((err) => {
         if (err.response.status === 401) {

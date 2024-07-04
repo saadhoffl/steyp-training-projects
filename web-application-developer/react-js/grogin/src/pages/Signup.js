@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Container = styled.div`
   display: flex;
@@ -68,14 +69,55 @@ const Paragraph = styled.p`
 `;
 
 const LoginPage = () => {
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = React.useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/v1/auth/create/", {
+        username,
+        password,
+        email,
+      })
+      .then((res) => {
+        let data = res.data;
+        localStorage.setItem("user_data", JSON.stringify(data));
+        navigate("/");
+      })
+      .catch((err) => {
+        if (err.response.status === 401) {
+          console.log(err.response.data);
+        }
+      });
+  };
+
   return (
     <Container>
       <Paragraph>Grogin</Paragraph>
-      <LoginForm>
+      <LoginForm onSubmit={handleSubmit}>
         <Title>Signup</Title>
-        <Input type="text" placeholder="First Name" />
-        <Input type="text" placeholder="Username" />
-        <Input type="password" placeholder="Password" />
+        <Input
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          value={email}
+          placeholder="email"
+        />
+        <Input
+          onChange={(e) => setUsername(e.target.value)}
+          type="username"
+          value={username}
+          placeholder="username"
+        />
+        <Input
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          value={password}
+          placeholder="Password"
+        />
         <Button>Signup</Button>
       </LoginForm>
       <StyledLink to="/signin">Already have an account?</StyledLink>
