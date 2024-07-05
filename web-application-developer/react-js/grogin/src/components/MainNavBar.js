@@ -6,6 +6,7 @@ import AccountIcon from "../assests/link-1.svg";
 import WishlistIcon from "../assests/link-2.svg";
 import CartIcon from "../assests/link-3.svg";
 import SearchIcon from "../assests/search--button.svg";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -204,6 +205,7 @@ const LogOutButton = styled.button`
 
 function MainNavBar() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
 
   const handleAccountClick = () => {
     setShowDropdown(!showDropdown);
@@ -212,7 +214,7 @@ function MainNavBar() {
   const handleLogout = () => {
     // Add logout logic here
     localStorage.removeItem("user_data");
-    // Redirect or perform any other logout actions
+    navigate("/signin");
   };
 
   return (
