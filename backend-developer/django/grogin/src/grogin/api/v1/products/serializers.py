@@ -13,3 +13,6 @@ class ProductSerializer(ModelSerializer):
 
     def get_category(self, instance):
         return instance.category.category_title
+    
+
+    

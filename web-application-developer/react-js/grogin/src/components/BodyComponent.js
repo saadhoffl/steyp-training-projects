@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ShowGridIcon from "../assests/divproductviewsbuttons.svg";
-import ProductImg from "../assests/link--123500x500jpg@2x.png";
 import Rated4Out5 from "../assests/img--rated-400-out-of-5.svg";
 import InStock from "../assests/link--add-to-cart-yellow-potatoes-whole-fresh-5lb-bag.svg";
 import { Link } from "react-router-dom";
 import BannerImg from "../assests/banner33jpg@2x.png";
+import axios from "axios";
 
 const MainContainer = styled.div`
   display: flex;
@@ -218,8 +218,10 @@ const CardImg = styled.img`
 
 const CardTitle = styled.p`
   padding-left: 15px;
+  height: 40px;
   margin: 0;
   font-size: 14px;
+  width: 200px;
 `;
 
 const RatingImg = styled.img`
@@ -447,6 +449,39 @@ const InputRange2 = styled.input`
 `;
 
 function BodyComponent() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/v1/products/")
+      .then((res) => {
+        console.log(res.data.data);
+        setProducts(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const renderProducts = () => {
+    return products.map((product) => (
+      <ProductCard>
+        <Link to="/product-details">
+          <CardImg src={"http://localhost:8000/" + product.product_img} />
+        </Link>
+        <CardTitle>{product.product_title}</CardTitle>
+        <RatingImg src={Rated4Out5} />
+        <CardPrice>
+          <OfferPrice>{"$" + product.product_price}</OfferPrice>
+          <MrpPrice>$1.78</MrpPrice>
+        </CardPrice>
+        <StockDiv>
+          <StockIcon src={InStock} />
+          <StockTitle>IN STOCK</StockTitle>
+        </StockDiv>
+      </ProductCard>
+    ));
+  };
+
   return (
     <>
       <MainContainer>
@@ -551,140 +586,7 @@ function BodyComponent() {
             <ShowItems>20 Items</ShowItems>
             <ShowGridImg src={ShowGridIcon} alt="Grid" />
           </AdjustFilters>
-          <ProductGridDiv>
-            <ProductCard>
-              <Link to="/product-details">
-                <CardImg src={ProductImg} />
-              </Link>
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-            <ProductCard>
-              <CardImg src={ProductImg} />
-              <CardTitle>Large Bagged Oranges</CardTitle>
-              <RatingImg src={Rated4Out5} />
-              <CardPrice>
-                <OfferPrice>$0.89</OfferPrice>
-                <MrpPrice>$1.78</MrpPrice>
-              </CardPrice>
-              <StockDiv>
-                <StockIcon src={InStock} />
-                <StockTitle>IN STOCK</StockTitle>
-              </StockDiv>
-            </ProductCard>
-          </ProductGridDiv>
+          <ProductGridDiv>{renderProducts()}</ProductGridDiv>
         </RightContainer>
       </MainContainer>
     </>
