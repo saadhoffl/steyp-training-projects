@@ -12,7 +12,10 @@ def products(request):
     qcolor = request.GET.get("qcolor")
     qbrand = request.GET.get("qbrand")
     qtitle = request.GET.get("qtitle")
-    qstock = request.GET.get("qstock")
+    qinstock = request.GET.get("qinstock")
+    qonsale = request.GET.get("qonsale")
+    qlprice = request.GET.get("qlprice")
+    qhprice = request.GET.get("qhprice")
     # instances = instances.filter(product_title__icontains=q)
     # instances = instances.filter(category__category_title__icontains=q)
     # instances = instances.filter(category__in=ids)
@@ -28,11 +31,20 @@ def products(request):
     if qbrand:
         instances = instances.filter(bybrand__brand__exact=qbrand)
 
-    if qstock:
-        instances = instances.filter(byproductstatus__product_status__exact=qstock)
+    if qinstock:
+        instances = instances.filter(byproductstatus__product_status__exact=qinstock)
+
+    if qonsale:
+        instances = instances.filter(byproductstatus__product_status__exact=qonsale)    
 
     if qtitle:
         instances = instances.filter(Q(bybrand__brand__icontains=qtitle) |Q(product_title__icontains=qtitle)|Q(category__category_title__icontains=qtitle))
+
+    if qlprice:
+        instances = instances.filter(product_price__lte=qlprice)
+
+    if qhprice:
+        instances = instances.filter(product_price__gte=qhprice)    
 
     serializer = ProductSerializer(instances, many=True)
     response_data = {

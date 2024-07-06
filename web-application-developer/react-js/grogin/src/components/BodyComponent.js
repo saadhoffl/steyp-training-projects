@@ -123,13 +123,6 @@ const SpanX1 = styled.span`
   font-weight: bold;
 `;
 
-const SpanX2 = styled.span`
-  margin-right: 7px;
-  margin-left: 15px;
-  font-size: 17px;
-  font-weight: bold;
-`;
-
 const AdjustFilters = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -410,6 +403,7 @@ const DivsiteBannerRoot = styled.div`
   font-size: 10px;
   color: #7c2d12;
   font-family: Inter;
+  margin-top: 23px;
 `;
 
 const InputRangeDiv = styled.div`
@@ -451,26 +445,108 @@ const InputRange2 = styled.input`
 function BodyComponent() {
   const [products, setProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState([]);
+  const [selectedInStock, setSelectedInStock] = useState([]);
+  const [selectedOnSale, setSelectedOnSale] = useState([]);
+  const [minPrice, setMinPrice] = useState(30);
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [filtersActive, setFiltersActive] = useState(false);
   const [apiLink, setApiLink] = useState(
     "http://localhost:8000/api/v1/products/"
   );
 
+  const handleInStockCheckboxChange = (InStock) => {
+    if (selectedInStock.includes(InStock)) {
+      toggleFilterState(false);
+      setSelectedInStock(selectedInStock.filter((item) => item !== InStock));
+    } else {
+      toggleFilterState(true);
+      setSelectedInStock([...selectedInStock, InStock]);
+    }
+  };
+
+  const handleOnSaleCheckboxChange = (OnSale) => {
+    if (selectedOnSale.includes(OnSale)) {
+      toggleFilterState(false);
+      setSelectedOnSale(selectedOnSale.filter((item) => item !== OnSale));
+    } else {
+      toggleFilterState(true);
+      setSelectedOnSale([...selectedOnSale, OnSale]);
+    }
+  };
+
+  const handleBrandCheckboxChange = (brand) => {
+    if (selectedBrand.includes(brand)) {
+      toggleFilterState(false);
+      setSelectedBrand(selectedBrand.filter((item) => item !== brand));
+    } else {
+      toggleFilterState(true);
+      setSelectedBrand([...selectedBrand, brand]);
+    }
+  };
+
   const handleCheckboxChange = (category) => {
     if (selectedCategories.includes(category)) {
+      toggleFilterState(false);
       setSelectedCategories(
         selectedCategories.filter((item) => item !== category)
       );
     } else {
+      toggleFilterState(true);
       setSelectedCategories([...selectedCategories, category]);
     }
+  };
+
+  const clearAllFilters = () => {
+    setSelectedCategories([]);
+    setSelectedBrand([]);
+    setSelectedInStock([]);
+    setSelectedOnSale([]);
+    setMinPrice(30);
+    setMaxPrice(0);
+    toggleFilterState(false);
+  };
+
+  const toggleFilterState = (val) => {
+    setFiltersActive(val);
   };
 
   useEffect(() => {
     const constructApiLink = () => {
       let updatedLink = "http://localhost:8000/api/v1/products/";
 
+      // Adding category query parameter
       if (selectedCategories.length > 0) {
-        updatedLink += "?qcategory=" + selectedCategories.join(",");
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qcategory=" + selectedCategories.join(",");
+      }
+
+      // Adding brand query parameter
+      if (selectedBrand.length > 0) {
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qbrand=" + selectedBrand.join(",");
+      }
+
+      // Adding InStock query parameter
+      if (selectedInStock.length > 0) {
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qinstock=" + selectedInStock.join(",");
+      }
+
+      // Adding OnSale query parameter
+      if (selectedOnSale.length > 0) {
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qonsale=" + selectedOnSale.join(",");
+      }
+
+      if (minPrice !== 0) {
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qlprice=" + minPrice;
+      }
+
+      if (maxPrice !== 30) {
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qhprice=" + maxPrice;
       }
 
       return updatedLink;
@@ -488,7 +564,15 @@ function BodyComponent() {
       .catch((err) => {
         console.log(err);
       });
-  }, [selectedCategories]); // Depend on selectedCategories to trigger useEffect
+  }, [
+    selectedCategories,
+    selectedBrand,
+    selectedInStock,
+    selectedOnSale,
+    minPrice,
+    maxPrice,
+    filtersActive,
+  ]); // Depend on selectedCategories to trigger useEffect
 
   const renderProducts = () => {
     return products.map((product) => (
@@ -515,15 +599,35 @@ function BodyComponent() {
       <MainContainer>
         <LeftContainer>
           <WidgetPriceFilter>
-            <WidgetParagraph>{(selectedCategories, apiLink)}</WidgetParagraph>
+            <WidgetParagraph>Filter</WidgetParagraph>
             <PriceFilterWidgetDiv>
-              <MinInput placeholder="0" />
+              <MinInput
+                type="number"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+              />
               <SubSymbol>-</SubSymbol>
-              <MaxInput placeholder="30" />
+              <MaxInput
+                type="number"
+                value={minPrice}
+                onChange={(e) => setMinPrice(parseInt(e.target.value))}
+              />
             </PriceFilterWidgetDiv>
             <InputRangeDiv>
-              <InputRange1 type="range" min={0} max={30} value={0} />
-              <InputRange2 type="range" min={31} max={60} value={60} />
+              <InputRange1
+                type="range"
+                min={0}
+                max={30}
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+              />
+              <InputRange2
+                type="range"
+                min={1}
+                max={30}
+                value={minPrice}
+                onChange={(e) => setMinPrice(parseInt(e.target.value))}
+              />
             </InputRangeDiv>
             <PriceResultDiv>
               <ResultPara>Price: $0 — $30</ResultPara>
@@ -535,6 +639,7 @@ function BodyComponent() {
             <CheckListDiv>
               <CheckListInput
                 type="checkbox"
+                checked={selectedCategories.includes("5")}
                 onChange={() => handleCheckboxChange("5")}
               />
               <CheckListPara>Fruits & Vegetables</CheckListPara>
@@ -542,6 +647,7 @@ function BodyComponent() {
             <CheckListDiv>
               <CheckListInput
                 type="checkbox"
+                checked={selectedCategories.includes("4")}
                 onChange={() => handleCheckboxChange("4")}
               />
               <CheckListPara>Baby & Pregnancy</CheckListPara>
@@ -549,6 +655,7 @@ function BodyComponent() {
             <CheckListDiv>
               <CheckListInput
                 type="checkbox"
+                checked={selectedCategories.includes("7")}
                 onChange={() => handleCheckboxChange("7")}
               />
               <CheckListPara>Beverages</CheckListPara>
@@ -556,6 +663,7 @@ function BodyComponent() {
             <CheckListDiv>
               <CheckListInput
                 type="checkbox"
+                checked={selectedCategories.includes("6")}
                 onChange={() => handleCheckboxChange("6")}
               />
               <CheckListPara>Meats & Seafood</CheckListPara>
@@ -563,6 +671,7 @@ function BodyComponent() {
             <CheckListDiv>
               <CheckListInput
                 type="checkbox"
+                checked={selectedCategories.includes("3")}
                 onChange={() => handleCheckboxChange("3")}
               />
               <CheckListPara>Biscuits & Snacks</CheckListPara>
@@ -578,27 +687,40 @@ function BodyComponent() {
           <ProductCategory>
             <CategoryTitle>Filter by Brands</CategoryTitle>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                checked={selectedBrand.includes("Fresh")}
+                onChange={() => handleBrandCheckboxChange("Fresh")}
+              />
               <CheckListPara>Fresh</CheckListPara>
             </CheckListDiv>
           </ProductCategory>
           <ProductStatus>
             <CategoryTitle>Product Status</CategoryTitle>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                checked={selectedInStock.includes("In Stock")}
+                onChange={() => handleInStockCheckboxChange("In Stock")}
+              />
               <CheckListPara>In Stock</CheckListPara>
             </CheckListDiv>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                checked={selectedOnSale.includes("On Sale")}
+                onChange={() => handleOnSaleCheckboxChange("On Sale")}
+              />
               <CheckListPara>On Sale</CheckListPara>
             </CheckListDiv>
           </ProductStatus>
         </LeftContainer>
         <RightContainer>
-          <FiltersDiv>
-            <SpanX1>x</SpanX1> Clear filters <SpanX2>x</SpanX2> Fruits &
-            Vegetables
-          </FiltersDiv>
+          {filtersActive && (
+            <FiltersDiv onClick={() => clearAllFilters()}>
+              <SpanX1>x</SpanX1> Clear filters
+            </FiltersDiv>
+          )}
           <DivsiteBannerRoot>
             <Banner33jpgIcon alt="" src={BannerImg} />
             <Heading>
@@ -622,11 +744,11 @@ function BodyComponent() {
             </Link1>
           </DivsiteBannerRoot>
           <AdjustFilters>
-            <FilterPara>Showing all 16 results</FilterPara>
+            <FilterPara>Showing all {products.length} results</FilterPara>
             <FilterSpan>Sort:</FilterSpan>
             <SortFilter>Sort by latest</SortFilter>
             <ShowSpan>Show:</ShowSpan>
-            <ShowItems>20 Items</ShowItems>
+            <ShowItems>{products.length} Items</ShowItems>
             <ShowGridImg src={ShowGridIcon} alt="Grid" />
           </AdjustFilters>
           <ProductGridDiv>{renderProducts()}</ProductGridDiv>
