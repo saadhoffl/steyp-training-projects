@@ -497,6 +497,16 @@ function BodyComponent() {
     }
   };
 
+  const handleMaxPriceChange = (e) => {
+    setMaxPrice(parseInt(e.target.value));
+    toggleFilterState(true);
+  };
+
+  const handleMinPriceChange = (e) => {
+    setMinPrice(parseInt(e.target.value));
+    toggleFilterState(true);
+  };
+
   const clearAllFilters = () => {
     setSelectedCategories([]);
     setSelectedBrand([]);
@@ -604,13 +614,13 @@ function BodyComponent() {
               <MinInput
                 type="number"
                 value={maxPrice}
-                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                onChange={handleMaxPriceChange}
               />
               <SubSymbol>-</SubSymbol>
               <MaxInput
                 type="number"
                 value={minPrice}
-                onChange={(e) => setMinPrice(parseInt(e.target.value))}
+                onChange={handleMinPriceChange}
               />
             </PriceFilterWidgetDiv>
             <InputRangeDiv>
@@ -619,14 +629,14 @@ function BodyComponent() {
                 min={0}
                 max={30}
                 value={maxPrice}
-                onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+                onChange={handleMaxPriceChange}
               />
               <InputRange2
                 type="range"
                 min={1}
                 max={30}
                 value={minPrice}
-                onChange={(e) => setMinPrice(parseInt(e.target.value))}
+                onChange={handleMinPriceChange}
               />
             </InputRangeDiv>
             <PriceResultDiv>
