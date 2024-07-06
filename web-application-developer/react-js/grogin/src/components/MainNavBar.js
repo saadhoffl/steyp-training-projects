@@ -67,6 +67,11 @@ const LocationImage = styled.img`
 
 const AccountImage = styled.img`
   width: 20px;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 const LocationTitle = styled.div`
@@ -79,6 +84,11 @@ const LocationValue = styled.div`
 
 const AccountTilte = styled.div`
   font-size: 13px;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
   @media (max-width: 500px) {
     display: none;
   }
@@ -158,6 +168,11 @@ const SearchButton = styled.img`
   overflow: hidden;
   flex-shrink: 0;
   z-index: 1;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.95);
+  }
 `;
 const SearchInput1 = styled.div`
   align-self: stretch;
@@ -203,8 +218,11 @@ const LogOutButton = styled.button`
   cursor: pointer;
 `;
 
-function MainNavBar() {
+function MainNavBar({ searchValue, setSearchValue }) {
   const [showDropdown, setShowDropdown] = useState(false);
+  const handleSearchInputChange = (e) => {
+    setSearchValue(e.target.value);
+  };
   const navigate = useNavigate();
 
   const handleAccountClick = () => {
@@ -235,8 +253,16 @@ function MainNavBar() {
             <SearchPlaceholder
               placeholder="Search for products, categories or brands..."
               type="text"
+              value={searchValue}
+              onChange={handleSearchInputChange}
             />
-            <SearchButton alt="" src={SearchIcon} />
+            <SearchButton
+              alt=""
+              src={SearchIcon}
+              onClick={() =>
+                handleSearchInputChange({ target: { value: searchValue } })
+              }
+            />
           </SearchInput1>
         </SearchBar>
       </MiddleContainer>
@@ -245,7 +271,7 @@ function MainNavBar() {
           <AccountImage src={AccountIcon} alt="" />
           <AccountTilte>Account</AccountTilte>
           {showDropdown && (
-            <DropDownContent>
+            <DropDownContent onClick={handleLogout}>
               <LogOutButton onClick={handleLogout}>Logout</LogOutButton>
             </DropDownContent>
           )}

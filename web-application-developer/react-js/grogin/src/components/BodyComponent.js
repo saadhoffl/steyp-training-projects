@@ -442,7 +442,7 @@ const InputRange2 = styled.input`
   &::-webkit-slider-thumb {
 `;
 
-function BodyComponent() {
+function BodyComponent({ searchValue }) {
   const [products, setProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState([]);
@@ -559,6 +559,12 @@ function BodyComponent() {
         updatedLink += "qhprice=" + maxPrice;
       }
 
+      if (searchValue) {
+        // updatedLink = "http://localhost:8000/api/v1/products/";
+        updatedLink += updatedLink.includes("?") ? "&" : "?";
+        updatedLink += "qtitle=" + searchValue;
+      }
+
       return updatedLink;
     };
 
@@ -582,6 +588,7 @@ function BodyComponent() {
     minPrice,
     maxPrice,
     filtersActive,
+    searchValue,
   ]); // Depend on selectedCategories to trigger useEffect
 
   const renderProducts = () => {
