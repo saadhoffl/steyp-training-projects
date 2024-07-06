@@ -450,9 +450,37 @@ const InputRange2 = styled.input`
 
 function BodyComponent() {
   const [products, setProducts] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [apiLink, setApiLink] = useState(
+    "http://localhost:8000/api/v1/products/"
+  );
+
+  const handleCheckboxChange = (category) => {
+    if (selectedCategories.includes(category)) {
+      setSelectedCategories(
+        selectedCategories.filter((item) => item !== category)
+      );
+    } else {
+      setSelectedCategories([...selectedCategories, category]);
+    }
+  };
+
   useEffect(() => {
+    const constructApiLink = () => {
+      let updatedLink = "http://localhost:8000/api/v1/products/";
+
+      if (selectedCategories.length > 0) {
+        updatedLink += "?qcategory=" + selectedCategories.join(",");
+      }
+
+      return updatedLink;
+    };
+
+    const updatedApiLink = constructApiLink();
+    setApiLink(updatedApiLink);
+
     axios
-      .get("http://localhost:8000/api/v1/products/")
+      .get(updatedApiLink)
       .then((res) => {
         console.log(res.data.data);
         setProducts(res.data.data);
@@ -460,11 +488,11 @@ function BodyComponent() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [selectedCategories]); // Depend on selectedCategories to trigger useEffect
 
   const renderProducts = () => {
     return products.map((product) => (
-      <ProductCard>
+      <ProductCard key={product.id}>
         <Link to="/product-details">
           <CardImg src={"http://localhost:8000/" + product.product_img} />
         </Link>
@@ -487,7 +515,7 @@ function BodyComponent() {
       <MainContainer>
         <LeftContainer>
           <WidgetPriceFilter>
-            <WidgetParagraph>Price Filter</WidgetParagraph>
+            <WidgetParagraph>{(selectedCategories, apiLink)}</WidgetParagraph>
             <PriceFilterWidgetDiv>
               <MinInput placeholder="0" />
               <SubSymbol>-</SubSymbol>
@@ -505,23 +533,38 @@ function BodyComponent() {
           <ProductCategory>
             <CategoryTitle>Product Category</CategoryTitle>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                onChange={() => handleCheckboxChange("5")}
+              />
               <CheckListPara>Fruits & Vegetables</CheckListPara>
             </CheckListDiv>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                onChange={() => handleCheckboxChange("4")}
+              />
               <CheckListPara>Baby & Pregnancy</CheckListPara>
             </CheckListDiv>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                onChange={() => handleCheckboxChange("7")}
+              />
               <CheckListPara>Beverages</CheckListPara>
             </CheckListDiv>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                onChange={() => handleCheckboxChange("6")}
+              />
               <CheckListPara>Meats & Seafood</CheckListPara>
             </CheckListDiv>
             <CheckListDiv>
-              <CheckListInput type="checkbox" />
+              <CheckListInput
+                type="checkbox"
+                onChange={() => handleCheckboxChange("3")}
+              />
               <CheckListPara>Biscuits & Snacks</CheckListPara>
             </CheckListDiv>
           </ProductCategory>

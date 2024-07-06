@@ -19,7 +19,8 @@ def products(request):
     # instances = instances.filter(bycolor__color__icontains=q)
 
     if qcategory:
-        instances = instances.filter(category__in=qcategory)
+        ids = qcategory.split(",")
+        instances = instances.filter(category__in=ids)
 
     if qcolor:
         instances = instances.filter(bycolor__color__exact=qcolor)
