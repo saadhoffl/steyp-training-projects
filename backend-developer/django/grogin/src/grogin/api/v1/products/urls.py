@@ -3,5 +3,6 @@ from api.v1.products import views
 
 urlpatterns = [
     path('',views.products),
+    path('view/<int:id>',views.product),
     
 ]

@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from products.models import Product
-from api.v1.products.serializers import ProductSerializer
+from api.v1.products.serializers import ProductSerializer, ProductViewSerializer
 from django.db.models import Q
 
 @api_view(['GET'])
@@ -52,3 +52,23 @@ def products(request):
         "data": serializer.data
     }
     return Response(response_data)
+
+
+
+@api_view(['GET'])
+def product(request,id):
+    if Product.objects.filter(id=id).exists():
+        instance = Product.objects.get(id=id)  # Fetch all Product instances
+
+        serializer = ProductViewSerializer(instance)
+        response_data = {
+            "status": 200,
+            "data": serializer.data
+        }
+        return Response(response_data)
+    else:
+        response_data = {
+            "status": 404,
+            "message": "Product not found"
+        }
+        return Response(response_data)
