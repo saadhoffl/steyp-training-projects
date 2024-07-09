@@ -11,8 +11,7 @@ import InstagramIcon from "../assests/list--item--link-2.svg";
 import LinkedinIcon from "../assests/list--item--link-3.svg";
 
 const Heading = styled.h3`
-  margin: 0;
-  position: relative;
+  margin-bottom: 25px;
   font-size: inherit;
   letter-spacing: -0.4px;
   font-weight: 700;
@@ -22,10 +21,8 @@ const RegisterNowTo = styled.p`
   margin: 0;
 `;
 const RegisterNowToContainer = styled.div`
-  position: relative;
   font-size: 13px;
   letter-spacing: -0.32px;
-  line-height: 19.51px;
   color: #6b7280;
 `;
 const Heading3JoinOurNewsletteParent = styled.div`
@@ -37,15 +34,11 @@ const Heading3JoinOurNewsletteParent = styled.div`
 const FormIcon = styled.img`
   height: 20px;
   width: 20px;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  min-height: 20px;
-  z-index: 1;
+  margin-left: 10px;
 `;
 const EnterYourEmail = styled.div`
-  position: relative;
   letter-spacing: -0.28px;
+  padding-left: 8px;
 `;
 const FormParent = styled.div`
   display: flex;
@@ -90,6 +83,7 @@ const FormInputWrapper = styled.div`
   align-self: stretch;
   height: 48px;
   display: flex;
+  margin-bottom: 10px;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
@@ -126,8 +120,9 @@ const InputContainerWrapper = styled.div`
 `;
 const FrameParent = styled.section`
   display: flex;
-  padding: 0px 0px 20px 0px;
+  padding: 0px 0px 30px 0px;
   justify-content: space-between;
+  align-items: center;
   text-align: left;
   font-size: 20px;
   color: #111827;
@@ -208,7 +203,6 @@ const ListItemMondayFriday0Parent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 2.5px;
 `;
 const FrameGroup = styled.div`
   display: flex;
@@ -247,7 +241,6 @@ const HelpHeadingContainerParent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 30px;
   font-size: 12px;
   color: rgba(17, 24, 39, 0.6);
 `;
@@ -332,7 +325,6 @@ const Heading4DownloadOurAppParent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 19.8px;
 `;
 const FollowUsOn = styled.div`
   position: relative;
@@ -371,6 +363,7 @@ const DivfooterInner = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   height: 353.3px;
+  padding: 40px 0px;
   border-top: 1px solid #d1d5db;
 `;
 const Copyright = styled.span`
@@ -483,6 +476,7 @@ const DivfooterInner1 = styled.div`
 `;
 const DivfooterInnerParent = styled.footer`
   height: 355.3px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   padding: 0px 0px 10px;
@@ -495,7 +489,7 @@ const FooterRoot = styled.div`
   background-color: #f3f4f6;
   display: flex;
   flex-direction: column;
-  padding: 30px 50px 10px;
+  padding: 40px 50px 10px;
   line-height: normal;
   letter-spacing: normal;
 `;
@@ -536,7 +530,7 @@ const Footer = () => {
           <HelpContainer>
             <HelpHeadingContainerParent>
               <HelpHeadingContainer>
-                <Heading2>Do You Need Help ?</Heading2>
+                <Heading>Do You Need Help ?</Heading>
                 <AutoseligenSyrNekContainer>
                   <RegisterNowTo>
                     Autoseligen syr. Nek diarask fröbomba. Nör
@@ -571,7 +565,7 @@ const Footer = () => {
             </HelpHeadingContainerParent>
           </HelpContainer>
           <Heading4MakeMoneyWithUsParent>
-            <Heading1>Make Money with Us</Heading1>
+            <Heading>Make Money with Us</Heading>
             <ListItemLinkSellOnGParent>
               <ListItem>Sell on Grogin</ListItem>
               <ListItem>Sell Your Services on Grogin</ListItem>
@@ -584,7 +578,7 @@ const Footer = () => {
             </ListItemLinkSellOnGParent>
           </Heading4MakeMoneyWithUsParent>
           <AboutContainer>
-            <Heading3>Get to Know Us</Heading3>
+            <Heading>Get to Know Us</Heading>
             <ListItemLinkSellOnGParent>
               <ListItem>Careers for Grogin</ListItem>
               <ListItem>About Grogin</ListItem>
@@ -596,7 +590,7 @@ const Footer = () => {
             </ListItemLinkSellOnGParent>
           </AboutContainer>
           <FooterLinksContainer>
-            <Heading4>Let Us Help You</Heading4>
+            <Heading>Let Us Help You</Heading>
             <ListItemLinkSellOnGParent>
               <ListItem>Accessibility Statement</ListItem>
               <ListItem>Your Orders</ListItem>
@@ -611,7 +605,7 @@ const Footer = () => {
           </FooterLinksContainer>
           <DownloadContainer>
             <Heading4DownloadOurAppParent>
-              <Heading5>Download our app</Heading5>
+              <Heading>Download our app</Heading>
               <AppButtonsContainer>
                 <LinkGooglePlayButtonDarkParent>
                   <LinkGooglePlayButtonDark
