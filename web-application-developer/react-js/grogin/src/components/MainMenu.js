@@ -245,7 +245,7 @@ const DivheaderRowRoot = styled.div`
   box-sizing: border-box;
   line-height: normal;
   letter-spacing: normal;
-  gap: 20px;
+  gap: 7px;
   text-align: left;
   font-size: 15px;
   color: #030712;

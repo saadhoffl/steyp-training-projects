@@ -9,7 +9,7 @@ const Container = styled.div`
   font-size: 13px;
   padding: 10px 50px;
   border-bottom: 1px solid rgb(229, 231, 235);
-  @media (max-width: 800px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;

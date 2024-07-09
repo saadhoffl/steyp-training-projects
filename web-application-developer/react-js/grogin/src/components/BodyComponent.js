@@ -13,11 +13,18 @@ const MainContainer = styled.div`
 
 const LeftContainer = styled.div`
   padding: 20px 50px;
+  @media (max-width: 1300px) {
+    padding: 20px 0px 20px 50px;
+    max-width: 215px;
+  }
 `;
 
 const WidgetPriceFilter = styled.div`
   border-bottom: 1px solid #ccc;
   max-width: 248px;
+  @media (max-width: 1300px) {
+    max-width: 180px;
+  }
 `;
 
 const WidgetParagraph = styled.p`
@@ -31,11 +38,14 @@ const PriceFilterWidgetDiv = styled.div`
 
 const MinInput = styled.input`
   padding-left: 10px;
-  width: 100px;
+  min-width: 100px;
   height: 30px;
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;
+  @media (max-width: 1300px) {
+    min-width: 70px;
+  }
 `;
 
 const SubSymbol = styled.p`
@@ -50,6 +60,9 @@ const MaxInput = styled.input`
   margin-left: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;
+  @media (max-width: 1300px) {
+    min-width: 70px;
+  }
 `;
 
 const PriceResultDiv = styled.div`
@@ -63,12 +76,18 @@ const ResultPara = styled.p`
 const FilterTitle = styled.p`
   margin-left: 80px;
   font-size: 14px;
+  @media (max-width: 1300px) {
+    margin-left: 48px;
+  }
 `;
 
 const ProductCategory = styled.div`
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
   width: 248px;
+  @media (max-width: 1300px) {
+    width: 180px;
+  }
 `;
 
 const CategoryTitle = styled.p`
@@ -97,6 +116,9 @@ const FilterByColorDiv = styled.div`
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
   width: 248px;
+  @media (max-width: 1300px) {
+    width: 180px;
+  }
 `;
 
 const ColorInput = styled.input`
@@ -133,7 +155,9 @@ const AdjustFilters = styled.div`
   border-radius: 9px;
 `;
 
-const RightContainer = styled.p``;
+const RightContainer = styled.p`
+  margin-right: 50px;
+`;
 
 const ProductGridDiv = styled.div`
   max-width: 930px;
@@ -294,11 +318,14 @@ const Heading1 = styled.b`
   position: relative;
   letter-spacing: -1.2px;
   z-index: 1;
+  @media (max-width: 1300px) {
+    font-size: 25px;
+  }
   @media screen and (max-width: 750px) {
-    font-size: 24px;
+    font-size: 25px;
   }
   @media screen and (max-width: 450px) {
-    font-size: 18px;
+    font-size: 25px;
   }
 `;
 const Heading2 = styled.a`
@@ -308,11 +335,14 @@ const Heading2 = styled.a`
   font-weight: 700;
   color: inherit;
   z-index: 1;
+  @media (max-width: 1300px) {
+    font-size: 25px;
+  }
   @media screen and (max-width: 750px) {
-    font-size: 24px;
+    font-size: 25px;
   }
   @media screen and (max-width: 450px) {
-    font-size: 18px;
+    font-size: 25px;
   }
 `;
 const Heading2GroceryStoreWithParent = styled.div`
@@ -396,7 +426,7 @@ const DivsiteBannerRoot = styled.div`
   justify-content: flex-start;
   padding: 36.9px 30px 33.9px;
   box-sizing: border-box;
-  gap: 15px;
+  gap: 10px;
   line-height: normal;
   letter-spacing: normal;
   text-align: center;

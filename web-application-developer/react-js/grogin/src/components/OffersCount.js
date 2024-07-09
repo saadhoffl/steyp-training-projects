@@ -7,6 +7,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgb(99, 76, 159);
+  @media (min-width: 767px) {
+    padding: 0px 50px;
+  }
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;

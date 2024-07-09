@@ -14,25 +14,12 @@ const Container = styled.div`
   align-items: center;
   border-bottom: 1px solid rgb(229, 231, 235);
   justify-content: space-between;
-  @media (max-width: 690px) {
-    padding: 5px 10px;
-  }
 `;
 
 const ImageContainer = styled.div`
   display: flex;
   width: 150px;
-  margin-right: 30px;
-  @media (max-width: 795px) {
-    width: 68px;
-    height: 19px;
-    margin-right: 5px;
-  }
-  @media (max-width: 525px) {
-    width: 65px;
-    height: 17px;
-    margin-right: 5px;
-  }
+  margin-right: 20px;
 `;
 
 const Image = styled.img`
@@ -42,6 +29,7 @@ const Image = styled.img`
 
 const MiddleContainer = styled.div`
   display: flex;
+  margin-right: 20px;
 `;
 
 const RightContainer = styled.div`
@@ -52,9 +40,6 @@ const LocationDiv = styled.div`
   display: flex;
   min-width: 100px;
   align-items: center;
-  @media (max-width: 690px) {
-    display: none;
-  }
 `;
 
 const LocationIn = styled.div`
@@ -113,53 +98,22 @@ const AccountDiv1 = styled.div`
 `;
 
 const SearchPlaceholder = styled.input`
-  width: 276px;
   border: none;
   outline: none;
+  margin-right: 10px;
   background-color: transparent;
   height: 21.5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 4.5px 0px 0px;
-  box-sizing: border-box;
   font-family: Inter;
   font-size: 14px;
   color: #6b7280;
-  @media (max-width: 1000px) {
-    width: 350px;
-    height: 30px;
+  @media (max-width: 887px) {
+    max-width: 190px;
   }
-  @media (max-width: 925px) {
-    width: 250px;
-    height: 30px;
+  @media (min-width: 1100px) {
+    min-width: 500px;
   }
-  @media (max-width: 800px) {
-    width: 200px;
-    height: 30px;
-  }
-  @media (max-width: 720px) {
-    width: 150px;
-    height: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  @media (max-width: 575px) {
-    width: 200px;
-    height: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  @media (max-width: 375px) {
-    width: 100px;
-    height: 15px;
-    @media (max-width: 220px) {
-      width: 70px;
-      height: 15px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
 `;
 const SearchButton = styled.img`
   height: 26px;
@@ -175,7 +129,6 @@ const SearchButton = styled.img`
   }
 `;
 const SearchInput1 = styled.div`
-  align-self: stretch;
   border-radius: 8px;
   background-color: #f3f4f6;
   display: flex;
@@ -183,21 +136,11 @@ const SearchInput1 = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 10px 9px 10px 18px;
-  gap: 20px;
 `;
 const SearchBar = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
   padding: 0px 0px 1.8px;
-  box-sizing: border-box;
-  min-width: 562px;
-  max-width: 100%;
-  @media screen and (max-width: 1125px) {
-    min-width: 100%;
-  }
 `;
 
 const DropDownContent = styled.div`
