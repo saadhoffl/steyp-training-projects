@@ -6,6 +6,7 @@ import AccountIcon from "../assests/link-1.svg";
 import WishlistIcon from "../assests/link-2.svg";
 import CartIcon from "../assests/link-3.svg";
 import SearchIcon from "../assests/search--button.svg";
+import MenuIcon from "../assests/list.png";
 import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
@@ -14,12 +15,18 @@ const Container = styled.div`
   align-items: center;
   border-bottom: 1px solid rgb(229, 231, 235);
   justify-content: space-between;
+  @media (max-width: 447px) {
+  padding: 20px 20px;
 `;
 
 const ImageContainer = styled.div`
   display: flex;
-  width: 150px;
+  width: 120px;
   margin-right: 20px;
+  min-width: 70px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const Image = styled.img`
@@ -40,6 +47,8 @@ const LocationDiv = styled.div`
   display: flex;
   min-width: 100px;
   align-items: center;
+  @media (max-width: 767px) {
+  display: none;
 `;
 
 const LocationIn = styled.div`
@@ -51,6 +60,15 @@ const LocationImage = styled.img`
 `;
 
 const AccountImage = styled.img`
+  width: 20px;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
+const MenuImage = styled.img`
   width: 20px;
   cursor: pointer;
   clickable: true;
@@ -89,11 +107,21 @@ const AccountDiv = styled.div`
   }
 `;
 
+const MenuDiv = styled.div`
+  margin: auto 0;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
 const AccountDiv1 = styled.div`
   margin: 0 auto;
   text-align: center;
   margin-right: 20px;
-  @media (max-width: 580px) {
+  @media (max-width: 767px) {
   display: none;
 `;
 
@@ -108,8 +136,14 @@ const SearchPlaceholder = styled.input`
   font-family: Inter;
   font-size: 14px;
   color: #6b7280;
+  @media (max-width: 407px) {
+    width: 20px;
+  }
+  @media (max-width: 567px) {
+    width: 180px;
+  }
   @media (max-width: 887px) {
-    max-width: 190px;
+    max-width: 220px;
   }
   @media (min-width: 1100px) {
     min-width: 500px;
@@ -136,6 +170,9 @@ const SearchInput1 = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   padding: 10px 9px 10px 18px;
+  @media (max-width: 567px) {
+    padding: 5px 9px 5px 18px;
+  }
 `;
 const SearchBar = styled.div`
   display: flex;
@@ -161,6 +198,8 @@ const LogOutButton = styled.button`
   cursor: pointer;
 `;
 
+const LeftContainer = styled.div``;
+
 function MainNavBar({ searchValue, setSearchValue }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const handleSearchInputChange = (e) => {
@@ -180,9 +219,14 @@ function MainNavBar({ searchValue, setSearchValue }) {
 
   return (
     <Container>
-      <ImageContainer>
-        <Image src={Logo} alt="" />
-      </ImageContainer>
+      <LeftContainer>
+        <ImageContainer>
+          <Image src={Logo} alt="" />
+        </ImageContainer>
+        <MenuDiv>
+          <MenuImage src={MenuIcon} alt="" />
+        </MenuDiv>
+      </LeftContainer>
       <MiddleContainer>
         <LocationDiv>
           <LocationImage src={Location} />

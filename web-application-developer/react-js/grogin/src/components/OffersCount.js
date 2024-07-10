@@ -17,11 +17,12 @@ const Container = styled.div`
     justify-content: center;
     padding-top: 10px;
   }
-  @media (max-width: 425px) {
+  @media (max-width: 447px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5px 10px;
   }
 `;
 

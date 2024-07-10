@@ -13,6 +13,12 @@ const MainContainer = styled.div`
 
 const LeftContainer = styled.div`
   padding: 20px 50px;
+  @media (max-width: 447px) {
+    padding: 20px 20px;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
   @media (max-width: 1300px) {
     padding: 20px 0px 20px 50px;
     max-width: 215px;
@@ -157,6 +163,15 @@ const AdjustFilters = styled.div`
 
 const RightContainer = styled.p`
   margin-right: 50px;
+  @media (max-width: 447px) {
+    margin-right: 20px;
+  }
+  @media (max-width: 767px) {
+    margin-left: 50px;
+  }
+  @media (max-width: 447px) {
+    margin-left: 20px;
+  }
 `;
 
 const ProductGridDiv = styled.div`

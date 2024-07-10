@@ -11,7 +11,7 @@ import InstagramIcon from "../assests/list--item--link-2.svg";
 import LinkedinIcon from "../assests/list--item--link-3.svg";
 
 const Heading = styled.h3`
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   font-size: inherit;
   letter-spacing: -0.4px;
   font-weight: 700;
@@ -23,13 +23,13 @@ const RegisterNowTo = styled.p`
 const RegisterNowToContainer = styled.div`
   font-size: 13px;
   letter-spacing: -0.32px;
+  margin-bottom: 25px;
   color: #6b7280;
 `;
 const Heading3JoinOurNewsletteParent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  margin-right: 20px;
 `;
 const FormIcon = styled.img`
   height: 20px;
@@ -78,6 +78,9 @@ const FormInput = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 1300px) {
+    width: 300px;
+  }
 `;
 const FormInputWrapper = styled.div`
   align-self: stretch;
@@ -101,6 +104,9 @@ const FormByContainer = styled.div`
   line-height: 17px;
   display: inline-block;
   color: #6b7280;
+  @media (max-width: 1300px) {
+    width: 300px;
+  }
 `;
 const InputContainer = styled.div`
   align-self: stretch;
@@ -127,11 +133,10 @@ const FrameParent = styled.section`
   font-size: 20px;
   color: #111827;
   font-family: Inter;
-`;
-const Heading1 = styled.div`
-  letter-spacing: -0.28px;
-  line-height: 17px;
-  font-weight: 600;
+  @media (max-width: 657px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 const ListItem = styled.div`
   letter-spacing: -0.32px;
@@ -147,6 +152,7 @@ const ListItemLinkSellOnGParent = styled.div`
 const Heading4MakeMoneyWithUsParent = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 `;
 const Heading2 = styled.div`
   letter-spacing: -0.28px;
@@ -154,14 +160,15 @@ const Heading2 = styled.div`
   font-weight: 600;
 `;
 const AutoseligenSyrNekContainer = styled.div`
-  position: relative;
   font-size: 13px;
+  max-width: 225px;
   letter-spacing: -0.32px;
   line-height: 19.5px;
   color: #6b7280;
 `;
 const HelpHeadingContainer = styled.div`
   display: flex;
+  margin-bottom: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -244,32 +251,16 @@ const HelpHeadingContainerParent = styled.div`
   font-size: 12px;
   color: rgba(17, 24, 39, 0.6);
 `;
-const Heading3 = styled.div`
-  position: relative;
-  letter-spacing: -0.28px;
-  line-height: 17px;
-  font-weight: 600;
-  display: inline-block;
-  min-width: 101px;
-`;
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-const Heading4 = styled.div`
-  letter-spacing: -0.28px;
-  line-height: 17px;
-  font-weight: 600;
+  margin-right: 20px;
 `;
 
 const FooterLinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
-const Heading5 = styled.div`
-  letter-spacing: -0.28px;
-  line-height: 17px;
-  font-weight: 600;
+  margin-right: 20px;
 `;
 const LinkGooglePlayButtonDark = styled.img`
   align-self: stretch;
@@ -357,14 +348,20 @@ const DownloadContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 `;
-const HelpContainer = styled.div``;
+const HelpContainer = styled.div`
+  margin-right: 20px;
+`;
 const DivfooterInner = styled.div`
   display: flex;
+  line-height: 50px;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 353.3px;
-  padding: 40px 0px;
+  padding: 10px 0px 40px;
   border-top: 1px solid #d1d5db;
+  @media (max-width: 657px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 const Copyright = styled.span`
   font-weight: 500;
@@ -455,14 +452,19 @@ const NavList = styled.a`
   position: relative;
   letter-spacing: -0.32px;
   line-height: 18px;
+  margin-right: 20px;
   color: inherit;
 `;
 const NavListItemLinkTerParent = styled.div`
   display: flex;
   flex-direction: row;
+  margin-left: 40px;
   align-items: flex-start;
   justify-content: flex-start;
   color: #111827;
+  @media (max-width: 657px) {
+    margin-left: 0px;
+  }
 `;
 const DivfooterInner1 = styled.div`
   border-top: 1px solid #d1d5db;
@@ -473,9 +475,12 @@ const DivfooterInner1 = styled.div`
   padding-top: 30px;
   font-size: 12px;
   color: #6b7280;
+  @media (max-width: 657px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 const DivfooterInnerParent = styled.footer`
-  height: 355.3px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;

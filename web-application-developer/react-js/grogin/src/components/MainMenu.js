@@ -264,7 +264,7 @@ const DivheaderRowRoot = styled.div`
     padding-right: 50px;
     box-sizing: border-box;
   }
-  @media screen and (max-width: 640px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
