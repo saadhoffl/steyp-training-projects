@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState, useRef } from "react";
+import styled, { keyframes } from "styled-components";
 import Logo from "../assests/link--groginlogodarkpng@2x.png";
 import Location from "../assests/link.svg";
 import AccountIcon from "../assests/link-1.svg";
@@ -7,7 +7,7 @@ import WishlistIcon from "../assests/link-2.svg";
 import CartIcon from "../assests/link-3.svg";
 import SearchIcon from "../assests/search--button.svg";
 import MenuIcon from "../assests/list.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -107,9 +107,23 @@ const AccountDiv = styled.div`
   }
 `;
 
-const MenuDiv = styled.div`
+const MenuButton = styled.button`
   margin: auto 0;
   text-align: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 20px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const MenuCloseButton = styled.button`
+  margin: auto 0;
+  text-align: center;
+  border: none;
+  background-color: transparent;
   margin-right: 20px;
   cursor: pointer;
   @media (min-width: 768px) {
@@ -198,10 +212,54 @@ const LogOutButton = styled.button`
   cursor: pointer;
 `;
 
+const slideInAnimation = keyframes`
+from {
+  transform: translateX(-100%);
+}
+to {
+  transform: translateX(0);
+}
+`;
+
+const MobileNav = styled.div`
+  display: none;
+  @media (max-width: 767px) {
+    &.responsive_nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background-color: white;
+      z-index: 999;
+      animation: ${slideInAnimation} 0.3s ease-in-out forwards;
+      /* Adjust the animation duration and easing as per your preference */
+    }
+  }
+`;
+
+const MobileNavUl = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const MobileNavLi = styled.li`
+  margin-bottom: 10px;
+`;
+
 const LeftContainer = styled.div``;
 
 function MainNavBar({ searchValue, setSearchValue }) {
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
+
   const handleSearchInputChange = (e) => {
     setSearchValue(e.target.value);
   };
@@ -223,9 +281,28 @@ function MainNavBar({ searchValue, setSearchValue }) {
         <ImageContainer>
           <Image src={Logo} alt="" />
         </ImageContainer>
-        <MenuDiv>
+        <MenuButton onClick={showNavBar}>
           <MenuImage src={MenuIcon} alt="" />
-        </MenuDiv>
+        </MenuButton>
+        <MobileNav ref={navRef}>
+          <MobileNavUl>
+            <MobileNavLi>
+              <Link to="/">Home</Link>
+            </MobileNavLi>
+            <MobileNavLi>
+              <Link to="/products">Products</Link>
+            </MobileNavLi>
+            <MobileNavLi>
+              <Link to="/about">About</Link>
+            </MobileNavLi>
+            <MobileNavLi>
+              <Link to="/contact">Contact</Link>
+            </MobileNavLi>
+            <MenuCloseButton onClick={showNavBar}>
+              <MenuImage src={MenuIcon} alt="" />
+            </MenuCloseButton>
+          </MobileNavUl>
+        </MobileNav>
       </LeftContainer>
       <MiddleContainer>
         <LocationDiv>
