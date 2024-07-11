@@ -8,7 +8,7 @@ const NavList = styled.a`
   letter-spacing: -0.3px;
   line-height: 48px;
   font-weight: 600;
-  color: black;
+  color: ${(props) => (props.isTrue ? "rgb(100, 76, 169);" : "blue")};
   display: inline-block;
   min-width: 42px;
   flex-shrink: 0;
@@ -30,98 +30,7 @@ const NavListItemLinkHomParent = styled.div`
   justify-content: flex-start;
   gap: 6.4px;
 `;
-const NavListItemLink1 = styled.div`
-  height: 1px;
-  width: 53.1px;
-  position: absolute;
-  margin: 0 !important;
-  right: -16.1px;
-  bottom: 0.5px;
-  background-color: #634c9f;
-`;
-const NavList1 = styled.a`
-  text-decoration: none;
-  position: relative;
-  letter-spacing: -0.3px;
-  line-height: 48px;
-  font-weight: 600;
-  color: inherit;
-  display: inline-block;
-  min-width: 37px;
-  flex-shrink: 0;
-`;
-const NavListItemLinkParent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-`;
-const NavListItemLink2 = styled.img`
-  align-self: stretch;
-  width: 9.8px;
-  position: relative;
-  max-height: 100%;
-  overflow: hidden;
-  flex-shrink: 0;
-  min-height: 48px;
-  z-index: 1;
-`;
-const FrameGroup = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 6.2px;
-  color: #634c9f;
-`;
-const NavList2 = styled.a`
-  text-decoration: none;
-  position: relative;
-  letter-spacing: -0.3px;
-  line-height: 48px;
-  font-weight: 600;
-  color: inherit;
-  flex-shrink: 0;
-`;
-const NavList3 = styled.a`
-  text-decoration: none;
-  position: relative;
-  letter-spacing: -0.3px;
-  line-height: 48px;
-  font-weight: 600;
-  color: #030712;
-  display: inline-block;
-  min-width: 74.3px;
-  flex-shrink: 0;
-`;
-const NavListItemLinkFruParent = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  gap: 24.1px;
-  width: 100%;
-  height: 100%;
-`;
-const NavListItem = styled.div`
-  position: absolute;
-  top: 47px;
-  left: 0px;
-  background-color: #634c9f;
-  width: 135.1px;
-  height: 1px;
-`;
-const FrameContainer = styled.div`
-  height: 48px;
-  flex: 1;
-  position: relative;
-  min-width: 152px;
-  color: #634c9f;
-`;
+
 const NavList4 = styled.a`
   text-decoration: none;
   position: relative;
@@ -270,37 +179,18 @@ const DivheaderRowRoot = styled.div`
 `;
 
 const MainMenu = ({ className = "" }) => {
+  const isTrue = true;
   return (
     <DivheaderRowRoot className={className}>
       <FrameParent>
         <NavListItemLinkHomParent>
           <NavLink to="/">
-            <NavList>Home</NavList>
+            <NavList isTrue={isTrue}>Home</NavList>
           </NavLink>
-          <NavListItemLink
-            loading="lazy"
-            alt=""
-            src="/nav--list--item--link.svg"
-          />
         </NavListItemLinkHomParent>
-        <FrameGroup>
-          <NavListItemLinkParent>
-            <NavListItemLink1 />
-            <NavList1>Shop</NavList1>
-          </NavListItemLinkParent>
-          <NavListItemLink2
-            loading="lazy"
-            alt=""
-            src="/nav--list--item--link-1.svg"
-          />
-        </FrameGroup>
-        <FrameContainer>
-          <NavListItemLinkFruParent>
-            <NavList2>{`Fruits & Vegetables`}</NavList2>
-            <NavList3>Beverages</NavList3>
-          </NavListItemLinkFruParent>
-          <NavListItem />
-        </FrameContainer>
+        <NavList4>Shop</NavList4>
+        <NavList4>Fruits & Vegetables</NavList4>
+        <NavList4>Beverages</NavList4>
         <NavList4>Blog</NavList4>
         <NavList5>Contact</NavList5>
       </FrameParent>

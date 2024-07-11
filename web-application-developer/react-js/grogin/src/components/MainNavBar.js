@@ -29,6 +29,16 @@ const ImageContainer = styled.div`
   }
 `;
 
+const MobileImageContainer = styled.div`
+  display: flex;
+  width: 90px;
+  margin-bottom: 20px;
+  min-width: 70px;
+  @media (max-width: 767px) {
+    display: block;
+  }
+`;
+
 const Image = styled.img`
   width: 100%;
   height: 100%;
@@ -66,6 +76,9 @@ const AccountImage = styled.img`
   &:active {
     transform: scale(0.9);
   }
+  @media (max-width: 767px) {
+    min-width: 25px;
+  }
 `;
 
 const MenuImage = styled.img`
@@ -92,7 +105,7 @@ const AccountTilte = styled.div`
   &:active {
     transform: scale(0.9);
   }
-  @media (max-width: 500px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `;
@@ -120,6 +133,9 @@ const MenuButton = styled.button`
 `;
 
 const MenuCloseButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 0px;
   margin: auto 0;
   text-align: center;
   border: none;
@@ -221,6 +237,15 @@ to {
 }
 `;
 
+const slideOutAnimation = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+
 const MobileNav = styled.div`
   display: none;
   @media (max-width: 767px) {
@@ -231,12 +256,46 @@ const MobileNav = styled.div`
       left: 0;
       width: 40%;
       height: 100%;
-      background-color: white;
+      background-color: rgb(228, 230, 230, 0.97);
+      padding: 20px 30px;
+      overflow: auto;
       z-index: 999;
-      animation: ${slideInAnimation} 0.3s ease-in-out forwards;
-      /* Adjust the animation duration and easing as per your preference */
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
     }
   }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+`;
+
+const StyledLink1 = styled(Link)`
+  text-decoration: none;
+  color: #dc2626;
+  font-weight: 500;
+`;
+
+const StyledLinkRed = styled(Link)`
+  background: linear-gradient(90deg, #dc2626, #ea580c);
+  border: 1px solid red;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto 0 auto 10px;
+  font-size: 13px;
+  padding: 2px 4px;
+  text-decoration: none;
+  color: white;
+  font-weight: 450;
 `;
 
 const MobileNavUl = styled.ul`
@@ -249,6 +308,18 @@ const MobileNavLi = styled.li`
   margin-bottom: 10px;
 `;
 
+const HrLine = styled.hr`
+  border: 1px solid #d1d5db;
+  margin: 0px 0px 20px 0px;
+`;
+
+const NavHeading = styled.h3`
+  margin: 0px 0px 15px 0px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+`;
+
 const LeftContainer = styled.div``;
 
 function MainNavBar({ searchValue, setSearchValue }) {
@@ -257,7 +328,17 @@ function MainNavBar({ searchValue, setSearchValue }) {
   const navRef = useRef();
 
   const showNavBar = () => {
-    navRef.current.classList.toggle("responsive_nav");
+    if (navRef.current.classList.contains("responsive_nav")) {
+      navRef.current.classList.toggle("slide-out");
+      navRef.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef.current.classList.toggle("responsive_nav");
+        navRef.current.classList.toggle("slide-out");
+      }, 480);
+    } else {
+      navRef.current.classList.toggle("responsive_nav");
+      navRef.current.classList.toggle("slide-in");
+    }
   };
 
   const handleSearchInputChange = (e) => {
@@ -285,23 +366,41 @@ function MainNavBar({ searchValue, setSearchValue }) {
           <MenuImage src={MenuIcon} alt="" />
         </MenuButton>
         <MobileNav ref={navRef}>
+          <MobileImageContainer>
+            <Image src={Logo} alt="" />
+          </MobileImageContainer>
+          <HrLine></HrLine>
+          <NavHeading>Menu</NavHeading>
           <MobileNavUl>
             <MobileNavLi>
-              <Link to="/">Home</Link>
+              <StyledLink to="/">Home</StyledLink>
             </MobileNavLi>
             <MobileNavLi>
-              <Link to="/products">Products</Link>
+              <StyledLink to="/">Shop</StyledLink>
             </MobileNavLi>
             <MobileNavLi>
-              <Link to="/about">About</Link>
+              <StyledLink to="/">Fruits & Vegetables</StyledLink>
             </MobileNavLi>
             <MobileNavLi>
-              <Link to="/contact">Contact</Link>
+              <StyledLink to="/">Beverages</StyledLink>
             </MobileNavLi>
-            <MenuCloseButton onClick={showNavBar}>
-              <MenuImage src={MenuIcon} alt="" />
-            </MenuCloseButton>
+            <MobileNavLi>
+              <StyledLink to="/">Blog</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Contact</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Trending Products</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink1 to="/">Almost Finished</StyledLink1>
+              <StyledLinkRed to="/">Sale</StyledLinkRed>
+            </MobileNavLi>
           </MobileNavUl>
+          <MenuCloseButton onClick={showNavBar}>
+            <MenuImage src={MenuIcon} alt="" />
+          </MenuCloseButton>
         </MobileNav>
       </LeftContainer>
       <MiddleContainer>
