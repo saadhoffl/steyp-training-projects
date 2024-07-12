@@ -252,8 +252,45 @@ const RightContainer = styled.p`
 `;
 
 const ProductGridDiv = styled.div`
-  max-width: 930px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 7px;
   margin-top: 20px;
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 910px;
+  }
+  @media (max-width: 1070px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 710px;
+  }
+  @media (max-width: 975px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 685px;
+  }
+  @media (max-width: 935px) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 568px;
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    max-width: 650px;
+  }
+  @media (max-width: 667px) {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    max-width: 520px;
+  }
+  @media (max-width: 587px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 450px;
+  }
+  @media (max-width: 347px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 280px;
+  }
 `;
 
 const FilterPara = styled.p`
@@ -322,28 +359,15 @@ const ProductCard = styled.div`
   display: inline-block;
 `;
 
-const CardImg = styled.img`
-  width: 223px;
-  @media (max-width: 1300px) {
-    width: 220px;
-  }
-  @media (max-width: 1100px) {
-    width: 220px;
-  }
-  @media (max-width: 1020px) {
-    width: 200px;
-  }
-  @media (max-width: 790px) {
-    width: 180px;
-  }
-`;
+const CardImg = styled.img``;
 
 const CardTitle = styled.p`
   padding-left: 15px;
-  height: 40px;
+  padding-right: 15px;
+  height: 52px;
   margin: 0;
   font-size: 14px;
-  width: 200px;
+  width: auto;
 `;
 
 const RatingImg = styled.img`
@@ -625,6 +649,24 @@ const FilterLogo = styled.img`
   }
 `;
 
+const ImgDiv = styled.div`
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
+const CustomLinkStyle = styled(Link)`
+  text-decoration: none;
+  color: #212529;
+  font-size: 13px;
+`;
+
 function BodyComponent({ searchValue }) {
   const [products, setProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -793,19 +835,21 @@ function BodyComponent({ searchValue }) {
   const renderProducts = () => {
     return products.map((product) => (
       <ProductCard key={product.id}>
-        <Link to={`/product-details/${product.id}`}>
-          <CardImg src={"http://localhost:8000/" + product.product_img} />
-        </Link>
-        <CardTitle>{product.product_title}</CardTitle>
-        <RatingImg src={Rated4Out5} />
-        <CardPrice>
-          <OfferPrice>{"$" + product.product_price}</OfferPrice>
-          <MrpPrice>$1.78</MrpPrice>
-        </CardPrice>
-        <StockDiv>
-          <StockIcon src={InStock} />
-          <StockTitle>IN STOCK</StockTitle>
-        </StockDiv>
+        <CustomLinkStyle to={`/product-details/${product.id}`}>
+          <ImgDiv>
+            <CardImg src={"http://localhost:8000/" + product.product_img} />
+          </ImgDiv>
+          <CardTitle>{product.product_title}</CardTitle>
+          <RatingImg src={Rated4Out5} />
+          <CardPrice>
+            <OfferPrice>{"$" + product.product_price}</OfferPrice>
+            <MrpPrice>$1.78</MrpPrice>
+          </CardPrice>
+          <StockDiv>
+            <StockIcon src={InStock} />
+            <StockTitle>IN STOCK</StockTitle>
+          </StockDiv>
+        </CustomLinkStyle>
       </ProductCard>
     ));
   };
