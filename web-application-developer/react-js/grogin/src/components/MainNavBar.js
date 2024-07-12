@@ -301,7 +301,7 @@ const StyledLinkRed = styled(Link)`
 const MobileNavUl = styled.ul`
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 30px 0;
 `;
 
 const MobileNavLi = styled.li`
@@ -385,17 +385,47 @@ function MainNavBar({ searchValue, setSearchValue }) {
               <StyledLink to="/">Beverages</StyledLink>
             </MobileNavLi>
             <MobileNavLi>
-              <StyledLink to="/">Blog</StyledLink>
-            </MobileNavLi>
-            <MobileNavLi>
-              <StyledLink to="/">Contact</StyledLink>
-            </MobileNavLi>
-            <MobileNavLi>
               <StyledLink to="/">Trending Products</StyledLink>
             </MobileNavLi>
             <MobileNavLi>
               <StyledLink1 to="/">Almost Finished</StyledLink1>
               <StyledLinkRed to="/">Sale</StyledLinkRed>
+            </MobileNavLi>
+          </MobileNavUl>
+          <NavHeading>Products</NavHeading>
+          <MobileNavUl>
+            <MobileNavLi>
+              <StyledLink to="/">Cart</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Wishlist</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Order Tracking</StyledLink>
+            </MobileNavLi>
+          </MobileNavUl>
+          <NavHeading>Account</NavHeading>
+          <MobileNavUl>
+            <MobileNavLi>
+              <StyledLink to="/">My Account</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Contact</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">About Us</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Blog</StyledLink>
+            </MobileNavLi>
+          </MobileNavUl>
+          <NavHeading>Settings</NavHeading>
+          <MobileNavUl>
+            <MobileNavLi>
+              <StyledLink to="/">Language</StyledLink>
+            </MobileNavLi>
+            <MobileNavLi>
+              <StyledLink to="/">Currency</StyledLink>
             </MobileNavLi>
           </MobileNavUl>
           <MenuCloseButton onClick={showNavBar}>
