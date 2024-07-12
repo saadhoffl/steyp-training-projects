@@ -211,13 +211,31 @@ const SearchBar = styled.div`
 const DropDownContent = styled.div`
   display: "block";
   position: absolute;
+  right: 192px;
   background-color: #f1f1f1;
-  min-width: 170px;
+  min-width: 70px;
   margin-top: 5px;
-  text-align: start;
+  text-align: center;
   padding: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  @media (max-width: 855px) {
+    right: 150px;
+  }
+  @media (min-width: 815px) and (max-width: 854px) {
+    right: 150px;
+  }
+
+  @media (min-width: 772px) and (max-width: 814px) {
+    right: 130px;
+  }
+
+  @media (max-width: 767px) {
+    right: 30px;
+  }
+  @media (max-width: 447px) {
+    right: 20px;
+  }
 `;
 
 const LogOutButton = styled.button`

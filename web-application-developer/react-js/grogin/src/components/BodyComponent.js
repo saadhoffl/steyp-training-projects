@@ -42,7 +42,7 @@ const LeftContainer = styled.div`
       position: fixed;
       top: 0;
       left: 0;
-      width: 40%;
+      width: 55%;
       height: 100%;
       background-color: rgb(228, 230, 230, 0.97);
       padding: 20px 30px;
@@ -210,6 +210,16 @@ const FiltersDiv = styled.div`
   margin-bottom: 15px;
   font-size: 14px;
   font-weight: normal;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const FiltersDivLeft = styled.div`
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: normal;
 `;
 
 const SpanX1 = styled.span`
@@ -248,6 +258,7 @@ const ProductGridDiv = styled.div`
 
 const FilterPara = styled.p`
   margin-right: 390px;
+  margin-left: 10px;
   @media (max-width: 1300px) {
     margin-right: 150px;
   }
@@ -806,9 +817,9 @@ function BodyComponent({ searchValue }) {
           <WidgetPriceFilter>
             <WidgetParagraphMob>Filter</WidgetParagraphMob>
             {filtersActive && (
-              <FiltersDiv onClick={() => clearAllFilters()}>
+              <FiltersDivLeft onClick={() => clearAllFilters()}>
                 <SpanX1>x</SpanX1> Clear filters
-              </FiltersDiv>
+              </FiltersDivLeft>
             )}
             <HrLine></HrLine>
             <WidgetParagraph>Filter</WidgetParagraph>

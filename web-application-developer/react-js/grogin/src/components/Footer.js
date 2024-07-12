@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useRef } from "react";
 import PropTypes from "prop-types";
 import EmailIcon from "../assests/form.svg";
 import PhoneIcon from "../assests/list--item.svg";
@@ -9,6 +10,25 @@ import FaceBookIcon from "../assests/list--item--link.svg";
 import TwitterIcon from "../assests/list--item--link-1.svg";
 import InstagramIcon from "../assests/list--item--link-2.svg";
 import LinkedinIcon from "../assests/list--item--link-3.svg";
+import PlusIcon from "../assests/plus-icon.png";
+
+const slideInAnimation = keyframes`
+from {
+  transform: translateX(0);
+}
+to {
+  transform: translateX(20%);
+}
+`;
+
+const slideOutAnimation = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(20%);
+  }
+`;
 
 const Heading = styled.h3`
   margin-bottom: 5px;
@@ -16,6 +36,17 @@ const Heading = styled.h3`
   letter-spacing: -0.4px;
   font-weight: 700;
   font-family: inherit;
+`;
+
+const Heading1 = styled.h3`
+  margin-bottom: 0px;
+  font-size: inherit;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  font-family: inherit;
+  @media (max-width: 657px) {
+    height: 0px;
+  }
 `;
 
 const HeadingNews = styled.h3`
@@ -30,6 +61,16 @@ const HeadingNews = styled.h3`
 `;
 const RegisterNowTo = styled.p`
   margin: 0;
+`;
+
+const RegisterNowTo2 = styled.p`
+  margin: 0;
+  padding-bottom: 7px;
+`;
+
+const RegisterNowTo1 = styled.p`
+  padding-bottom: 2px;
+  margin-top: 8px;
 `;
 const RegisterNowToContainer = styled.div`
   font-size: 13px;
@@ -175,6 +216,65 @@ const ListItemLinkSellOnGParent = styled.div`
   flex-direction: column;
   font-size: 13px;
   color: #4b5563;
+  @media (max-width: 657px) {
+    display: none;
+    &.show_f2 {
+      padding: 13px 0 5px 0;
+      display: block;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
+    }
+  }
+`;
+
+const ListItemLinkSellOnGParent1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #4b5563;
+  @media (max-width: 657px) {
+    display: none;
+    &.show_f3 {
+      padding: 13px 0 5px 0;
+      display: block;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
+    }
+  }
+`;
+
+const ListItemLinkSellOnGParent2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #4b5563;
+  @media (max-width: 657px) {
+    display: none;
+    &.show_f4 {
+      padding: 13px 0 5px 0;
+      display: block;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
+    }
+  }
 `;
 const Heading4MakeMoneyWithUsParent = styled.div`
   display: flex;
@@ -187,10 +287,24 @@ const AutoseligenSyrNekContainer = styled.div`
   letter-spacing: -0.32px;
   line-height: 19.5px;
   color: #6b7280;
+  @media (max-width: 657px) {
+    display: none;
+    &.show_f1 {
+      padding: 10px 0;
+      display: block;
+      animation-duration: 0.7s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
+    }
+  }
 `;
 const HelpHeadingContainer = styled.div`
   display: flex;
-  margin-bottom: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -238,14 +352,8 @@ const FrameGroup = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  margin-top: 8px;
   gap: 22px;
-`;
-const ContactHoursContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0px 2px;
 `;
 const ListItem7 = styled.div`
   position: relative;
@@ -264,14 +372,6 @@ const ListItemNeedHelpWithYParent = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1.5px;
-`;
-const HelpHeadingContainerParent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: 12px;
-  color: rgba(17, 24, 39, 0.6);
 `;
 const AboutContainer = styled.div`
   display: flex;
@@ -370,9 +470,7 @@ const DownloadContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
 `;
-const HelpContainer = styled.div`
-  margin-right: 20px;
-`;
+
 const DivfooterInner = styled.div`
   display: flex;
   line-height: 50px;
@@ -519,9 +617,92 @@ const FooterRoot = styled.div`
   padding: 40px 50px 10px;
   line-height: normal;
   letter-spacing: normal;
+  @media (max-width: 447px) {
+    padding: 40px 20px 10px;
+  }
+`;
+
+const HeadDownArrow = styled.div`
+  display: flex;
+  @media (max-width: 657px) {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+`;
+
+const PlusIconHolder = styled.img`
+  display: none;
+  @media (max-width: 657px) {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding-top: 29px;
+    margin-right: 10px;
+  }
 `;
 
 const Footer = () => {
+  const navRef = useRef();
+  const navRef2 = useRef();
+  const navRef3 = useRef();
+  const navRef4 = useRef();
+
+  const showf1Bar = () => {
+    if (navRef.current.classList.contains("show_f1")) {
+      navRef.current.classList.toggle("slide-out");
+      navRef.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef.current.classList.toggle("show_f1");
+        navRef.current.classList.toggle("slide-out");
+      }, 680);
+    } else {
+      navRef.current.classList.toggle("show_f1");
+      navRef.current.classList.toggle("slide-in");
+    }
+  };
+
+  const showf2Bar = () => {
+    if (navRef2.current.classList.contains("show_f2")) {
+      navRef2.current.classList.toggle("slide-out");
+      navRef2.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef2.current.classList.toggle("show_f2");
+        navRef2.current.classList.toggle("slide-out");
+      }, 680);
+    } else {
+      navRef2.current.classList.toggle("show_f2");
+      navRef2.current.classList.toggle("slide-in");
+    }
+  };
+
+  const showf3Bar = () => {
+    if (navRef3.current.classList.contains("show_f3")) {
+      navRef3.current.classList.toggle("slide-out");
+      navRef3.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef3.current.classList.toggle("show_f3");
+        navRef3.current.classList.toggle("slide-out");
+      }, 680);
+    } else {
+      navRef3.current.classList.toggle("show_f3");
+      navRef3.current.classList.toggle("slide-in");
+    }
+  };
+
+  const showf4Bar = () => {
+    if (navRef4.current.classList.contains("show_f4")) {
+      navRef4.current.classList.toggle("slide-out");
+      navRef4.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef4.current.classList.toggle("show_f4");
+        navRef4.current.classList.toggle("slide-out");
+      }, 680);
+    } else {
+      navRef4.current.classList.toggle("show_f4");
+      navRef4.current.classList.toggle("slide-in");
+    }
+  };
+
   return (
     <FooterRoot>
       <FrameParent>
@@ -554,46 +735,44 @@ const Footer = () => {
       </FrameParent>
       <DivfooterInnerParent>
         <DivfooterInner>
-          <HelpContainer>
-            <HelpHeadingContainerParent>
-              <HelpHeadingContainer>
-                <Heading>Do You Need Help ?</Heading>
-                <AutoseligenSyrNekContainer>
-                  <RegisterNowTo>
-                    Autoseligen syr. Nek diarask fröbomba. Nör
-                  </RegisterNowTo>
-                  <RegisterNowTo>
-                    antipol kynoda nynat. Pressa fåmoska.
-                  </RegisterNowTo>
-                </AutoseligenSyrNekContainer>
-              </HelpHeadingContainer>
-              <ContactHoursContainer>
-                <FrameGroup>
-                  <ListItemWrapper>
-                    <ListItem4 loading="lazy" alt="" src={PhoneIcon} />
-                  </ListItemWrapper>
-                  <ListItemMondayFriday0Parent>
-                    <ListItem5>Monday-Friday: 08am-9pm</ListItem5>
-                    <ListItem6>0 800 300-353</ListItem6>
-                  </ListItemMondayFriday0Parent>
-                </FrameGroup>
-              </ContactHoursContainer>
-              <ContactHoursContainer>
-                <FrameGroup>
-                  <ListItemWrapper>
-                    <ListItem4 loading="lazy" alt="" src={EmailIconBlack} />
-                  </ListItemWrapper>
-                  <ListItemNeedHelpWithYParent>
-                    <ListItem5>Need help with your order?</ListItem5>
-                    <ListItem7>info@example.com</ListItem7>
-                  </ListItemNeedHelpWithYParent>
-                </FrameGroup>
-              </ContactHoursContainer>
-            </HelpHeadingContainerParent>
-          </HelpContainer>
+          <HelpHeadingContainer>
+            <HeadDownArrow onClick={showf1Bar}>
+              <PlusIconHolder src={PlusIcon} alt="" />
+              <Heading1>Do You Need Help ?</Heading1>
+            </HeadDownArrow>
+            <AutoseligenSyrNekContainer ref={navRef}>
+              <RegisterNowTo1>
+                Autoseligen syr. Nek diarask fröbomba. Nör
+              </RegisterNowTo1>
+              <RegisterNowTo2>
+                antipol kynoda nynat. Pressa fåmoska.
+              </RegisterNowTo2>
+              <FrameGroup>
+                <ListItemWrapper>
+                  <ListItem4 loading="lazy" alt="" src={PhoneIcon} />
+                </ListItemWrapper>
+                <ListItemMondayFriday0Parent>
+                  <ListItem5>Monday-Friday: 08am-9pm</ListItem5>
+                  <ListItem6>0 800 300-353</ListItem6>
+                </ListItemMondayFriday0Parent>
+              </FrameGroup>
+              <FrameGroup>
+                <ListItemWrapper>
+                  <ListItem4 loading="lazy" alt="" src={EmailIconBlack} />
+                </ListItemWrapper>
+                <ListItemNeedHelpWithYParent>
+                  <ListItem5>Need help with your order?</ListItem5>
+                  <ListItem7>info@example.com</ListItem7>
+                </ListItemNeedHelpWithYParent>
+              </FrameGroup>
+            </AutoseligenSyrNekContainer>
+          </HelpHeadingContainer>
           <Heading4MakeMoneyWithUsParent>
-            <Heading>Make Money with Us</Heading>
-            <ListItemLinkSellOnGParent>
+            <HeadDownArrow onClick={showf2Bar}>
+              <PlusIconHolder src={PlusIcon} alt="" />
+              <Heading1>Make Money with Us</Heading1>
+            </HeadDownArrow>
+            <ListItemLinkSellOnGParent ref={navRef2}>
               <ListItem>Sell on Grogin</ListItem>
               <ListItem>Sell Your Services on Grogin</ListItem>
               <ListItem>Sell on Grogin Business</ListItem>
@@ -605,8 +784,11 @@ const Footer = () => {
             </ListItemLinkSellOnGParent>
           </Heading4MakeMoneyWithUsParent>
           <AboutContainer>
-            <Heading>Get to Know Us</Heading>
-            <ListItemLinkSellOnGParent>
+            <HeadDownArrow onClick={showf4Bar}>
+              <PlusIconHolder src={PlusIcon} alt="" />
+              <Heading1>Get to Know Us</Heading1>
+            </HeadDownArrow>
+            <ListItemLinkSellOnGParent2 ref={navRef4}>
               <ListItem>Careers for Grogin</ListItem>
               <ListItem>About Grogin</ListItem>
               <ListItem>Inverstor Relations</ListItem>
@@ -614,11 +796,14 @@ const Footer = () => {
               <ListItem>Customer reviews</ListItem>
               <ListItem>Social Responsibility</ListItem>
               <ListItem>Store Locations</ListItem>
-            </ListItemLinkSellOnGParent>
+            </ListItemLinkSellOnGParent2>
           </AboutContainer>
           <FooterLinksContainer>
-            <Heading>Let Us Help You</Heading>
-            <ListItemLinkSellOnGParent>
+            <HeadDownArrow onClick={showf3Bar}>
+              <PlusIconHolder src={PlusIcon} alt="" />
+              <Heading1>Let Us Help You</Heading1>
+            </HeadDownArrow>
+            <ListItemLinkSellOnGParent1 ref={navRef3}>
               <ListItem>Accessibility Statement</ListItem>
               <ListItem>Your Orders</ListItem>
               <ListItem>{`Returns & Replacements`}</ListItem>
@@ -628,7 +813,7 @@ const Footer = () => {
               <ListItem>Terms and Conditions</ListItem>
               <ListItem>Cookie Settings</ListItem>
               <ListItem>Help Center</ListItem>
-            </ListItemLinkSellOnGParent>
+            </ListItemLinkSellOnGParent1>
           </FooterLinksContainer>
           <DownloadContainer>
             <Heading4DownloadOurAppParent>
