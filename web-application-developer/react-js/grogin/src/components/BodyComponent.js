@@ -1,27 +1,67 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect, useRef } from "react";
+import styled, { keyframes } from "styled-components";
 import ShowGridIcon from "../assests/divproductviewsbuttons.svg";
 import Rated4Out5 from "../assests/img--rated-400-out-of-5.svg";
 import InStock from "../assests/link--add-to-cart-yellow-potatoes-whole-fresh-5lb-bag.svg";
 import { Link } from "react-router-dom";
 import BannerImg from "../assests/banner33jpg@2x.png";
+import FilterIcon from "../assests/filter.png";
+import CloseIcon from "../assests/close.png";
 import axios from "axios";
 
 const MainContainer = styled.div`
   display: flex;
 `;
 
+const slideInAnimation = keyframes`
+from {
+  transform: translateX(-100%);
+}
+to {
+  transform: translateX(0);
+}
+`;
+
+const slideOutAnimation = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+
 const LeftContainer = styled.div`
   padding: 20px 50px;
-  @media (max-width: 447px) {
-    padding: 20px 20px;
-  }
   @media (max-width: 767px) {
     display: none;
-  }
-  @media (max-width: 1300px) {
-    padding: 20px 0px 20px 50px;
-    max-width: 215px;
+    &.show_filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background-color: rgb(228, 230, 230, 0.97);
+      padding: 20px 30px;
+      overflow: auto;
+      z-index: 999;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+      &.slide-in {
+        animation-name: ${slideInAnimation};
+      }
+      &.slide-out {
+        animation-name: ${slideOutAnimation};
+      }
+    }
+    @media (max-width: 1300px) {
+      padding: 20px 0px 20px 50px;
+      max-width: 215px;
+    }
   }
 `;
 
@@ -36,6 +76,20 @@ const WidgetPriceFilter = styled.div`
 const WidgetParagraph = styled.p`
   font-size: 14px;
   font-weight: bold;
+  @media (max-width: 767px) {
+    display: none;
+  }
+`;
+
+const WidgetParagraphMob = styled.p`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-bottom: 25px;
+  }
 `;
 
 const PriceFilterWidgetDiv = styled.div`
@@ -108,6 +162,15 @@ const CheckListDiv = styled.div`
   margin-bottom: 10px;
 `;
 
+const CheckListDivMob = styled.div`
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+`;
+
 const CheckListInput = styled.input`
   margin-right: 20px;
   margin-left: 0px;
@@ -135,7 +198,11 @@ const ColorInput = styled.input`
 
 const ProductStatus = styled.div`
   padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
   width: 248px;
+  @media (max-width: 1300px) {
+    width: 180px;
+  }
 `;
 
 const FiltersDiv = styled.div`
@@ -195,11 +262,17 @@ const FilterPara = styled.p`
 const FilterSpan = styled.span`
   margin-top: 13px;
   margin-right: 9px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const SortFilter = styled.div`
   margin-top: 13px;
   margin-right: 89px;
+  @media (max-width: 767px) {
+    display: none;
+  }
   @media (max-width: 1100px) {
     margin-right: 59px;
   }
@@ -211,10 +284,16 @@ const SortFilter = styled.div`
 const ShowSpan = styled.span`
   margin-top: 13px;
   margin-right: 9px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const ShowItems = styled.p`
   margin-right: 55px;
+  @media (max-width: 767px) {
+    display: none;
+  }
   @media (max-width: 1100px) {
     margin-right: 25px;
   }
@@ -457,6 +536,39 @@ const InputRangeDiv = styled.div`
   padding-bottom: 10px;
 `;
 
+const HrLine = styled.hr`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    border: 1px solid #d1d5db;
+    margin: 0px 0px 20px 0px;
+  }
+`;
+
+const MenuCloseButton = styled.button`
+  position: absolute;
+  top: 18px;
+  right: 0px;
+  margin: auto 0;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  margin-right: 20px;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+const MenuImage = styled.img`
+  width: 20px;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 const InputRange1 = styled.input`
   margin-right: -0.2px;
   width: 100%;
@@ -485,6 +597,21 @@ const InputRange2 = styled.input`
   border-top-right-radius: 60px;
   border-bottom-right-radius: 60px;
   &::-webkit-slider-thumb {
+`;
+
+const FilterLogo = styled.img`
+  display: none;
+  @media (max-width: 767px) {
+    display: block;
+    margin: auto 10px;
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    clickable: true;
+    &:active {
+      transform: scale(0.9);
+    }
+  }
 `;
 
 function BodyComponent({ searchValue }) {
@@ -564,6 +691,22 @@ function BodyComponent({ searchValue }) {
 
   const toggleFilterState = (val) => {
     setFiltersActive(val);
+  };
+
+  const navRef = useRef();
+
+  const showFilterBar = () => {
+    if (navRef.current.classList.contains("show_filter")) {
+      navRef.current.classList.toggle("slide-out");
+      navRef.current.classList.toggle("slide-in");
+      setTimeout(() => {
+        navRef.current.classList.toggle("show_filter");
+        navRef.current.classList.toggle("slide-out");
+      }, 480);
+    } else {
+      navRef.current.classList.toggle("show_filter");
+      navRef.current.classList.toggle("slide-in");
+    }
   };
 
   useEffect(() => {
@@ -659,8 +802,15 @@ function BodyComponent({ searchValue }) {
   return (
     <>
       <MainContainer>
-        <LeftContainer>
+        <LeftContainer ref={navRef}>
           <WidgetPriceFilter>
+            <WidgetParagraphMob>Filter</WidgetParagraphMob>
+            {filtersActive && (
+              <FiltersDiv onClick={() => clearAllFilters()}>
+                <SpanX1>x</SpanX1> Clear filters
+              </FiltersDiv>
+            )}
+            <HrLine></HrLine>
             <WidgetParagraph>Filter</WidgetParagraph>
             <PriceFilterWidgetDiv>
               <MinInput
@@ -767,15 +917,18 @@ function BodyComponent({ searchValue }) {
               />
               <CheckListPara>In Stock</CheckListPara>
             </CheckListDiv>
-            <CheckListDiv>
+            <CheckListDivMob>
               <CheckListInput
                 type="checkbox"
                 checked={selectedOnSale.includes("On Sale")}
                 onChange={() => handleOnSaleCheckboxChange("On Sale")}
               />
               <CheckListPara>On Sale</CheckListPara>
-            </CheckListDiv>
+            </CheckListDivMob>
           </ProductStatus>
+          <MenuCloseButton onClick={showFilterBar}>
+            <MenuImage src={CloseIcon} alt="" />
+          </MenuCloseButton>
         </LeftContainer>
         <RightContainer>
           {filtersActive && (
@@ -806,6 +959,7 @@ function BodyComponent({ searchValue }) {
             </Link1>
           </DivsiteBannerRoot>
           <AdjustFilters>
+            <FilterLogo src={FilterIcon} alt="Filter" onClick={showFilterBar} />
             <FilterPara>Showing all {products.length} results</FilterPara>
             <FilterSpan>Sort:</FilterSpan>
             <SortFilter>Sort by latest</SortFilter>

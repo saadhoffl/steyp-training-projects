@@ -17,6 +17,17 @@ const Heading = styled.h3`
   font-weight: 700;
   font-family: inherit;
 `;
+
+const HeadingNews = styled.h3`
+  margin-bottom: 5px;
+  font-size: inherit;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  font-family: inherit;
+  @media (max-width: 400px) {
+    font-size: 15px;
+  }
+`;
 const RegisterNowTo = styled.p`
   margin: 0;
 `;
@@ -39,6 +50,9 @@ const FormIcon = styled.img`
 const EnterYourEmail = styled.div`
   letter-spacing: -0.28px;
   padding-left: 8px;
+  @media (max-width: 400px) {
+    font-size: 11px;
+  }
 `;
 const FormParent = styled.div`
   display: flex;
@@ -69,6 +83,7 @@ const FormButton = styled.div`
 const FormInput = styled.div`
   height: 50px;
   width: 400px;
+  overflow: hidden;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   background-color: #fff;
@@ -78,8 +93,15 @@ const FormInput = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 1300px) {
-    width: 300px;
+  @media (max-width: 400px) {
+    width: 220px;
+    height: 40px;
+  }
+  @media (max-width: 887px) {
+    max-width: 320px;
+  }
+  @media (min-width: 1100px) {
+    min-width: 400px;
   }
 `;
 const FormInputWrapper = styled.div`
@@ -104,6 +126,11 @@ const FormByContainer = styled.div`
   line-height: 17px;
   display: inline-block;
   color: #6b7280;
+  @media (max-width: 400px) {
+    font-size: 9px;
+    display: flex;
+    flex-wrap: wrap;
+  }
   @media (max-width: 1300px) {
     width: 300px;
   }
@@ -153,11 +180,6 @@ const Heading4MakeMoneyWithUsParent = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 20px;
-`;
-const Heading2 = styled.div`
-  letter-spacing: -0.28px;
-  line-height: 17px;
-  font-weight: 600;
 `;
 const AutoseligenSyrNekContainer = styled.div`
   font-size: 13px;
@@ -504,7 +526,7 @@ const Footer = () => {
     <FooterRoot>
       <FrameParent>
         <Heading3JoinOurNewsletteParent>
-          <Heading>Join our newsletter for £10 offs</Heading>
+          <HeadingNews>Join our newsletter for £10 offs</HeadingNews>
           <RegisterNowToContainer>
             <RegisterNowTo>{`Register now to get latest updates on promotions &`}</RegisterNowTo>
             <RegisterNowTo>coupons.Don’t worry, we not spam!</RegisterNowTo>

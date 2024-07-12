@@ -7,6 +7,7 @@ import WishlistIcon from "../assests/link-2.svg";
 import CartIcon from "../assests/link-3.svg";
 import SearchIcon from "../assests/search--button.svg";
 import MenuIcon from "../assests/list.png";
+import CloseIcon from "../assests/close.png";
 import { useNavigate, Link } from "react-router-dom";
 
 const Container = styled.div`
@@ -166,11 +167,8 @@ const SearchPlaceholder = styled.input`
   font-family: Inter;
   font-size: 14px;
   color: #6b7280;
-  @media (max-width: 407px) {
-    width: 20px;
-  }
   @media (max-width: 567px) {
-    width: 180px;
+    width: 120px;
   }
   @media (max-width: 887px) {
     max-width: 220px;
@@ -429,7 +427,7 @@ function MainNavBar({ searchValue, setSearchValue }) {
             </MobileNavLi>
           </MobileNavUl>
           <MenuCloseButton onClick={showNavBar}>
-            <MenuImage src={MenuIcon} alt="" />
+            <MenuImage src={CloseIcon} alt="" />
           </MenuCloseButton>
         </MobileNav>
       </LeftContainer>
