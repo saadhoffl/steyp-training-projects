@@ -9,7 +9,7 @@ import axios from "axios";
 const ProductGridDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 7px;
+  grid-gap: 1px;
   margin-right: 0px;
   @media (max-width: 1400px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -24,11 +24,11 @@ const ProductGridDiv = styled.div`
     max-width: 910px;
   }
   @media (max-width: 975px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 795px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 910px;
   }
   @media (max-width: 935px) {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     max-width: 798px;
   }
   @media (max-width: 837px) {
@@ -40,12 +40,35 @@ const ProductGridDiv = styled.div`
     max-width: 520px;
   }
   @media (max-width: 587px) {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     max-width: 450px;
   }
-  @media (max-width: 347px) {
+  @media (max-width: 410px) {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    max-width: 280px;
+    max-width: 370px;
+    margin-right: 0px;
+  }
+  @media (max-width: 377px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 350px;
+    margin-right: 0px;
+  }
+  @media (max-width: 376px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 340px;
+    width: 324px;
+    margin-right: 0px;
+  }
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 340px;
+    width: 314px;
+    margin-right: 0px;
+  }
+  @media (max-width: 347px) {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 300px;
+    width: 258px;
   }
 `;
 
@@ -103,7 +126,7 @@ const StockTitle = styled.p`
 `;
 
 const ProductCard = styled.div`
-  margin: 3px;
+  margin: 2px;
   border: 0.5px solid #ccc;
   border-radius: 9px;
   display: inline-block;

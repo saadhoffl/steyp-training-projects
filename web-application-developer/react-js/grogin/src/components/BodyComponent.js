@@ -254,7 +254,7 @@ const RightContainer = styled.p`
 const ProductGridDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 7px;
+  grid-gap: 1px;
   margin-top: 20px;
   @media (max-width: 1300px) {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -272,8 +272,12 @@ const ProductGridDiv = styled.div`
     max-width: 685px;
   }
   @media (max-width: 935px) {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    max-width: 568px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    max-width: 668px;
+  }
+  @media (max-width: 820px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 528px;
   }
   @media (max-width: 767px) {
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -353,7 +357,7 @@ const ShowItems = styled.p`
 const ShowGridImg = styled.img``;
 
 const ProductCard = styled.div`
-  margin: 3px;
+  margin: 2px;
   border: 0.5px solid #ccc;
   border-radius: 9px;
   display: inline-block;
