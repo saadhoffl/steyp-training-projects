@@ -26,6 +26,37 @@ const MainIcon = styled.img`
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 910px) {
+    width: 100%;
+    height: 85%;
+  }
+  @media screen and (max-width: 857px) {
+    width: 100%;
+    height: 80%;
+  }
+  @media screen and (max-width: 857px) {
+    width: 60%;
+    height: 80%;
+  }
+  @media screen and (max-width: 700px) {
+    width: 80%;
+    height: 80%;
+  }
+  @media screen and (max-width: 660px) {
+    width: 80%;
+    height: 90%;
+  }
+  @media screen and (max-width: 540px) {
+    width: 90%;
+    height: 100%;
+  }
+  @media screen and (max-width: 370px) {
+    width: 100%;
+    height: 95%;
+  }
 `;
 const EmptyCaption = styled.div`
   position: relative;

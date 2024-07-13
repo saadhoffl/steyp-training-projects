@@ -359,7 +359,10 @@ const ProductCard = styled.div`
   display: inline-block;
 `;
 
-const CardImg = styled.img``;
+const CardImg = styled.img`
+  width: 100%;
+  height: 200px;
+`;
 
 const CardTitle = styled.p`
   padding-left: 15px;
