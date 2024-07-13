@@ -6,6 +6,7 @@ const LinkDescription = styled.div`
   position: relative;
   letter-spacing: -0.32px;
   line-height: 24px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -38,6 +39,7 @@ const DescriptionTab = styled.div`
 const TabLink = styled.div`
   position: relative;
   letter-spacing: -0.32px;
+  font-size: 15px;
   line-height: 24px;
   display: inline-block;
   min-width: 85.2px;
@@ -87,6 +89,9 @@ const ContentRoot = styled.div`
   font-size: 16px;
   color: #030712;
   font-family: Inter;
+  @media screen and (max-width: 447px) {
+    font-size: 13px;
+  }
 `;
 
 const DescriptionReview = ({ className = "" }) => {

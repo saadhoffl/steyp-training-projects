@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(99, 76, 159);
+  background-color: rgb(99, 76, 159, 0.9);
 `;
 
 const LoginForm = styled.form`
@@ -73,7 +73,7 @@ const LogoImg = styled.img`
   width: 140px;
   margin-bottom: 10px;
   margin-top: 10px;
-  height: 40px;
+  height: 35px;
 `;
 
 const LoginPage = () => {

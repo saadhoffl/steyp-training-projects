@@ -116,8 +116,8 @@ const CompareWrapper = styled.div`
 const Social = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   gap: 26.1px;
   max-width: 100%;
   @media screen and (max-width: 750px) {
@@ -128,7 +128,7 @@ const Images = styled.div`
   width: 906.1px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   max-width: 100%;
   gap: 20px;
@@ -149,6 +149,9 @@ const GalleryRoot = styled.div`
   font-size: 13px;
   color: #030712;
   font-family: Inter;
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
 `;
 
 const Gallery = ({ className = "", productDetail }) => {

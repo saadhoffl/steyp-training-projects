@@ -10,12 +10,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  opacity: 0.9;
   background: rgb(25, 0, 36);
   background: linear-gradient(
     90deg,
-    rgba(25, 0, 36, 0.8603816526610644) 0%,
+    rgba(166, 0, 255, 0.8603816526610644) 0%,
     rgba(9, 32, 121, 0.6558998599439776) 35%,
-    rgba(166, 0, 255, 0.7847514005602241) 100%
+    rgba(166, 0, 255, 0.7847514005602241) 97%
   );
 `;
 
@@ -84,7 +85,7 @@ const LogoImg = styled.img`
   width: 140px;
   margin-bottom: 10px;
   margin-top: 10px;
-  height: 40px;
+  height: 35px;
 `;
 
 const LoginPage = () => {

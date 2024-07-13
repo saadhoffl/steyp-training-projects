@@ -17,26 +17,31 @@ const Structure1 = styled.section`
   max-width: 100%;
 `;
 const Details1 = styled.section`
-  width: 1360px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0px 20px 20.4px;
   box-sizing: border-box;
-  gap: 54px;
   max-width: 100%;
   @media screen and (max-width: 1200px) {
-    padding-bottom: 871px;
     box-sizing: border-box;
+    height: auto;
   }
   @media screen and (max-width: 750px) {
     gap: 27px;
-    padding-bottom: 872px;
     box-sizing: border-box;
-  }
-  @media screen and (max-width: 450px) {
     height: auto;
+  }
+  @media screen and (max-width: 447px) {
+    height: auto;
+    padding: 0px 10px 20.4px;
+  }
+  @media screen and (max-width: 368px) {
+    margin-right: 22px;
+  }
+  @media screen and (max-width: 345px) {
+    margin-right: 0px;
   }
 `;
 const MainRoot = styled.div`
@@ -57,8 +62,9 @@ const MainRoot = styled.div`
   @media screen and (max-width: 750px) {
     gap: 30px;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 447px) {
     gap: 15px;
+    padding: 20px 20px 0px;
   }
 `;
 

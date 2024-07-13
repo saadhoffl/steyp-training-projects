@@ -7,32 +7,57 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const ProductGridDiv = styled.div`
-  max-width: 1330px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-gap: 7px;
+  margin-right: 0px;
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 1410px;
+  }
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 1210px;
+  }
+  @media (max-width: 1070px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 910px;
+  }
+  @media (max-width: 975px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 795px;
+  }
+  @media (max-width: 935px) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 798px;
+  }
+  @media (max-width: 837px) {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    max-width: 650px;
+  }
+  @media (max-width: 667px) {
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    max-width: 520px;
+  }
+  @media (max-width: 587px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 450px;
+  }
+  @media (max-width: 347px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    max-width: 280px;
+  }
 `;
 
-const CardImg = styled.img`
-  width: 234px;
-  @media (max-width: 1300px) {
-    width: 220px;
-  }
-  @media (max-width: 1100px) {
-    width: 220px;
-  }
-  @media (max-width: 1020px) {
-    width: 200px;
-  }
-  @media (max-width: 790px) {
-    width: 180px;
-  }
-`;
+const CardImg = styled.img``;
 
 const CardTitle = styled.p`
   padding-left: 15px;
-  height: 40px;
+  padding-right: 15px;
+  height: 52px;
   margin: 0;
   font-size: 14px;
-  width: 200px;
+  width: auto;
 `;
 
 const RatingImg = styled.img`
@@ -84,6 +109,25 @@ const ProductCard = styled.div`
 const Title = styled.p`
   font-size: 18px;
   font-weight: bold;
+  margin-top: 70px;
+`;
+
+const ImgDiv = styled.div`
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  clickable: true;
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
+const CustomLinkStyle = styled(Link)`
+  text-decoration: none;
+  color: #212529;
+  font-size: 13px;
 `;
 
 const RenderProducts = ({ productDetail }) => {
@@ -105,29 +149,32 @@ const RenderProducts = ({ productDetail }) => {
 
   return products.map((product) => (
     <ProductCard key={product.id}>
-      <Link to={`/product-details/${product.id}`}>
-        <CardImg src={"http://localhost:8000/" + product.product_img} />
-      </Link>
-      <CardTitle>{product.product_title}</CardTitle>
-      <RatingImg src={Rated4Out5} />
-      <CardPrice>
-        <OfferPrice>{"$" + product.product_price}</OfferPrice>
-        <MrpPrice>$1.78</MrpPrice>
-      </CardPrice>
-      <StockDiv>
-        <StockIcon src={InStock} />
-        <StockTitle>IN STOCK</StockTitle>
-      </StockDiv>
+      <CustomLinkStyle to={`/product-details/${product.id}`}>
+        <ImgDiv>
+          <CardImg src={"http://localhost:8000/" + product.product_img} />
+        </ImgDiv>
+
+        <CardTitle>{product.product_title}</CardTitle>
+        <RatingImg src={Rated4Out5} />
+        <CardPrice>
+          <OfferPrice>{"$" + product.product_price}</OfferPrice>
+          <MrpPrice>$1.78</MrpPrice>
+        </CardPrice>
+        <StockDiv>
+          <StockIcon src={InStock} />
+          <StockTitle>IN STOCK</StockTitle>
+        </StockDiv>
+      </CustomLinkStyle>
     </ProductCard>
   ));
 };
 
 const Products = ({ productDetail }) => {
   return (
-    <ProductGridDiv>
+    <>
       <Title>Related Products</Title>
-      {RenderProducts({ productDetail })}
-    </ProductGridDiv>
+      <ProductGridDiv>{RenderProducts({ productDetail })}</ProductGridDiv>
+    </>
   );
 };
 

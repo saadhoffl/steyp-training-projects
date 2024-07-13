@@ -5,15 +5,6 @@ import NoticeIcon from "../assests/divnoticeicon.svg";
 import CartIcon from "../assests/before.svg";
 import React from "react";
 
-const Home = styled.a`
-  text-decoration: none;
-  position: relative;
-  letter-spacing: -0.32px;
-  line-height: 18px;
-  color: inherit;
-  display: inline-block;
-  min-width: 33px;
-`;
 const Elements = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,69 +16,13 @@ const Elements = styled.div`
 const Elements3 = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 12px 0px 0px;
+  align-items: center;
+  justify-content: center;
 `;
-const LinkIcon = styled.img`
-  width: 11.7px;
-  height: 12px;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-`;
-const Elements1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 3px 0px 0px;
-`;
-const FruitsVegetables = styled.a`
-  text-decoration: none;
-  position: relative;
-  letter-spacing: -0.32px;
-  line-height: 18px;
-  color: inherit;
-  display: inline-block;
-  min-width: 104px;
-  white-space: nowrap;
-`;
-const ExoticFruits = styled.div`
-  position: relative;
-  letter-spacing: -0.32px;
-  line-height: 18px;
-  display: inline-block;
-  min-width: 122.3px;
-  white-space: nowrap;
-`;
-const MarketsideFreshOrganic = styled.div`
-  position: relative;
-  letter-spacing: -0.32px;
-  line-height: 18px;
-  color: #030712;
-  white-space: nowrap;
-`;
-const ElementsParent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 4.7px;
-  max-width: 100%;
-  @media screen and (max-width: 750px) {
-    display: none;
-  }
-`;
+
 const MainIcon = styled.img`
-  width: 100%;
+  width: 75%;
   height: 100%;
-  position: absolute;
-  margin: 0 !important;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
@@ -104,11 +39,13 @@ const Main1 = styled.div`
   width: 39.1px;
   border-radius: 14px 40px 40px 14px;
   background-color: #dc2626;
+  color: #fff;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 6px 8px;
+  margin-bottom: 8px;
   box-sizing: border-box;
   z-index: 1;
 `;
@@ -151,11 +88,11 @@ const Main2 = styled.button`
 `;
 const Content = styled.div`
   align-self: stretch;
-  height: 660px;
+  height: 500px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   box-sizing: border-box;
   position: relative;
@@ -163,6 +100,16 @@ const Content = styled.div`
   text-align: center;
   font-size: 10px;
   color: #fef2f2;
+  @media screen and (max-width: 850px) {
+    height: 500px;
+    width: 90%;
+    align-self: center;
+  }
+  @media screen and (max-width: 557px) {
+    height: 300px;
+    width: 80%;
+    align-self: center;
+  }
 `;
 const Container1 = styled.div`
   flex: 1;
@@ -171,7 +118,7 @@ const Container1 = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   gap: 19px;
-  min-width: 429px;
+  min-width: 129px;
   max-width: 100%;
   @media screen and (max-width: 750px) {
     min-width: 100%;
@@ -192,12 +139,15 @@ const MarketsideFreshOrganicContainer = styled.h1`
   max-width: 100%;
   flex-shrink: 0;
   @media screen and (max-width: 1050px) {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 36px;
   }
   @media screen and (max-width: 450px) {
     font-size: 23px;
     line-height: 27px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 18px;
   }
 `;
 const ImgRated300OutOf = styled.img`
@@ -320,14 +270,13 @@ const Main3 = styled.div`
   }
 `;
 const Rating = styled.div`
-  align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0px 0px 6.4px;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 90%;
 `;
 const VivamusAdipiscingNislContainer = styled.div`
   position: relative;
@@ -392,6 +341,9 @@ const MainLink = styled.div`
   font-size: 14px;
   color: #fff;
   font-family: Inter;
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const Details = styled.div`
   display: flex;
@@ -411,7 +363,7 @@ const ProductDescription = styled.div`
   padding: 0px 0px 4.4px;
   box-sizing: border-box;
   gap: 15px;
-  max-width: 100%;
+  max-width: 90%;
   flex-shrink: 0;
   font-size: 14px;
   color: #4b5563;
@@ -518,6 +470,16 @@ const Main4 = styled.div`
   padding: 14px 16px;
   gap: 15.9px;
   max-width: 100%;
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+    width: 100%;
+    min-width: 280px;
+    max-width: 330px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 const Offer = styled.div`
   align-self: stretch;
@@ -529,6 +491,15 @@ const Offer = styled.div`
   box-sizing: border-box;
   max-width: 100%;
   color: #ea580c;
+  @media screen and (max-width: 1040px) {
+    max-width: 95%;
+  }
+  @media screen and (max-width: 850px) {
+    max-width: 100%;
+  }
+  @media screen and (max-width: 385px) {
+    flex-direction: column;
+  }
 `;
 const DivquantityButtonIcon = styled.img`
   align-self: stretch;
@@ -568,9 +539,15 @@ const Form = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+  @media screen and (max-width: 1010px) {
+    width: 80px;
+  }
+  @media screen and (max-width: 375px) {
+    width: 65px;
+  }
 `;
 const BeforeIcon = styled.img`
-  width: 14px;
+  width: 10px;
   height: 14px;
   position: relative;
 `;
@@ -578,28 +555,32 @@ const AddToCart = styled.b`
   position: relative;
   font-size: 14px;
   letter-spacing: -0.28px;
-  line-height: 42px;
   display: inline-block;
   font-family: Inter;
   color: #fff;
   text-align: center;
-  min-width: 74px;
+  min-width: 40px;
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const Button2 = styled.button`
   cursor: pointer;
   border: none;
-  padding: 1px 32px 17px 33px;
   background-color: #16a34a;
   height: 46px;
   flex: 1;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   gap: 6px;
   min-width: 104px;
+  @media screen and (max-width: 1010px) {
+    min-width: 80px;
+  }
 `;
 const BuyNow = styled.b`
   position: relative;
@@ -611,28 +592,26 @@ const BuyNow = styled.b`
   color: #fff;
   text-align: center;
   min-width: 59px;
+  @media screen and (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const Button3 = styled.button`
   cursor: pointer;
   border: none;
-  padding: 1px 40px 16px 41px;
   background-color: #212529;
   height: 46px;
   flex: 0.8316;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
   gap: 6px;
   min-width: 104px;
-  @media screen and (max-width: 450px) {
-    flex: 1;
-  }
 `;
 const Actions = styled.div`
-  width: 454px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -644,8 +623,11 @@ const Actions = styled.div`
   text-align: center;
   font-size: 15px;
   color: #020617;
-  @media screen and (max-width: 450px) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 1040px) {
+    max-width: 95%;
+  }
+  @media screen and (max-width: 850px) {
+    max-width: 100%;
   }
 `;
 const ListItem = styled.input`
@@ -659,7 +641,9 @@ const ListItem = styled.input`
 const Payment = styled.b`
   font-family: Inter;
 `;
-const PaymentUponReceipt = styled.span``;
+const PaymentUponReceipt = styled.span`
+  margin-right: 15px;
+`;
 const ListItemContainer = styled.div`
   position: relative;
   letter-spacing: -0.32px;
@@ -704,7 +688,6 @@ const StrongWarrantyContainer = styled.div`
   line-height: 19.5px;
   display: flex;
   align-items: center;
-  flex-shrink: 0;
 `;
 const Title2 = styled.div`
   flex: 1;
@@ -728,11 +711,11 @@ const ListItem1 = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 11px 12px 12px;
+  padding: 25px 50px 25px 15px;
   gap: 17.9px;
   max-width: 100%;
-  @media screen and (max-width: 750px) {
-    flex-wrap: wrap;
+  @media screen and (max-width: 340px) {
+    padding: 38px 50px 38px 15px;
   }
 `;
 const Main5 = styled.div`
@@ -749,6 +732,14 @@ const Main5 = styled.div`
   max-width: 100%;
   flex-shrink: 0;
   color: #6b7280;
+  @media screen and (max-width: 1040px) {
+    max-width: 430px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: 850px) {
+    max-width: 100%;
+    margin-right: 0px;
+  }
 `;
 const ProductName = styled.div`
   align-self: stretch;
@@ -767,12 +758,12 @@ const ProductDetail = styled.div`
   justify-content: flex-end;
   padding: 0px 0px 24.8px;
   box-sizing: border-box;
-  min-width: 429px;
+  min-width: 400px;
   max-width: 100%;
   font-size: 13px;
   color: #030712;
-  @media screen and (max-width: 750px) {
-    min-width: 100%;
+  @media screen and (max-width: 850px) {
+    min-width: 90%;
   }
 `;
 const LayoutRoot = styled.div`
@@ -794,40 +785,15 @@ const LayoutRoot = styled.div`
   }
 `;
 
+const Group = styled.div``;
+
 const MainDiv = styled.div``;
 
 const ProductDetails = ({ productDetail }) => {
   return (
     <LayoutRoot>
       <Container1>
-        <ElementsParent>
-          <Elements>
-            <Home>Home</Home>
-          </Elements>
-          <Elements1>
-            <LinkIcon loading="lazy" alt="" src="/link.svg" />
-          </Elements1>
-          <Elements>
-            <FruitsVegetables>{`Fruits & Vegetables`}</FruitsVegetables>
-          </Elements>
-          <Elements1>
-            <LinkIcon loading="lazy" alt="" src="/-link-2.svg" />
-          </Elements1>
-          <Elements>
-            <ExoticFruits>{`Exotic Fruits & Veggies`}</ExoticFruits>
-          </Elements>
-          <Elements1>
-            <LinkIcon loading="lazy" alt="" src="/-link-3.svg" />
-          </Elements1>
-          <MarketsideFreshOrganic>
-            Marketside Fresh Organic Bananas, Bunch
-          </MarketsideFreshOrganic>
-        </ElementsParent>
-        <Content>
-          <MainIcon
-            alt=""
-            src={"http://localhost:8000/" + productDetail.product_img}
-          />
+        <Group>
           <Main1>
             <EmptyCaption>56%</EmptyCaption>
           </Main1>
@@ -837,6 +803,12 @@ const ProductDetails = ({ productDetail }) => {
               <Organic>Organic</Organic>
             </Elements>
           </Main2>
+        </Group>
+        <Content>
+          <MainIcon
+            alt=""
+            src={"http://localhost:8000/" + productDetail.product_img}
+          />
         </Content>
       </Container1>
       <ProductDetail>
@@ -846,7 +818,6 @@ const ProductDetails = ({ productDetail }) => {
               <MarketsideFreshOrganic1>
                 {productDetail.product_title}
               </MarketsideFreshOrganic1>
-              <MarketsideFreshOrganic1></MarketsideFreshOrganic1>
             </MarketsideFreshOrganicContainer>
             <Rating>
               <Main3>
@@ -976,7 +947,6 @@ const ProductDetails = ({ productDetail }) => {
                       <MarketsideFreshOrganic1>
                         <Payment>Warranty.</Payment>
                         <PaymentUponReceipt>
-                          {" "}
                           The Consumer Protection Act does not provide for the
                           return of this product of proper
                         </PaymentUponReceipt>
