@@ -366,6 +366,13 @@ const ProductCard = styled.div`
 const CardImg = styled.img`
   width: 100%;
   height: 200px;
+  @media (max-width: 447px) {
+    width: 80%;
+    height: 170px;
+  }
+  @media (max-width: 347px) {
+    height: 300px;
+  }
 `;
 
 const CardTitle = styled.p`
