@@ -75,6 +75,9 @@ const ProductGridDiv = styled.div`
 const CardImg = styled.img`
   width: 100%;
   height: 200px;
+  @media (max-width: 376px) {
+    height: 300px;
+  }
 `;
 
 const CardTitle = styled.p`
