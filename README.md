@@ -21,4 +21,5 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 ## BACKEND-DEVELOPER:
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Link |
+|------------|--------------|----------------|--------------|------|--------|
 | 01 | grogin | Completed | django backend for grogin reactjs project | ReactJs and django | - |
