@@ -16,14 +16,14 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Github Link |
 |------------|--------------|----------------|--------------|------|--------|
-| 01 | movie-land | Completed | created through watching Youtube video | ReactJs with online json api data | - |
-| 02 | pinterest-clone | on-going | created through watching Youtube video | ReactJs with sanity.io database | - |
-| 03 | grogin | Completed | created with figma design | ReactJs with postgresql, python django rest api | - |
+| 01 | movie-land | Completed | created through watching Youtube video | ReactJs with online json api data | [Movie Land website](https://github.com/saadhoffl/steyp-training-projects/tree/main/web-application-developer/react-js/movie-land) |
+| 02 | pinterest-clone | on-going | created through watching Youtube video | ReactJs with sanity.io database | [Pinterest Clone](https://github.com/saadhoffl/steyp-training-projects/tree/main/web-application-developer/react-js/pinterest-clone) |
+| 03 | grogin | Completed | created with figma design | ReactJs with postgresql, python django rest api | [Grogin Website](https://github.com/saadhoffl/steyp-training-projects/tree/main/web-application-developer/react-js/grogin) |
 | 04 | traveller | on-going | created with watching through steyp platform | ReactJs with postgresql, python django rest api | - |
 
 ## BACKEND-DEVELOPER:
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Github Link |
 |------------|--------------|----------------|--------------|------|--------|
-| 01 | grogin | Completed | django backend for grogin reactjs project | ReactJs and django | - |
-| 02 | traveller | Completed | django backend for traveller reactjs project | ReactJs and django | - |
+| 01 | grogin | Completed | django backend for grogin reactjs project | ReactJs and django | [Grogin](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/grogin) |
+| 02 | traveller | Completed | django backend for traveller reactjs project | ReactJs and django | [Traveller Guide](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/traveller) |
