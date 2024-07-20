@@ -6,9 +6,9 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Github Link |
 |------------|--------------|----------------|--------------|------|--------|
-| 01 | html-css-home-page | Completed | created through watching Youtube video | html and css | - |
-| 02 | wonderla-clone | Completed | created by own | html, css and js | - |
-| 03 | delta-ui | Completed | Figma to web page ui design Provided by mahadev | html, css and js | LINK: [Delta Website](https://github.com/saadhoffl/steyp-training-projects/tree/main/ui-engineer/html/delta-ui) |
+| 01 | html-css-home-page | Completed | created through watching Youtube video | html and css | [Home Page](https://github.com/saadhoffl/steyp-training-projects/tree/main/ui-engineer/html/html-css-home-page) |
+| 02 | wonderla-clone | Completed | created by own | html, css and js | [Wonderla Clone](https://github.com/saadhoffl/steyp-training-projects/tree/main/ui-engineer/html/wonderla-clone) |
+| 03 | delta-ui | Completed | Figma to web page ui design Provided by mahadev | html, css and js | [Delta Website](https://github.com/saadhoffl/steyp-training-projects/tree/main/ui-engineer/html/delta-ui) |
 
 ## WEB-APPLICATION-DEVELOPER:
 
