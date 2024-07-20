@@ -52,14 +52,14 @@ function Places() {
         <Heading>Welcome Saadh</Heading>
         <Paragraph>Explore the world around you.</Paragraph>
       </TopContainer>
-      <Places Container>{RenderPlaces()}</Places>
+      <PlacesContainer>{RenderPlaces()}</PlacesContainer>
     </>
   );
 }
 
 const TopContainer = styled.div`
   width: 90%;
-  margin: 100px auto 0;
+  margin: 30px auto 0;
 `;
 const Heading = styled.h1``;
 const Paragraph = styled.p``;
