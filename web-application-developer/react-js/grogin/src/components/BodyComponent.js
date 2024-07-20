@@ -829,7 +829,6 @@ function BodyComponent({ searchValue }) {
     axios
       .get(updatedApiLink)
       .then((res) => {
-        console.log(res.data.data);
         setProducts(res.data.data);
       })
       .catch((err) => {
