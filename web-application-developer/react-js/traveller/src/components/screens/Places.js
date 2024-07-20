@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Header from "./includes/Header";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Places() {
   const [places, setPlaces] = useState([]);
@@ -61,23 +62,59 @@ const TopContainer = styled.div`
   width: 90%;
   margin: 30px auto 0;
 `;
-const Heading = styled.h1``;
-const Paragraph = styled.p``;
+const Heading = styled.h1`
+  font-size: 32px;
+  margin-bottom: 15px;
+`;
+const Paragraph = styled.p`
+  font-size: 20px;
+  color: #dfddd5;
+`;
 
-const PlacesContainer = styled.ul``;
-const PlaceCard = styled.li``;
-const PlaceCardLink = styled.a``;
+const PlacesContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 40px auto 0;
+`;
+const PlaceCard = styled.li`
+  width: 23.5%;
+  margin-right: 2%;
+  margin-bottom: 25px;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+`;
+const PlaceCardLink = styled(Link)`
+  text-decoration: none;
+  display: block;
+`;
 const PlaceImg = styled.img`
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
-const PlaceBottomContainer = styled.div``;
-const PlaceTitle = styled.h2``;
-const Location = styled.p``;
+const PlaceBottomContainer = styled.div`
+  padding: 10px 15px;
+  color: black;
+`;
+const PlaceTitle = styled.h2`
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 550;
+`;
+const Location = styled.div`
+  display: flex;
+  color: #7e7e7e;
+`;
 const LocationIconImg = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 18px;
+  margin-right: 10px;
 `;
-const LocationName = styled.span``;
+const LocationName = styled.span`
+  font-size: 17px;
+`;
 
 export default Places;
