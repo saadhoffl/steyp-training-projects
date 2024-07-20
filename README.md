@@ -15,7 +15,7 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 | Project No | Project Name | Project Status | Descriptions | Skills | Link |
 |------------|--------------|----------------|--------------|------|--------|
 | 01 | movie-land | Completed | created through watching Youtube video | ReactJs | - |
-| 02 | pinterest-clone | on-goging | created through watching Youtube video | ReactJs with sanity.io database | - |
+| 02 | pinterest-clone | on-going | created through watching Youtube video | ReactJs with sanity.io database | - |
 | 03 | grogin | Completed | created with figma design | ReactJs with postgresql, python django rest api | - |
 | 04 | traveller | on-going | created with watching through steyp platform | ReactJs with postgresql, python django rest api | - |
 
