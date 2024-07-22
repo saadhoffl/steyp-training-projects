@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 
 import Header from "./includes/Header";
+import { BASE_URL } from "../../axiosConfig";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,7 +13,7 @@ function Places() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/v1/places/")
+      .get(`${BASE_URL}places/`)
       .then((response) => {
         setPlaces(response.data.data);
       })
@@ -22,10 +23,10 @@ function Places() {
   }, []);
 
   const RenderPlaces = () => {
-    return places.map((place) => {
+    return places.map((place, index) => {
       return (
-        <PlaceCard>
-          <PlaceCardLink>
+        <PlaceCard key={index}>
+          <PlaceCardLink to={`/place/${place.id}/`}>
             <PlaceImg src={place.featured_image} alt="image" />
             <PlaceBottomContainer>
               <PlaceTitle>{place.name}</PlaceTitle>
@@ -98,6 +99,7 @@ const PlaceImg = styled.img`
 const PlaceBottomContainer = styled.div`
   padding: 10px 15px;
   color: black;
+  background-color: #ececec;
 `;
 const PlaceTitle = styled.h2`
   margin-bottom: 10px;
