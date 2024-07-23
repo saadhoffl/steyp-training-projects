@@ -10,10 +10,12 @@ function Header() {
   };
   return (
     <HeaderContainer>
-      <LogoImg
-        src={require("../../../assets/images/logo.png")}
-        alt="Website Logo"
-      />
+      <Link to="/">
+        <LogoImg
+          src={require("../../../assets/images/logo.png")}
+          alt="Website Logo"
+        />
+      </Link>
       <RightContanier>
         {userData ? (
           <Button onClick={() => handleLogout()}>Logout</Button>

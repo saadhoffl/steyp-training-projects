@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import Header from "./includes/Header";
 import { BASE_URL } from "../../axiosConfig";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../../App";
 
 function Place({ match }) {
   const [place, setPlace] = useState({});
   const { id } = useParams();
 
+  const { userData } = useContext(UserContext);
+
   useEffect(() => {
     axios
-      .get(`${BASE_URL}places/view/${id}/`)
+      .get(`${BASE_URL}places/protected/${id}/`, {
+        headers: {
+          Authorization: `Bearer ${userData?.access}`,
+        },
+      })
       .then((response) => {
         setPlace(response.data.data);
       })

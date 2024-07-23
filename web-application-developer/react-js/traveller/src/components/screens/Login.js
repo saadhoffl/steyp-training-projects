@@ -56,10 +56,12 @@ function Login() {
       </Helmet>
       <LeftContainer>
         <HeaderContainer>
-          <LogoImg
-            src={require("../../assets/images/logo.png")}
-            alt="Website Logo"
-          />
+          <Link to="/">
+            <LogoImg
+              src={require("../../assets/images/logo.png")}
+              alt="Website Logo"
+            />
+          </Link>
         </HeaderContainer>
         <MainHeading>Travel to the best beautiful places</MainHeading>
       </LeftContainer>

@@ -4,12 +4,15 @@ import Place from "./components/screens/Place";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/screens/Login";
 import Signup from "./components/screens/Signup";
+import PrivateRoutes from "./utils/PrivateRoutes";
 import React, { useState, useEffect } from "react";
 
 export const UserContext = React.createContext();
 
 function App() {
   const [userData, setUserData] = useState({});
+  const [loading, setLoading] = useState(true);
+
   const updateUserData = (action) => {
     switch (action.type) {
       case "LOGOUT":
@@ -26,15 +29,20 @@ function App() {
 
   useEffect(() => {
     setUserData(JSON.parse(localStorage.getItem("token")));
+    setLoading(false);
   }, []);
 
-  return (
+  return loading ? (
+    <h1>Loading...</h1>
+  ) : (
     <div>
       <UserContext.Provider value={{ userData, updateUserData }}>
         <Router>
           <Routes>
+            <Route element={<PrivateRoutes />}>
+              <Route path="/place/:id" element={<Place />} exact />
+            </Route>
             <Route path="/" element={<Places />} />
-            <Route path="/place/:id" element={<Place />} />
             <Route path="/auth/login/" element={<Login />} />
             <Route path="/auth/create/" element={<Signup />} />
           </Routes>
