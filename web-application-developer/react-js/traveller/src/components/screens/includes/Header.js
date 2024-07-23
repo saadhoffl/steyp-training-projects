@@ -10,7 +10,13 @@ function Header() {
         alt="Website Logo"
       />
       <RightContanier>
-        <Button to="/auth/login">Login</Button>
+        {localStorage.getItem("token") ? (
+          <Button onChange={() => localStorage.removeItem("token")}>
+            Logout
+          </Button>
+        ) : (
+          <Button to="/auth/login">Sign In</Button>
+        )}
       </RightContanier>
     </HeaderContainer>
   );

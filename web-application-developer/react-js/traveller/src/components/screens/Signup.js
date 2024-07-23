@@ -23,10 +23,14 @@ function Login() {
         password,
       })
       .then((response) => {
-        console.log(response);
-        // let data = response.data;
-        // localStorage.setItem("token", JSON.stringify(data));
-        // navigate("/");
+        let data = response.data;
+        let status_code = response.data.status_code;
+        if (status_code === 6000) {
+          localStorage.setItem("token", JSON.stringify(data));
+          navigate("/");
+        } else {
+          setMessage(response.data.message);
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -38,9 +42,9 @@ function Login() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      if (e.target.type === "text1") {
-        document.getElementById("text2").focus();
-      } else if (e.target.type === "text2") {
+      if (e.target.type === "text") {
+        document.getElementById("email").focus();
+      } else if (e.target.type === "email") {
         document.getElementById("password").focus();
       } else if (e.target.type === "password") {
         handleSubmit(e);
@@ -71,8 +75,9 @@ function Login() {
               <Input
                 onChange={(e) => setUsername(e.target.value)}
                 value={username}
-                type="text1"
+                type="text"
                 placeholder="Username"
+                id="username"
                 onKeyDown={handleKeyDown}
               />
             </InputContainer>
@@ -80,7 +85,7 @@ function Login() {
               <Input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
-                type="text2"
+                type="email"
                 placeholder="Email"
                 id="email"
                 onKeyDown={handleKeyDown}
