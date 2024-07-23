@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -9,7 +10,7 @@ function Header() {
         alt="Website Logo"
       />
       <RightContanier>
-        <Button>Login</Button>
+        <Button to="/auth/login">Login</Button>
       </RightContanier>
     </HeaderContainer>
   );
@@ -34,7 +35,7 @@ const LogoImg = styled.img`
   display: block;
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
   background-color: #046bf7;
   border-radius: 4px;
   padding: 13px 45px;
