@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { BASE_URL } from "../../axiosConfig";
 import axios from "axios";
+import { UserContext } from "../../App";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  const { updateUserData } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -27,6 +30,7 @@ function Login() {
         let status_code = response.data.status_code;
         if (status_code === 6000) {
           localStorage.setItem("token", JSON.stringify(data));
+          updateUserData({ type: "LOGIN", payload: data });
           navigate("/");
         } else {
           setMessage(response.data.message);
