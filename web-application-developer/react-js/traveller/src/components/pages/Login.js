@@ -1,19 +1,29 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { BASE_URL } from "../../axiosConfig";
 import axios from "axios";
 import { UserContext } from "../../App";
+import queryString from "query-string";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [nextPath, setNextPath] = useState("");
 
   const { updateUserData } = useContext(UserContext);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const { search } = location;
+    const values = queryString.parse(search);
+    const { next } = values;
+    setNextPath(next);
+  }, []);
 
   const handleSubmit = (e) => {
     setMessage("");
@@ -27,7 +37,7 @@ function Login() {
         let data = response.data;
         localStorage.setItem("token", JSON.stringify(data));
         updateUserData({ type: "LOGIN", payload: data });
-        navigate("/");
+        nextPath ? navigate(nextPath) : navigate("/");
       })
       .catch((error) => {
         console.log(error);

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 
-import Header from "./includes/Header";
+import Header from "../screens/includes/Header";
+import Footer from "../screens/includes/Footer";
 import { BASE_URL } from "../../axiosConfig";
 
 import axios from "axios";
@@ -55,13 +56,14 @@ function Places() {
         <Paragraph>Explore the world around you.</Paragraph>
       </TopContainer>
       <PlacesContainer>{RenderPlaces()}</PlacesContainer>
+      <Footer />
     </>
   );
 }
 
 const TopContainer = styled.div`
   width: 90%;
-  margin: 30px auto 0;
+  margin: 30px auto 0px;
 `;
 const Heading = styled.h1`
   font-size: 32px;
@@ -76,7 +78,7 @@ const PlacesContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  margin: 40px auto 0;
+  margin: 40px auto 50px;
 `;
 const PlaceCard = styled.li`
   width: 23.5%;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Header from "./includes/Header";
+import Header from "../screens/includes/Header";
+import Footer from "../screens/includes/Footer";
 import { BASE_URL } from "../../axiosConfig";
 import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
@@ -63,6 +64,7 @@ function Place({ match }) {
         <SubHeading>Place Details</SubHeading>
         <Description>{place.description}</Description>
       </PlaceContainer>
+      <Footer />
     </>
   );
 }

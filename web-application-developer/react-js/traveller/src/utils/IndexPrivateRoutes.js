@@ -6,13 +6,7 @@ const PrivateRoutes = () => {
   const { userData } = useContext(UserContext);
   const location = useLocation();
 
-  return userData ? (
-    <Outlet />
-  ) : (
-    <Navigate
-      to={{ pathname: "/auth/login", search: `?next=${location.pathname}` }}
-    />
-  );
+  return !userData ? <Outlet /> : <Navigate to="/" />;
 };
 
 export default PrivateRoutes;

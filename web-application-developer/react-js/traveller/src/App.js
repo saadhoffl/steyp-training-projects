@@ -1,10 +1,12 @@
 import "./App.css";
-import Places from "./components/screens/Places";
-import Place from "./components/screens/Place";
+import Error404 from "./Error404";
+import Places from "./components/pages/Places";
+import Place from "./components/pages/Place";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/screens/Login";
-import Signup from "./components/screens/Signup";
+import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
 import PrivateRoutes from "./utils/PrivateRoutes";
+import IndexPrivateRoutes from "./utils/IndexPrivateRoutes";
 import React, { useState, useEffect } from "react";
 
 export const UserContext = React.createContext();
@@ -39,12 +41,15 @@ function App() {
       <UserContext.Provider value={{ userData, updateUserData }}>
         <Router>
           <Routes>
+            <Route path="/" element={<Places />} />
             <Route element={<PrivateRoutes />}>
               <Route path="/place/:id" element={<Place />} exact />
             </Route>
-            <Route path="/" element={<Places />} />
-            <Route path="/auth/login/" element={<Login />} />
-            <Route path="/auth/create/" element={<Signup />} />
+            <Route element={<IndexPrivateRoutes />}>
+              <Route path="/auth/login/" element={<Login />} exact />
+              <Route path="/auth/create/" element={<Signup />} exact />
+            </Route>
+            <Route path="/*" element={<Error404 />} />
           </Routes>
         </Router>
       </UserContext.Provider>
