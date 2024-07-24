@@ -42,7 +42,7 @@ const LeftContainer = styled.div`
       position: fixed;
       top: 0;
       left: 0;
-      width: 55%;
+      width: 45%;
       height: 100%;
       background-color: rgb(228, 230, 230, 0.97);
       padding: 20px 30px;
@@ -57,10 +57,6 @@ const LeftContainer = styled.div`
       &.slide-out {
         animation-name: ${slideOutAnimation};
       }
-    }
-    @media (max-width: 1300px) {
-      padding: 20px 0px 20px 50px;
-      max-width: 215px;
     }
   }
 `;
@@ -236,6 +232,9 @@ const AdjustFilters = styled.div`
   margin-top: 15px;
   padding: 10px;
   border-radius: 9px;
+  @media (max-width: 767px) {
+    justify-content: space-between;
+  }
 `;
 
 const RightContainer = styled.p`
@@ -252,49 +251,10 @@ const RightContainer = styled.p`
 `;
 
 const ProductGridDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 1px;
-  margin-top: 20px;
-  @media (max-width: 1300px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  @media (max-width: 1300px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 710px;
-  }
-  @media (max-width: 1070px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 710px;
-  }
-  @media (max-width: 975px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 685px;
-  }
-  @media (max-width: 935px) {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    max-width: 668px;
-  }
-  @media (max-width: 820px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 528px;
-  }
-  @media (max-width: 767px) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    max-width: 650px;
-  }
-  @media (max-width: 667px) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    max-width: 520px;
-  }
-  @media (max-width: 587px) {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    max-width: 450px;
-  }
-  @media (max-width: 347px) {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    max-width: 280px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px auto 50px;
 `;
 
 const FilterPara = styled.p`
@@ -357,22 +317,45 @@ const ShowItems = styled.p`
 const ShowGridImg = styled.img``;
 
 const ProductCard = styled.div`
-  margin: 2px;
-  border: 0.5px solid #ccc;
-  border-radius: 9px;
-  display: inline-block;
+  width: 24.39%;
+  height: 100%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+  @media (max-width: 1440px) {
+    width: 24.3%;
+  }
+  @media (max-width: 1149px) {
+    width: 24%;
+  }
+  @media (max-width: 1149px) {
+    width: 32.2%;
+    &:nth-child(4n) {
+      margin-right: 5px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 799px) {
+    width: 48.4%;
+    &:nth-child(3n) {
+      margin-right: 5px;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
 `;
 
 const CardImg = styled.img`
   width: 100%;
-  height: 200px;
-  @media (max-width: 447px) {
-    width: 80%;
-    height: 170px;
-  }
-  @media (max-width: 347px) {
-    height: 300px;
-  }
+  display: block;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const CardTitle = styled.p`
