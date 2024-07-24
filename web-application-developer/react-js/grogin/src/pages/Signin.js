@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import Logo from "../assests/link--groginlogodarkpng@2x.png";
+import queryString from "query-string";
 
 const Container = styled.div`
   display: flex;
@@ -92,8 +93,17 @@ const LoginPage = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
+  const [nextPath, setNextPath] = useState("");
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const { search } = location;
+    const values = queryString.parse(search);
+    const { next } = values;
+    setNextPath(next);
+  }, []);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -118,7 +128,7 @@ const LoginPage = () => {
       .then((res) => {
         let data = res.data;
         localStorage.setItem("user_data", JSON.stringify(data));
-        navigate("/");
+        nextPath ? navigate(nextPath) : navigate("/");
       })
       .catch((err) => {
         if (err.response.status === 401) {

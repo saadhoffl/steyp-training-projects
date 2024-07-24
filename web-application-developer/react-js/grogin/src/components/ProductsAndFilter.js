@@ -354,8 +354,6 @@ const ProductCard = styled.div`
 const CardImg = styled.img`
   width: 100%;
   display: block;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 `;
 
 const CardTitle = styled.p`

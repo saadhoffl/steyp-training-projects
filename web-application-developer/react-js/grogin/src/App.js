@@ -5,7 +5,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Error404 from "./pages/Error404";
 import PrivateRoutes from "./utils/PrivateRoutes";
-import NoLoginPrivateRoutes from "./utils/NoLoginPrivateRoutes";
+import NoLoginPrivateRoutes from "./utils/IndexPrivateRoutes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

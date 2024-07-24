@@ -7,77 +7,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const ProductGridDiv = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 1px;
-  margin-right: 0px;
-  @media (max-width: 1400px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    max-width: 1410px;
-  }
-  @media (max-width: 1300px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 1210px;
-  }
-  @media (max-width: 1070px) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    max-width: 910px;
-  }
-  @media (max-width: 975px) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    max-width: 910px;
-  }
-  @media (max-width: 935px) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    max-width: 798px;
-  }
-  @media (max-width: 837px) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    max-width: 650px;
-  }
-  @media (max-width: 667px) {
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    max-width: 520px;
-  }
-  @media (max-width: 587px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 450px;
-  }
-  @media (max-width: 410px) {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    max-width: 370px;
-    margin-right: 0px;
-  }
-  @media (max-width: 377px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 350px;
-    margin-right: 0px;
-  }
-  @media (max-width: 376px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 340px;
-    width: 324px;
-    margin-right: 0px;
-  }
-  @media (max-width: 360px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 340px;
-    width: 314px;
-    margin-right: 0px;
-  }
-  @media (max-width: 347px) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    max-width: 300px;
-    width: 258px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px auto 50px;
+  @media (max-width: 370px) {
+    padding-left: 7px;
   }
 `;
 
 const CardImg = styled.img`
   width: 100%;
-  height: 200px;
-  @media (max-width: 376px) {
-    height: 300px;
-  }
+  display: block;
 `;
 
 const CardTitle = styled.p`
@@ -129,10 +70,59 @@ const StockTitle = styled.p`
 `;
 
 const ProductCard = styled.div`
-  margin: 2px;
-  border: 0.5px solid #ccc;
-  border-radius: 9px;
-  display: inline-block;
+  width: 19.59%;
+  height: 100%;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  &:nth-child(5n) {
+    margin-right: 0;
+  }
+  @media (max-width: 1440px) {
+    width: 19.5%;
+  }
+  @media (max-width: 1338px) {
+    width: 19.4%;
+  }
+  @media (max-width: 1149px) {
+    width: 24.2%;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 1013px) {
+    width: 24%;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 799px) {
+    width: 32.2%;
+    &:nth-child(3n) {
+      margin-right: 0px;
+    }
+    &:nth-child(4n) {
+      margin-right: 5px;
+    }
+  }
+  @media (max-width: 610px) {
+    width: 48.4%;
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
+    &:nth-child(3n) {
+      margin-right: 5px;
+    }
+  }
+  @media (max-width: 370px) {
+    width: 48.3%;
+    &:nth-child(2n) {
+      margin-right: 0px;
+    }
+    &:nth-child(3n) {
+      margin-right: 5px;
+    }
+  }
 `;
 
 const Title = styled.p`

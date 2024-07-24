@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import OffersCount from "../components/OffersCount";
 import SeconadaryMenu from "../components/SecondaryMenu";
 import MainNavBar from "../components/MainNavBar";
@@ -7,13 +7,14 @@ import Footer from "../components/Footer";
 import ProductBody from "../components/ProductBody";
 
 function App() {
+  const [searchValue, setSearchValue] = useState("");
   return (
     <>
       <OffersCount />
       <SeconadaryMenu />
-      <MainNavBar />
+      <MainNavBar searchValue={searchValue} setSearchValue={setSearchValue} />
       <MainMenu />
-      <ProductBody />
+      <ProductBody searchValue={searchValue} />
       <Footer />
     </>
   );
