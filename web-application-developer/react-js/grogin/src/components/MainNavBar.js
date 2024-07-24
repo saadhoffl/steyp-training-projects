@@ -301,6 +301,12 @@ const StyledLink1 = styled(Link)`
   font-weight: 500;
 `;
 
+const StyledLink2 = styled(Link)`
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+`;
+
 const StyledLinkRed = styled(Link)`
   background: linear-gradient(90deg, #dc2626, #ea580c);
   border: 1px solid red;
@@ -336,6 +342,10 @@ const NavHeading = styled.h3`
   color: #6b7280;
 `;
 
+const LogoLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const LeftContainer = styled.div``;
 
 function MainNavBar({ searchValue, setSearchValue }) {
@@ -367,17 +377,27 @@ function MainNavBar({ searchValue, setSearchValue }) {
   };
 
   const handleLogout = () => {
-    // Add logout logic here
+    if (!handleIsLoggedIn()) return;
     localStorage.removeItem("user_data");
-    navigate("/signin");
+    navigate("/");
+  };
+
+  const handleIsLoggedIn = () => {
+    if (localStorage.getItem("user_data")) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   return (
     <Container>
       <LeftContainer>
-        <ImageContainer>
-          <Image src={Logo} alt="" />
-        </ImageContainer>
+        <LogoLink to="/">
+          <ImageContainer>
+            <Image src={Logo} alt="" />
+          </ImageContainer>
+        </LogoLink>
         <MenuButton onClick={showNavBar}>
           <MenuImage src={MenuIcon} alt="" />
         </MenuButton>
@@ -481,7 +501,11 @@ function MainNavBar({ searchValue, setSearchValue }) {
           <AccountTilte>Account</AccountTilte>
           {showDropdown && (
             <DropDownContent onClick={handleLogout}>
-              <LogOutButton onClick={handleLogout}>Logout</LogOutButton>
+              {handleIsLoggedIn() ? (
+                <LogOutButton onClick={handleLogout}>Logout</LogOutButton>
+              ) : (
+                <StyledLink2 to={"/signin"}>Login</StyledLink2>
+              )}
             </DropDownContent>
           )}
         </AccountDiv>

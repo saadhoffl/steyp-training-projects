@@ -95,6 +95,18 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      if (e.target.type === "text") {
+        // Move focus to password input
+        document.getElementById("password").focus();
+      } else if (e.target.type === "password") {
+        // Submit the form
+        handleSubmit(e);
+      }
+    }
+  };
+
   const handleSubmit = (e) => {
     setError("");
     e.preventDefault();
@@ -125,12 +137,15 @@ const LoginPage = () => {
           value={username}
           type="text"
           placeholder="Username"
+          onKeyDown={handleKeyDown}
         />
         <Input
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           type="password"
           placeholder="Password"
+          id="password"
+          onKeyDown={handleKeyDown}
         />
         <Button>Signin</Button>
         {error && <ErrorMsg>{error}</ErrorMsg>}

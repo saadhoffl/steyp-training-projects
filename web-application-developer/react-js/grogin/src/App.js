@@ -12,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Index />} exact />
         <Route element={<PrivateRoutes />}>
-          <Route path="/" element={<Index />} exact />
           <Route
             path="/product-details/:id"
             element={<ProductDetails />}
