@@ -66,12 +66,30 @@ const TopContainer = styled.div`
   margin: 30px auto 0px;
 `;
 const Heading = styled.h1`
-  font-size: 32px;
+  font-size: 2.6vw;
   margin-bottom: 15px;
+  @media (max-width: 900px) {
+    font-size: 3.2vw;
+  }
+  @media (max-width: 700px) {
+    font-size: 3.9vw;
+  }
+  @media (max-width: 500px) {
+    font-size: 4.7vw;
+  }
 `;
 const Paragraph = styled.p`
   font-size: 20px;
   color: #dfddd5;
+  @media (max-width: 900px) {
+    font-size: 2.2vw;
+  }
+  @media (max-width: 700px) {
+    font-size: 2.9vw;
+  }
+  @media (max-width: 500px) {
+    font-size: 3.7vw;
+  }
 `;
 
 const PlacesContainer = styled.ul`
@@ -86,6 +104,24 @@ const PlaceCard = styled.li`
   margin-bottom: 25px;
   &:nth-child(4n) {
     margin-right: 0;
+  }
+  @media (max-width: 820px) {
+    width: 32%;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-child(4n) {
+      margin-right: 2%;
+    }
+  }
+  @media (max-width: 600px) {
+    width: 49%;
+    &:nth-child(3n) {
+      margin-right: 2%;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
   }
 `;
 const PlaceCardLink = styled(Link)`
@@ -105,8 +141,14 @@ const PlaceBottomContainer = styled.div`
 `;
 const PlaceTitle = styled.h2`
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 1.5vw;
   font-weight: 550;
+  @media (max-width: 820px) {
+    font-size: 2.4vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 3.3vw;
+  }
 `;
 const Location = styled.div`
   display: flex;

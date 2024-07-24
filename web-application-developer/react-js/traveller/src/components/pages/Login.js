@@ -117,11 +117,23 @@ const Container = styled.div`
   height: 95vh;
   display: flex;
   padding: 15px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    padding: 10px 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 127vh;
+  }
 `;
 
 const LeftContainer = styled.div`
   width: 55%;
   padding: 10px 70px 70px;
+  @media (max-width: 720px) {
+    width: 100%;
+    padding: 0px 0px;
+  }
 `;
 
 const RightContainer = styled.div`
@@ -132,6 +144,11 @@ const RightContainer = styled.div`
   justify-content: center;
   border-radius: 20px;
   padding: 0 70px 60px;
+  @media (max-width: 720px) {
+    width: 100%;
+    padding: 30px 60px;
+    box-sizing: border-box;
+  }
 `;
 
 const HeaderContainer = styled.div``;
@@ -139,14 +156,30 @@ const HeaderContainer = styled.div``;
 const LogoImg = styled.img`
   width: 200px;
   display: block;
+  @media (max-width: 720px) {
+    margin: 0 auto;
+  }
 `;
 
 const MainHeading = styled.h1`
-  font-size: 55px;
   font-weight: bold;
   color: #0c3a4a;
   margin-top: 180px;
   line-height: 1.2em;
+  font-size: 3.2vw;
+  margin-bottom: 15px;
+  @media (max-width: 900px) {
+    font-size: 3.2vw;
+  }
+  @media (max-width: 720px) {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 3.9vw;
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    font-size: 4.7vw;
+  }
 `;
 
 const LoginContainer = styled.div`

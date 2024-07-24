@@ -72,13 +72,28 @@ function Place({ match }) {
 const PlaceContainer = styled.div`
   width: 70%;
   margin: 40px auto 70px;
+  @media (max-width: 900px) {
+    width: 80%;
+  }
+  @media (max-width: 500px) {
+    width: 88%;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 40px;
   margin-bottom: 15px;
   color: black;
   font-weight: 600;
+  font-size: 2.6vw;
+  @media (max-width: 900px) {
+    font-size: 3.2vw;
+  }
+  @media (max-width: 700px) {
+    font-size: 3.9vw;
+  }
+  @media (max-width: 500px) {
+    font-size: 4.7vw;
+  }
 `;
 
 const InfoContainer = styled.div`
@@ -135,13 +150,28 @@ const GalleryImage = styled.img`
 `;
 
 const SubHeading = styled.h3`
-  font-size: 28px;
   margin-bottom: 20px;
+  font-size: 2.3vw;
+  @media (max-width: 900px) {
+    font-size: 3.1vw;
+  }
+  @media (max-width: 700px) {
+    font-size: 3.7vw;
+  }
+  @media (max-width: 500px) {
+    font-size: 4.7vw;
+  }
+  @media (max-width: 400px) {
+    font-size: 5.9vw;
+  }
 `;
 
 const Description = styled.p`
   font-size: 16px;
   line-height: 1.6em;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export default Place;

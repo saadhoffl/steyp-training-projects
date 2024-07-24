@@ -10,22 +10,24 @@ function Header() {
   };
   return (
     <HeaderContainer>
-      <LeftContainer>
-        <LeftParagraph>© 2024 Travellers, LLC.</LeftParagraph>
-      </LeftContainer>
-      <RightContainer>
-        <List>
-          <ListItem>
-            <ListItemLink to="/">About</ListItemLink>
-          </ListItem>
-          <ListItem>
-            <ListItemLink to="/">Contact</ListItemLink>
-          </ListItem>
-          <ListItem>
-            <ListItemLink to="/">Terms and Conditions</ListItemLink>
-          </ListItem>
-        </List>
-      </RightContainer>
+      <HeaderWrapper>
+        <LeftContainer>
+          <LeftParagraph>© 2024 Travellers, LLC.</LeftParagraph>
+        </LeftContainer>
+        <RightContainer>
+          <List>
+            <ListItem>
+              <ListItemLink to="/">About</ListItemLink>
+            </ListItem>
+            <ListItem>
+              <ListItemLink to="/">Contact</ListItemLink>
+            </ListItem>
+            <ListItem>
+              <ListItemLink to="/">Terms and Conditions</ListItemLink>
+            </ListItem>
+          </List>
+        </RightContainer>
+      </HeaderWrapper>
     </HeaderContainer>
   );
 }
@@ -33,30 +35,43 @@ function Header() {
 const HeaderContainer = styled.div`
   width: 100%;
   background-color: #efefef;
+`;
+
+const HeaderWrapper = styled.div`
+  width: 90%;
   margin: 0 auto;
   padding: 30px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 510px) {
+    flex-direction: column;
+    line-height: 30px;
+  }
 `;
 
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 70px;
+  font-size: 15px;
+  @media (max-width: 510px) {
+    font-size: 13px;
+  }
 `;
 
 const LeftContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 70px;
 `;
 
 const LeftParagraph = styled.p`
-  font-size: 14px;
+  font-size: 15px;
   color: black;
   margin-right: 15px;
   font-weight: bold;
+  @media (max-width: 510px) {
+    font-size: 13px;
+  }
 `;
 
 const List = styled.ul`

@@ -42,18 +42,42 @@ const RightContanier = styled.div`
 `;
 
 const LogoImg = styled.img`
-  width: 200px;
+  width: 20vw;
   display: block;
+  @media (max-width: 720px) {
+    width: 25vw;
+  }
+  @media (max-width: 500px) {
+    width: 31vw;
+  }
+  @media (max-width: 400px) {
+    width: 37vw;
+  }
 `;
 
 const Button = styled(Link)`
   background-color: #046bf7;
   border-radius: 4px;
-  padding: 13px 45px;
+  padding: 2.2vh 3vw;
   color: white;
-  font-size: 18px;
+  font-size: 1.5vw;
   font-weight: bold;
   cursor: pointer;
+  @media (max-width: 900px) {
+    font-size: 1.7vw;
+  }
+  @media (max-width: 800px) {
+    font-size: 2vw;
+  }
+  @media (max-width: 600px) {
+    font-size: 2.5vw;
+  }
+  @media (max-width: 440px) {
+    font-size: 2.8vw;
+  }
+  @media (max-width: 370px) {
+    font-size: 3vw;
+  }
 `;
 
 export default Header;
