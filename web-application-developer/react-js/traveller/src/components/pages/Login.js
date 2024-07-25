@@ -125,11 +125,20 @@ const Container = styled.div`
     margin-bottom: 40px;
     height: 127vh;
   }
+  @media (max-width: 560px) {
+    padding: 10px 40px;
+  }
+  @media (max-width: 410px) {
+    padding: 10px 30px;
+  }
 `;
 
 const LeftContainer = styled.div`
   width: 55%;
   padding: 10px 70px 70px;
+  @media (max-width: 990px) {
+    width: 40%;
+  }
   @media (max-width: 720px) {
     width: 100%;
     padding: 0px 0px;
@@ -144,10 +153,23 @@ const RightContainer = styled.div`
   justify-content: center;
   border-radius: 20px;
   padding: 0 70px 60px;
+  @media (max-width: 1100px) {
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 990px) {
+    width: 60%;
+  }
   @media (max-width: 720px) {
     width: 100%;
     padding: 30px 60px;
     box-sizing: border-box;
+  }
+  @media (max-width: 450px) {
+    padding: 40px 40px;
+  }
+  @media (max-width: 410px) {
+    padding: 40px 30px;
   }
 `;
 
@@ -158,6 +180,9 @@ const LogoImg = styled.img`
   display: block;
   @media (max-width: 720px) {
     margin: 0 auto;
+  }
+  @media (max-width: 410px) {
+    width: 160px;
   }
 `;
 
@@ -186,6 +211,10 @@ const LoginContainer = styled.div`
   padding-bottom: 50px;
   border-bottom: 1px solid #fff;
   width: 100%;
+  @media (max-width: 1100px) {
+    padding-bottom: 30px;
+    box-sizing: border-box;
+  }
 `;
 
 const LoginHeading = styled.h1`
@@ -193,11 +222,17 @@ const LoginHeading = styled.h1`
   color: #0c3a4a;
   font-weight: bold;
   margin-bottom: 15px;
+  @media (max-width: 460px) {
+    font-size: 27px;
+  }
 `;
 
 const LoginInfo = styled.p`
   font-size: 18px;
   margin-bottom: 35px;
+  @media (max-width: 460px) {
+    font-size: 16px;
+  }
 `;
 
 const Form = styled.form`
@@ -220,6 +255,12 @@ const Input = styled.input`
   font-size: 18px;
   box-sizing: border-box;
   outline: none;
+  @media (max-width: 460px) {
+    padding: 15px 25px 15px 30px;
+  }
+  @media (max-width: 410px) {
+    padding: 12px 25px 12px 30px;
+  }
 `;
 
 const ButtonContainer = styled.div`

@@ -21,6 +21,12 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 | 03 | grogin | Completed | created with figma design | ReactJs with postgresql, python django rest api | [Grogin Website](https://github.com/saadhoffl/steyp-training-projects/tree/main/web-application-developer/react-js/grogin) |
 | 04 | traveller | Completed | created with watching through steyp platform | ReactJs with postgresql, python django rest api | - |
 
+### React-Js
+
+| Project No | Project Name | Project Status | Descriptions | Skills | Github Link |
+|------------|--------------|----------------|--------------|------|--------|
+| 01 | exclusive | on-going | creating my own | NextJs with django rest api | [Exclusive](https://github.com/saadhoffl/steyp-training-projects/tree/main/web-application-developer/next-js/exclusive) |
+
 ## BACKEND-DEVELOPER:
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Github Link |

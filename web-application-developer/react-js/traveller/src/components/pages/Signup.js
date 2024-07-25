@@ -63,10 +63,12 @@ function Login() {
       </Helmet>
       <LeftContainer>
         <HeaderContainer>
-          <LogoImg
-            src={require("../../assets/images/logo.png")}
-            alt="Website Logo"
-          />
+          <Link to="/">
+            <LogoImg
+              src={require("../../assets/images/logo.png")}
+              alt="Website Logo"
+            />
+          </Link>
         </HeaderContainer>
         <MainHeading>Travel to the best beautiful places</MainHeading>
       </LeftContainer>
@@ -123,11 +125,31 @@ const Container = styled.div`
   height: 95vh;
   display: flex;
   padding: 15px;
+  @media (max-width: 720px) {
+    flex-direction: column;
+    padding: 10px 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 127vh;
+  }
+  @media (max-width: 560px) {
+    padding: 10px 40px;
+  }
+  @media (max-width: 410px) {
+    padding: 10px 30px;
+  }
 `;
 
 const LeftContainer = styled.div`
   width: 55%;
   padding: 10px 70px 70px;
+  @media (max-width: 990px) {
+    width: 40%;
+  }
+  @media (max-width: 720px) {
+    width: 100%;
+    padding: 0px 0px;
+  }
 `;
 
 const RightContainer = styled.div`
@@ -138,6 +160,24 @@ const RightContainer = styled.div`
   justify-content: center;
   border-radius: 20px;
   padding: 0 70px 10px;
+  @media (max-width: 1100px) {
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 990px) {
+    width: 60%;
+  }
+  @media (max-width: 720px) {
+    width: 100%;
+    padding: 30px 60px;
+    box-sizing: border-box;
+  }
+  @media (max-width: 450px) {
+    padding: 40px 40px;
+  }
+  @media (max-width: 410px) {
+    padding: 40px 30px;
+  }
 `;
 
 const HeaderContainer = styled.div``;
@@ -145,32 +185,64 @@ const HeaderContainer = styled.div``;
 const LogoImg = styled.img`
   width: 200px;
   display: block;
+  @media (max-width: 720px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 410px) {
+    width: 160px;
+  }
 `;
 
 const MainHeading = styled.h1`
-  font-size: 55px;
   font-weight: bold;
   color: #0c3a4a;
   margin-top: 180px;
   line-height: 1.2em;
+  font-size: 3.2vw;
+  margin-bottom: 15px;
+  @media (max-width: 900px) {
+    font-size: 3.2vw;
+  }
+  @media (max-width: 720px) {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 3.9vw;
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    font-size: 4.7vw;
+  }
 `;
 
 const LoginContainer = styled.div`
   padding-bottom: 50px;
   border-bottom: 1px solid #fff;
   width: 100%;
+  @media (max-width: 1100px) {
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  }
 `;
 
 const LoginHeading = styled.h1`
-  font-size: 35px;
+  font-size: 32px;
   color: #0c3a4a;
   font-weight: bold;
   margin-bottom: 15px;
+  @media (max-width: 1010px) {
+    font-size: 28px;
+  }
+  @media (max-width: 460px) {
+    font-size: 27px;
+  }
 `;
 
 const LoginInfo = styled.p`
   font-size: 18px;
   margin-bottom: 35px;
+  @media (max-width: 460px) {
+    font-size: 16px;
+  }
 `;
 
 const Form = styled.form`
@@ -193,6 +265,15 @@ const Input = styled.input`
   font-size: 18px;
   box-sizing: border-box;
   outline: none;
+  @media (max-width: 1100px) {
+    padding: 17px 25px 17px 30px;
+  }
+  @media (max-width: 460px) {
+    padding: 15px 25px 15px 30px;
+  }
+  @media (max-width: 410px) {
+    padding: 12px 25px 12px 30px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -209,6 +290,9 @@ const SubmitButton = styled.button`
   border-radius: 8px;
   font-size: 19px;
   cursor: pointer;
+  @media (max-width: 460px) {
+    padding: 10px 25px;
+  }
 `;
 
 const SignupButton = styled(Link)`
