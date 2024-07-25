@@ -349,6 +349,24 @@ const ProductCard = styled.div`
       margin-right: 0;
     }
   }
+  @media (max-width: 767px) {
+    width: 32.2%;
+    &:nth-child(2n) {
+      margin-right: 5px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  @media (max-width: 569px) {
+    width: 48.4%;
+    &:nth-child(3n) {
+      margin-right: 5px;
+    }
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
 `;
 
 const CardImg = styled.img`
