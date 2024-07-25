@@ -31,5 +31,5 @@ LINK: [MY-SKILLS AND PROJECTS](https://github.com/saadhoffl/my-skills)
 
 | Project No | Project Name | Project Status | Descriptions | Skills | Github Link |
 |------------|--------------|----------------|--------------|------|--------|
-| 01 | grogin | Completed | django backend for grogin reactjs project | ReactJs and django | [Grogin](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/grogin) |
-| 02 | traveller | Completed | django backend for traveller reactjs project | ReactJs and django | [Traveller Guide](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/traveller) |
+| 01 | grogin | Completed | django backend for grogin reactjs project | ReactJs and django rest api | [Grogin](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/grogin) |
+| 02 | traveller | Completed | django backend for traveller reactjs project | ReactJs and django rest api | [Traveller Guide](https://github.com/saadhoffl/steyp-training-projects/tree/main/backend-developer/django/traveller) |
