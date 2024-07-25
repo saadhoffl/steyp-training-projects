@@ -1,5 +1,45 @@
-.topbarcontainer{
+.container{
     width: 100%;
-    height: 10vh;
+    display: flex;
     background-color: black;
+}
+
+.left{
+    width: 80%;
+    text-align: center;
+    margin-left: 130px;
+}
+
+.right{
+    display: flex;
+    width: 20%;
+    text-align: start;
+    margin: auto 0;
+}
+
+.paragraph{
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.shopnow{
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.languages{
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.chevron_down{
+    color: white;
+    width: 10px;
 }

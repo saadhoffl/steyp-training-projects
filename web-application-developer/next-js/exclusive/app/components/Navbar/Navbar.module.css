@@ -1,0 +1,61 @@
+.container{
+   display: flex;
+   margin-top: 28px;
+   padding: 0px 90px;
+   border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.left{
+    margin: auto 0;
+    
+}
+
+.logo{
+    
+}
+
+.middle{
+    margin: auto 0;
+
+}
+
+.navbar{
+    display: flex;
+}
+
+.navitem{
+ 
+}
+
+.right{
+    display: flex;
+    align-items: center;
+}
+
+.search_bar_container{
+   
+}  
+
+.search_bar{
+  
+}
+
+.search_icon{
+
+    color: black;
+
+}
+
+.user_wishlist{
+    color: black;
+
+}
+
+.cart_icon{
+    color: black;
+
+}
+
+
+
+
