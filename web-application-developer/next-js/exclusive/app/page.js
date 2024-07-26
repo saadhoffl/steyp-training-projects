@@ -3,6 +3,7 @@ import Topbar from "./components/Topbar/Topbar";
 import Navbar from "./components/Navbar/Navbar";
 import Spotlight from "./components/Spotlight/Spotlight";
 import CategoryCard from "./components/CategoryCard/CategoryCard";
+import Products from "./components/Products/Products";
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
       <Navbar />
       <Spotlight />
       <CategoryCard />
+      <Products />
     </>
   );
 }
