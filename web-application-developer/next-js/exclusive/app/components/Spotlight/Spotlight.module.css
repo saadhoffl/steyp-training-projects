@@ -1,0 +1,81 @@
+.container{
+    width: 85%;
+    margin: 35px auto 0;
+    display: flex;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+
+.container .left{
+    width: 50%;
+    margin: auto 0;
+    padding-left: 90px;
+}
+
+.container .left .heading_container{
+    display: flex;
+}
+
+.container .left .heading_container .icon_apple{
+   margin-right: 25px;
+   width: 27px;
+   color: white;
+}
+
+.container .left .offers_heading{
+    color: white;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.container .left .heading_container .heading{
+    color: white;
+}
+
+.container .left .button_container{
+    display: flex;
+    align-items: center;
+}
+
+.container .left .button_container{
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.container .left .button_container .button{
+    color: white;
+    margin: 10px 10px 10px 0;
+    font-size: 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+.container .left .button_container .button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px; 
+    width: 100%;
+    height: 1px; 
+    background-color: rgb(255, 255, 255); 
+}
+
+.container .left .button_container .icon_right_arrow{
+    width: 20px;
+}
+
+
+
+.container .right .img_container{
+    padding: 20px 10px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.container .right .img_container .spotlight_img{
+    width: 93%;
+    height: 90%;
+    padding: 10px;
+}
