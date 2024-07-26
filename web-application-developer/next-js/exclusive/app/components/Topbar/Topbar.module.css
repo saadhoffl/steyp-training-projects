@@ -4,26 +4,21 @@
     background-color: black;
 }
 
-.left{
+
+
+.container .left{
     width: 80%;
     text-align: center;
     margin-left: 130px;
 }
 
-.right{
-    display: flex;
-    width: 20%;
-    text-align: start;
-    margin: auto 0;
-}
-
-.paragraph{
+.container .left .paragraph{
     color: white;
     padding: 10px;
     font-size: 15px;
 }
 
-.shopnow{
+.container .left .paragraph .shopnow{
     color: white;
     padding: 10px;
     font-size: 15px;
@@ -32,14 +27,24 @@
     cursor: pointer;
 }
 
-.languages{
+
+
+.container .right{
+    display: flex;
+    width: 20%;
+    text-align: start;
+    margin: auto 0;
+}
+
+
+.container .right .languages{
     color: white;
     padding: 10px;
     font-size: 15px;
     font-weight: 500;
 }
 
-.chevron_down{
+.container .right .chevron_down{
     color: white;
     width: 10px;
 }
