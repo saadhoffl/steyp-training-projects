@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import style from "./Navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,11 +13,17 @@ function Navbar() {
     <section className={style.top_container}>
       <section className={style.container}>
         <div className={style.left}>
-          <span className={style.logo}>Exclusive</span>
+          <Link href="/">
+            <span className={style.logo}>Exclusive</span>
+          </Link>
         </div>
         <div className={style.middle}>
           <ul className={style.navbar}>
-            <li className={(style.navitem, style.active)}>Home</li>
+            <li className={(style.navitem, style.active)}>
+              <Link href="/" style={{ color: "black" }}>
+                Home
+              </Link>
+            </li>
             <li className={style.navitem}>Contact</li>
             <li className={style.navitem}>About</li>
             <li className={style.navitem}>Signin</li>

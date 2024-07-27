@@ -1,3 +1,19 @@
+.product_heading_container{
+    text-align: start;
+    width: 85%;
+    margin: 40px auto 0;
+}
+
+.product_heading_container .heading{
+    font-size: 15px;
+    margin-top: 20px;
+    color: rgb(100, 100, 100);
+}
+
+.product_heading_container .heading .slash{
+   font-size: 10px;
+}
+
 .product_container{
     width: 85%;
     display: flex;
@@ -105,22 +121,4 @@
     color: #000000;
     cursor: pointer;
     opacity: 0.73;
-}
-
-
-.product_view_button{
-    text-align: center;
-    border-top: 1px solid #dddddd;
-    width: 85%;
-    margin: 10px auto 0;
-}
-
-.product_view_button .view_button{
-    margin-top: 20px;
-    background-color: #DB4444;
-    color: white;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }

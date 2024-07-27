@@ -1,0 +1,92 @@
+.top_container{
+    width: 100%;
+    margin-top: 80px;
+    background-color: black;
+    color: white;
+}
+
+.top_container .container{
+    width: 85%;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.top_container .container .list_container .list .list_heading{
+    font-size: 18px;
+    margin-bottom: 19px;
+}
+
+.top_container .container .list_container .list .list_sub_heading{
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.top_container .container .list_container .list .list_item{
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.top_container .container .list_container .input_container{
+    border-radius: 4px;
+    border: 1px solid rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    
+}
+
+.top_container .container .list_container .input{
+    color: white;
+}
+
+.top_container .container .download_app .download_container{
+    display: flex;
+    gap: 10px;
+}
+
+.top_container .container .download_app .download_container .app{
+    display: flex;
+    flex-direction: column;
+}
+
+.top_container .container .download_app .social_icon{
+    display: flex;
+    gap: 15px;
+    width: 140px;
+    margin-top: 20px;
+}
+
+.top_container .container .download_app .social_icon .star{
+    width: 100%;
+    height: 100%;
+}
+
+.top_container .container .download_app .download_heading{
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.top_container .container .download_app .download_sub_heading{
+    margin-bottom: 6px;
+}
+
+.top_container .copyright{
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(22, 22, 22);
+    display: flex;
+    justify-content: center;
+}
+
+.top_container .copyright .copyright_text{
+    font-size: 14px;
+    padding: 20px 10px;
+}
+
+.top_container .copyright .copyright_icon{
+    width: 16px;
+}

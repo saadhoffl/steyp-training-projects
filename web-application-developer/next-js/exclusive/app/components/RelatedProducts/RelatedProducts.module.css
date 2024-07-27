@@ -1,3 +1,29 @@
+.container{
+    width: 85%;
+    margin: 30px auto;
+}
+
+.container .heading_container .right_border{
+    border-left: 14px solid #DB4444;
+    border-radius: 2px;
+    padding: 5px 0;
+    margin-right: 10px;
+}
+
+.container .heading_container .main_heading{
+    font-size: 14px;
+    font-weight: 500;
+    color: #DB4444;
+    display: inline;
+}
+
+.product_container{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+}
+
 .product_container{
     width: 85%;
     display: flex;

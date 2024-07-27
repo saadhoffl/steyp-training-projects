@@ -1,16 +1,21 @@
 import React from "react";
-import style from "./Products.module.css";
+import style from "./AllProducts.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-function Products() {
+function AllProducts() {
   return (
     <>
+      <section className={style.product_heading_container}>
+        <h1 className={style.heading}>
+          Home <span className={style.slash}>/</span> Products
+        </h1>
+      </section>
       <section className={style.product_container}>
         <div className={style.product_card}>
-          <Link href="/product-details">
+          <Link href="/products">
             <div className={style.product_top_container}>
               <div className={style.img_container}>
                 <Image
@@ -252,13 +257,8 @@ function Products() {
           </div>
         </div>
       </section>
-      <section className={style.product_view_button}>
-        <Link href="/products">
-          <button className={style.view_button}>View All Products</button>
-        </Link>
-      </section>
     </>
   );
 }
 
-export default Products;
+export default AllProducts;
