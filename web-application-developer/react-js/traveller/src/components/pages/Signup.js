@@ -75,7 +75,9 @@ function Login() {
       <RightContainer>
         <LoginContainer>
           <LoginHeading>Signup to your account</LoginHeading>
-          <LoginInfo>Enter your email and password to login</LoginInfo>
+          <LoginInfo>
+            Enter your username, email and password to signup
+          </LoginInfo>
           <Form onSubmit={handleSubmit}>
             <InputContainer>
               <Input
@@ -112,7 +114,7 @@ function Login() {
             </SignupButton>
             {message && <ErrorMessage>{message}</ErrorMessage>}
             <ButtonContainer>
-              <SubmitButton type="submit">Login</SubmitButton>
+              <SubmitButton type="submit">Signup</SubmitButton>
             </ButtonContainer>
           </Form>
         </LoginContainer>

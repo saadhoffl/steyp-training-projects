@@ -26,7 +26,11 @@ function Navbar() {
             </li>
             <li className={style.navitem}>Contact</li>
             <li className={style.navitem}>About</li>
-            <li className={style.navitem}>Signin</li>
+            <li className={style.navitem}>
+              <Link href="/signin" style={{ color: "white", padding: "5px" }}>
+                Signin
+              </Link>
+            </li>
           </ul>
         </div>
         <div className={style.right}>
