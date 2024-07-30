@@ -29,7 +29,7 @@ function Login() {
     setMessage("");
     e.preventDefault();
     axios
-      .post(`${BASE_URL}auth/signin/`, {
+      .post(`api/v1/auth/signin/`, {
         username,
         password,
       })
