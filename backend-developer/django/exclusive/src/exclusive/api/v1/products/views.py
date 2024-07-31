@@ -12,6 +12,11 @@ from products.models import Product
 def products(request):
     instances = Product.objects.filter()
 
+    qsize = request.GET.get("qsize")
+
+    if qsize:
+        instances = Product.objects.filter()[:int(qsize)]
+
     context = {'request': request}
     serializer = ProductSerializer(instances, many=True, context=context)
 
