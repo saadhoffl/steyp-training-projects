@@ -1,29 +1,25 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./Products.module.css";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faEye, faStar } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
-function Products() {
-  const [products, setProducts] = useState([]);
+async function getProducts() {
+  const response = await fetch(
+    "http://localhost:8000/api/v1/products/?qsize=8"
+  );
+  const data = await response.json();
+  return data.data;
+}
 
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      const response = await fetch("/api/products/");
-      const data = await response.json();
-      setProducts(data.data);
-    };
-    fetchPlaces();
-  }, []);
-
+const Products = async () => {
+  const products = await getProducts();
   const RenderPlaces = () => {
     return products.map((product, index) => {
       return (
         <div className={style.product_card} key={index}>
-          <Link href="/products">
+          <Link href={`/product-details/${product.id}`}>
             <div className={style.product_top_container}>
               <div className={style.img_container}>
                 <Image
@@ -68,6 +64,6 @@ function Products() {
       </section>
     </>
   );
-}
+};
 
 export default Products;

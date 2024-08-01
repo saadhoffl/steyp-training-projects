@@ -10,27 +10,41 @@ import {
   faTruck,
 } from "@fortawesome/free-solid-svg-icons";
 
-function ProductDetails() {
+async function getProducts(id) {
+  const response = await fetch(
+    `http://localhost:8000/api/v1/products/view/${id}/`,
+    {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIyNTMwNDU4LCJpYXQiOjE3MjI1MzAxNTgsImp0aSI6IjJkMDIyMDE3Yjc0OTQ1OTg5MDA5ZTI5NzYwOThmNDE4IiwidXNlcl9pZCI6MX0.Eg7mNc71i2r6gLyMsYQ7rM2lcC5Zlztr1StZ-bAiisk`,
+      },
+    }
+  );
+  const data = await response.json();
+  return data.data;
+}
+
+const ProductDetails = async ({ id }) => {
+  const products = await getProducts(id);
   return (
     <>
       <section className={style.product_heading_container}>
         <h1 className={style.heading}>
-          Home <span className={style.slash}>/</span> Camera
-          <span className={style.slash}> / </span> CANON EOS DSLR Camera
+          Home <span className={style.slash}>/</span> {products.category}
+          <span className={style.slash}> / </span> {products.name}
         </h1>
       </section>
       <section className={style.product_details}>
         <div className={style.left_container}>
           <Image
             className={style.product_img}
-            src="/assets/images/camera.png"
-            alt="product_img"
+            src={products.image}
+            alt={products.name}
             width={400}
             height={300}
           />
         </div>
         <div className={style.right_container}>
-          <h1 className={style.product_name}>CANON EOS DSLR Camera</h1>
+          <h1 className={style.product_name}>{products.name}</h1>
           <div className={style.stock_review_container}>
             <div className={style.star_container}>
               <FontAwesomeIcon icon={faStar} className={style.star} />
@@ -46,11 +60,7 @@ function ProductDetails() {
             </div>
           </div>
           <div className={style.description_container}>
-            <p className={style.description}>
-              PlayStation 5 Controller Skin High quality vinyl with air channel
-              adhesive for easy bubble free install & mess free removal Pressure
-              sensitive.
-            </p>
+            <p className={style.description}>{products.description}</p>
           </div>
           <div className={style.color_container}>
             <h3 className={style.color_heading}>Color:</h3>
@@ -84,6 +94,6 @@ function ProductDetails() {
       </section>
     </>
   );
-}
+};
 
 export default ProductDetails;
