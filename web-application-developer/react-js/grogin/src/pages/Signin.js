@@ -140,7 +140,9 @@ const LoginPage = () => {
   return (
     <Container>
       <LoginForm onSubmit={handleSubmit}>
-        <LogoImg src={Logo} alt="Grogin App Logo" />
+        <Link to="/">
+          <LogoImg src={Logo} alt="Grogin App Logo" />
+        </Link>
         <Title>Sign in to dashboard</Title>
         <Input
           onChange={(e) => setUsername(e.target.value)}

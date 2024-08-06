@@ -106,7 +106,9 @@ const LoginPage = () => {
   return (
     <Container>
       <LoginForm onSubmit={handleSubmit}>
-        <LogoImg src={Logo} alt="Grogin App Logo" />
+        <Link to="/">
+          <LogoImg src={Logo} alt="Grogin App Logo" />
+        </Link>
         <Title>Sign up to shop now!</Title>
         <Input
           onChange={(e) => setEmail(e.target.value)}
